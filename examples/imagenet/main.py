@@ -31,7 +31,7 @@ from torch.nn.parameter import Parameter
 from torchelastic.p2p.coordinator_p2p import CoordinatorP2P
 from torchelastic.utils.data import CyclingIterator, ElasticDistributedSampler
 from torchvision.models.resnet import BasicBlock, Bottleneck
-
+from torchelastic import metrics
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
@@ -39,6 +39,7 @@ logging.basicConfig(
     level=logging.INFO, format="[%(levelname)s] %(asctime)s %(module)s: %(message)s"
 )
 
+metrics.configure(metrics.ConsoleMetricHandler(), group = "perf-test")
 
 class TrainParams(typing.NamedTuple):
     num_data_workers: int = 8
@@ -92,6 +93,7 @@ class ImagenetState(torchelastic.State):
         self.data_start_index = 0
         self.model_state = {}
 
+    @metrics.profile("perf-test")
     def sync(self, world_size, rank):
         self._sync_state(rank)
 
@@ -103,6 +105,7 @@ class ImagenetState(torchelastic.State):
 
         return self
 
+    @metrics.profile("perf-test")
     def capture_snapshot(self):
         # need only capture mutable fields
         snapshot = {}
@@ -112,12 +115,14 @@ class ImagenetState(torchelastic.State):
         snapshot["model_state"] = copy.deepcopy(self.model_state)
         return snapshot
 
+    @metrics.profile("perf-test")
     def apply_snapshot(self, snapshot):
         self.epoch = snapshot["epoch"]
         self.iteration = snapshot["iteration"]
         self.data_start_index = snapshot["data_start_index"]
         self.model_state = snapshot["model_state"]
 
+    @metrics.profile("perf-test")
     def _sync_state(self, rank):
         # broadcast from the max rank with the biggest start index
         max_rank, _ = edist.all_gather_return_max_long(self.data_start_index)
@@ -146,6 +151,7 @@ class ImagenetState(torchelastic.State):
             f"\tepoch={self.epoch}/{self.num_epochs}"
         )
 
+    @metrics.profile("perf-test")
     def _init_model(self):
         local_rank = dist.get_rank() % torch.cuda.device_count()
 
@@ -191,6 +197,7 @@ class ImagenetState(torchelastic.State):
 
         return iter(self.data_loader)
 
+    @metrics.profile("perf-test")
     def _init_data_loader(self):
         self.data_iter = CyclingIterator(
             n=self.num_epochs,
