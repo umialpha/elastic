@@ -1,9 +1,7 @@
-FROM pytorch/pytorch:1.3-cuda10.1-cudnn7-runtime
-
-# install torchelastic
-WORKDIR /opt/torchelastic
-COPY . .
-RUN pip install -v .
+FROM torchelastic/torchelastic:0.1.0rc1 
+RUN pip install classy-vision
 
 WORKDIR /workspace
-RUN chmod -R a+w .
+COPY . /workspace/elastic
+RUN chmod -R u+x /workspace/elastic/examples/bin
+ENV PATH=/workspace/elastic/examples/bin:${PATH}

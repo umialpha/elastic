@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: download-dataset-task
+  namespace: elastic
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: app
+    image: centos:latest
+    command:
+    - /bin/sh
+    - "-c"
+    - |
+      /bin/bash <<'EOF'
+      yum install -y wget
+      yum install -y unzip
+      wget http://cs231n.stanford.edu/tiny-imagenet-200.zip
+      unzip tiny-imagenet-200.zip -d /data
+      EOF
+    volumeMounts:
+    - name: persistent-storage
+      mountPath: /data
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: elastic-example

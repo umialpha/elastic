@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: imagenet-worker-1
+  namespace: elastic
   labels:
     job-name: imagenet
     worker: "1"
@@ -9,9 +10,10 @@ spec:
   restartPolicy: "OnFailure"
   containers:
   - name: elastic-trainer-worker
-    image: torchelastic/examples:0.1.0rc1
+    image: kuberegistry0.azurecr.io/elastic:v1
+    command: ["fetch_and_run"]
     args:
-    - "s3://<BUCKET>/petctl/<USER>/<JOB_ID>/main.py"
+    - "/workspace/elastic/examples/imagenet/main.py"
     - "--input_path"
     - "/data/tiny-imagenet-200/train"
     - "--epochs"
@@ -38,7 +40,7 @@ spec:
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
-      claimName: efs-claim
+      claimName: elastic-example
   - name: dshm
     emptyDir:
       medium: Memory
@@ -48,6 +50,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: imagenet-worker-1
+  namespace: elastic
 spec:
   selector:
     job-name: imagenet
@@ -59,6 +62,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: imagenet-worker-2
+  namespace: elastic
   labels:
     job-name: imagenet
     worker: "2"
@@ -67,8 +71,9 @@ spec:
   containers:
   - name: elastic-trainer-worker
     image: torchelastic/examples:0.1.0rc1
+    command: ["fetch_and_run"]
     args:
-    - "s3://<BUCKET>/petctl/<USER>/<JOB_ID>/main.py"
+    - "/workspace/elastic/examples/imagenet/main.py"
     - "--input_path"
     - "/data/tiny-imagenet-200/train"
     - "--epochs"
@@ -95,7 +100,7 @@ spec:
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
-      claimName: efs-claim
+      claimName: elastic-example
   - name: dshm
     emptyDir:
       medium: Memory
@@ -105,6 +110,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: imagenet-worker-2
+  namespace: elastic
 spec:
   selector:
     job-name: imagenet

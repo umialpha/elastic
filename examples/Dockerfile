@@ -1,8 +1,9 @@
-ARG BASE_IMAGE=pytorch/elastic:0.1.0rc1
+ARG BASE_IMAGE=pytorch/elastic:latest
 FROM $BASE_IMAGE
 
 ARG WITH_CLASSY_VISION=1
 
+RUN apt-get update && apt-get install -y python-pip
 # install utilities and dependencies
 RUN pip install awscli --upgrade
 RUN pip install classy-vision
