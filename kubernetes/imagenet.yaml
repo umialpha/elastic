@@ -10,7 +10,7 @@ spec:
   restartPolicy: "OnFailure"
   containers:
   - name: elastic-trainer-worker
-    image: kuberegistry0.azurecr.io/elastic:v1
+    image: kuberegistry0.azurecr.io/elastic:v2
     command: ["fetch_and_run"]
     args:
     - "/workspace/elastic/examples/imagenet/main.py"
@@ -70,7 +70,7 @@ spec:
   restartPolicy: "OnFailure"
   containers:
   - name: elastic-trainer-worker
-    image: torchelastic/examples:0.1.0rc1
+    image: kuberegistry0.azurecr.io/elastic:v2
     command: ["fetch_and_run"]
     args:
     - "/workspace/elastic/examples/imagenet/main.py"

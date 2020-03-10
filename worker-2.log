@@ -1,0 +1,1454 @@
+[INFO] 2020-03-10 02:02:22,477 main: rdzv init method=etcd://etcd:2379/imagenet?min_workers=1&max_workers=3&last_call_timeout=5
+[INFO] 2020-03-10 02:02:22,477 main: Loading data from: /data/tiny-imagenet-200/train
+[INFO] 2020-03-10 02:02:31,668 main: Loading model: resnet101
+[INFO] 2020-03-10 02:02:34,680 main: Rank [0] running on GPU [0]
+INFO 2020-03-10 02:02:34,686 Etcd machines: ['http://0.0.0.0:2379']
+[INFO] 2020-03-10 02:02:34,733 main: Entering torchelastic train_loop
+INFO 2020-03-10 02:02:34,734 Attempting to join next rendezvous
+INFO 2020-03-10 02:02:34,750 Observed existing rendezvous state: {'status': 'joinable', 'version': '4', 'participants': [0]}
+INFO 2020-03-10 02:02:34,776 Joined rendezvous version 4 as rank 1. Full state: {'status': 'joinable', 'version': '4', 'participants': [0, 1]}
+INFO 2020-03-10 02:02:34,776 Waiting for remaining peers.
+INFO 2020-03-10 02:02:39,808 All peers arrived. Confirming membership.
+INFO 2020-03-10 02:02:39,906 Waiting for confirmations from all peers.
+INFO 2020-03-10 02:02:39,907 Rendezvous version 4 is complete. Final state: {'status': 'final', 'version': '4', 'participants': [0, 1], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_4/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_4/rank_1'], 'num_workers_waiting': 0}
+INFO 2020-03-10 02:02:39,907 Using TCPStore for c10d::Store implementation
+INFO 2020-03-10 02:02:39,922 Rank 1 will conenct to TCPStore server at imagenet-worker-1:59923
+[INFO] 2020-03-10 02:02:39,924 coordinator_p2p: Got next rendezvous: rank 1, world size 2
+[INFO] 2020-03-10 02:02:39,943 coordinator_p2p: Initialized process group rank 1, world size 2
+[INFO] 2020-03-10 02:02:39,945 main: Rank 1: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=0
+	iteration=0
+	epoch=0/10
+[INFO] 2020-03-10 02:02:42,734 train_loop: Rank 1 synced state with other nodes
+[INFO] 2020-03-10 02:02:55,008 main: epoch: 0, iteration: 0, data_idx: 0
+[INFO] 2020-03-10 02:03:04,185 main: epoch: 0, iteration: 1, data_idx: 96
+[INFO] 2020-03-10 02:03:14,070 main: epoch: 0, iteration: 2, data_idx: 192
+[INFO] 2020-03-10 02:03:23,151 main: epoch: 0, iteration: 3, data_idx: 288
+[INFO] 2020-03-10 02:03:31,434 main: epoch: 0, iteration: 4, data_idx: 384
+[INFO] 2020-03-10 02:03:39,669 main: epoch: 0, iteration: 5, data_idx: 480
+[INFO] 2020-03-10 02:03:48,149 main: epoch: 0, iteration: 6, data_idx: 576
+[INFO] 2020-03-10 02:03:56,848 main: epoch: 0, iteration: 7, data_idx: 672
+[INFO] 2020-03-10 02:04:05,446 main: epoch: 0, iteration: 8, data_idx: 768
+[INFO] 2020-03-10 02:04:14,620 main: epoch: 0, iteration: 9, data_idx: 864
+[INFO] 2020-03-10 02:04:23,770 main: epoch: 0, iteration: 10, data_idx: 960
+[INFO] 2020-03-10 02:04:32,333 main: epoch: 0, iteration: 11, data_idx: 1056
+[INFO] 2020-03-10 02:04:41,118 main: epoch: 0, iteration: 12, data_idx: 1152
+[INFO] 2020-03-10 02:04:49,180 main: epoch: 0, iteration: 13, data_idx: 1248
+[INFO] 2020-03-10 02:04:57,539 main: epoch: 0, iteration: 14, data_idx: 1344
+[INFO] 2020-03-10 02:05:07,479 main: epoch: 0, iteration: 15, data_idx: 1440
+[INFO] 2020-03-10 02:05:17,791 main: epoch: 0, iteration: 16, data_idx: 1536
+[INFO] 2020-03-10 02:05:27,030 main: epoch: 0, iteration: 17, data_idx: 1632
+[INFO] 2020-03-10 02:05:36,328 main: epoch: 0, iteration: 18, data_idx: 1728
+[INFO] 2020-03-10 02:05:45,265 main: epoch: 0, iteration: 19, data_idx: 1824
+[INFO] 2020-03-10 02:05:54,145 main: epoch: 0, iteration: 20, data_idx: 1920
+[INFO] 2020-03-10 02:06:02,671 main: epoch: 0, iteration: 21, data_idx: 2016
+[INFO] 2020-03-10 02:06:11,767 main: epoch: 0, iteration: 22, data_idx: 2112
+[INFO] 2020-03-10 02:06:20,689 main: epoch: 0, iteration: 23, data_idx: 2208
+[INFO] 2020-03-10 02:06:28,844 main: epoch: 0, iteration: 24, data_idx: 2304
+[INFO] 2020-03-10 02:06:37,632 main: epoch: 0, iteration: 25, data_idx: 2400
+[INFO] 2020-03-10 02:06:46,962 main: epoch: 0, iteration: 26, data_idx: 2496
+[INFO] 2020-03-10 02:06:56,217 main: epoch: 0, iteration: 27, data_idx: 2592
+[INFO] 2020-03-10 02:07:04,855 main: epoch: 0, iteration: 28, data_idx: 2688
+[INFO] 2020-03-10 02:07:13,204 main: epoch: 0, iteration: 29, data_idx: 2784
+[INFO] 2020-03-10 02:07:22,226 main: epoch: 0, iteration: 30, data_idx: 2880
+[INFO] 2020-03-10 02:07:31,356 main: epoch: 0, iteration: 31, data_idx: 2976
+[INFO] 2020-03-10 02:07:47,004 main: epoch: 0, iteration: 32, data_idx: 3072
+[INFO] 2020-03-10 02:07:55,821 main: epoch: 0, iteration: 33, data_idx: 3168
+[INFO] 2020-03-10 02:08:05,176 main: epoch: 0, iteration: 34, data_idx: 3264
+[INFO] 2020-03-10 02:08:13,813 main: epoch: 0, iteration: 35, data_idx: 3360
+[INFO] 2020-03-10 02:08:21,848 main: epoch: 0, iteration: 36, data_idx: 3456
+[INFO] 2020-03-10 02:08:30,611 main: epoch: 0, iteration: 37, data_idx: 3552
+[INFO] 2020-03-10 02:08:39,087 main: epoch: 0, iteration: 38, data_idx: 3648
+[INFO] 2020-03-10 02:08:47,502 main: epoch: 0, iteration: 39, data_idx: 3744
+[INFO] 2020-03-10 02:08:55,398 main: epoch: 0, iteration: 40, data_idx: 3840
+[INFO] 2020-03-10 02:09:03,463 main: epoch: 0, iteration: 41, data_idx: 3936
+[INFO] 2020-03-10 02:09:11,896 main: epoch: 0, iteration: 42, data_idx: 4032
+[INFO] 2020-03-10 02:09:21,480 main: epoch: 0, iteration: 43, data_idx: 4128
+[INFO] 2020-03-10 02:09:30,910 main: epoch: 0, iteration: 44, data_idx: 4224
+[INFO] 2020-03-10 02:09:40,858 main: epoch: 0, iteration: 45, data_idx: 4320
+[INFO] 2020-03-10 02:09:53,491 main: epoch: 0, iteration: 46, data_idx: 4416
+[INFO] 2020-03-10 02:10:02,986 main: epoch: 0, iteration: 47, data_idx: 4512
+[INFO] 2020-03-10 02:10:10,727 main: epoch: 0, iteration: 48, data_idx: 4608
+[INFO] 2020-03-10 02:10:22,070 main: epoch: 0, iteration: 49, data_idx: 4704
+[INFO] 2020-03-10 02:10:32,452 main: epoch: 0, iteration: 50, data_idx: 4800
+[INFO] 2020-03-10 02:10:41,812 main: epoch: 0, iteration: 51, data_idx: 4896
+[INFO] 2020-03-10 02:10:51,874 main: epoch: 0, iteration: 52, data_idx: 4992
+[INFO] 2020-03-10 02:11:01,046 main: epoch: 0, iteration: 53, data_idx: 5088
+[INFO] 2020-03-10 02:11:10,868 main: epoch: 0, iteration: 54, data_idx: 5184
+[INFO] 2020-03-10 02:11:22,477 main: epoch: 0, iteration: 55, data_idx: 5280
+[INFO] 2020-03-10 02:11:33,999 main: epoch: 0, iteration: 56, data_idx: 5376
+[INFO] 2020-03-10 02:11:46,225 main: epoch: 0, iteration: 57, data_idx: 5472
+[INFO] 2020-03-10 02:12:01,123 main: epoch: 0, iteration: 58, data_idx: 5568
+[1583805754.7347956][perf-test]: capture_snapshot.success=1
+[1583805754.7348156][perf-test]: capture_snapshot.duration.ms=0
+[1583805759.9447634][perf-test]: capture_snapshot.success=1
+[1583805759.944781][perf-test]: capture_snapshot.duration.ms=0
+[1583805759.945765][perf-test]: apply_snapshot.success=1
+[1583805759.9457772][perf-test]: apply_snapshot.duration.ms=0
+[1583805759.9458663][perf-test]: _sync_state.success=1
+[1583805759.9458761][perf-test]: _sync_state.duration.ms=2
+[1583805762.734067][perf-test]: _init_model.success=1
+[1583805762.7340944][perf-test]: _init_model.duration.ms=2788
+[1583805762.7343805][perf-test]: _init_data_loader.success=1
+[1583805762.7343922][perf-test]: _init_data_loader.duration.ms=0
+[1583805762.7343986][perf-test]: sync.success=1
+[1583805762.7344038][perf-test]: sync.duration.ms=2790
+[1583805762.7361395][perf-test]: capture_snapshot.success=1
+[1583805762.7361512][perf-test]: capture_snapshot.duration.ms=0
+[1583805775.063015][perf-test]: capture_snapshot.success=1
+[1583805775.0630414][perf-test]: capture_snapshot.duration.ms=50
+[1583805784.2440388][perf-test]: capture_snapshot.success=1
+[1583805784.2440596][perf-test]: capture_snapshot.duration.ms=48
+[1583805794.1194625][perf-test]: capture_snapshot.success=1
+[1583805794.119482][perf-test]: capture_snapshot.duration.ms=43
+[1583805803.2007432][perf-test]: capture_snapshot.success=1
+[1583805803.200764][perf-test]: capture_snapshot.duration.ms=43
+[1583805811.4815474][perf-test]: capture_snapshot.success=1
+[1583805811.4815667][perf-test]: capture_snapshot.duration.ms=41
+[1583805819.7168438][perf-test]: capture_snapshot.success=1
+[1583805819.7168667][perf-test]: capture_snapshot.duration.ms=41
+[1583805828.1963654][perf-test]: capture_snapshot.success=1
+[1583805828.1963859][perf-test]: capture_snapshot.duration.ms=39
+[1583805836.8962693][perf-test]: capture_snapshot.success=1
+[1583805836.8962972][perf-test]: capture_snapshot.duration.ms=41
+[1583805845.4925508][perf-test]: capture_snapshot.success=1
+[1583805845.4925718][perf-test]: capture_snapshot.duration.ms=40
+[1583805854.6670148][perf-test]: capture_snapshot.success=1
+[1583805854.6670358][perf-test]: capture_snapshot.duration.ms=40
+[1583805863.818048][perf-test]: capture_snapshot.success=1
+[1583805863.8180716][perf-test]: capture_snapshot.duration.ms=40
+[1583805872.3796673][perf-test]: capture_snapshot.success=1
+[1583805872.3796887][perf-test]: capture_snapshot.duration.ms=39
+[1583805881.1642783][perf-test]: capture_snapshot.success=1
+[1583805881.1642988][perf-test]: capture_snapshot.duration.ms=40
+[1583805889.2262704][perf-test]: capture_snapshot.success=1
+[1583805889.2262924][perf-test]: capture_snapshot.duration.ms=40
+[1583805897.5926666][perf-test]: capture_snapshot.success=1
+[1583805897.592688][perf-test]: capture_snapshot.duration.ms=39
+[1583805907.524237][perf-test]: capture_snapshot.success=1
+[1583805907.524257][perf-test]: capture_snapshot.duration.ms=39
+[1583805917.8368127][perf-test]: capture_snapshot.success=1
+[1583805917.8368335][perf-test]: capture_snapshot.duration.ms=38
+[1583805927.081618][perf-test]: capture_snapshot.success=1
+[1583805927.0816383][perf-test]: capture_snapshot.duration.ms=38
+[1583805936.3778772][perf-test]: capture_snapshot.success=1
+[1583805936.3778975][perf-test]: capture_snapshot.duration.ms=40
+[1583805945.3188334][perf-test]: capture_snapshot.success=1
+[1583805945.3188539][perf-test]: capture_snapshot.duration.ms=38
+[1583805954.190338][perf-test]: capture_snapshot.success=1
+[1583805954.1903574][perf-test]: capture_snapshot.duration.ms=38
+[1583805962.7165742][perf-test]: capture_snapshot.success=1
+[1583805962.7165976][perf-test]: capture_snapshot.duration.ms=39
+[1583805971.8137298][perf-test]: capture_snapshot.success=1
+[1583805971.8137498][perf-test]: capture_snapshot.duration.ms=39
+[1583805980.762993][perf-test]: capture_snapshot.success=1
+[1583805980.7630198][perf-test]: capture_snapshot.duration.ms=67
+[1583805988.8905869][perf-test]: capture_snapshot.success=1
+[1583805988.8906062][perf-test]: capture_snapshot.duration.ms=37
+[1583805997.6760378][perf-test]: capture_snapshot.success=1
+[1583805997.6760583][perf-test]: capture_snapshot.duration.ms=38
+[1583806007.0150082][perf-test]: capture_snapshot.success=1
+[1583806007.0150285][perf-test]: capture_snapshot.duration.ms=40
+[1583806016.263709][perf-test]: capture_snapshot.success=1
+[1583806016.2637312][perf-test]: capture_snapshot.duration.ms=39
+[1583806024.9055805][perf-test]: capture_snapshot.success=1
+[1583806024.905603][perf-test]: capture_snapshot.duration.ms=38
+[1583806033.2523808][perf-test]: capture_snapshot.success=1
+[1583806033.2524042][perf-test]: capture_snapshot.duration.ms=39
+[1583806042.2712579][perf-test]: capture_snapshot.success=1
+[1583806042.2712786][perf-test]: capture_snapshot.duration.ms=39
+[1583806051.414314][perf-test]: capture_snapshot.success=1
+[1583806051.4143333][perf-test]: capture_snapshot.duration.ms=38
+[1583806067.0517156][perf-test]: capture_snapshot.success=1
+[1583806067.051736][perf-test]: capture_snapshot.duration.ms=39
+[1583806075.8662791][perf-test]: capture_snapshot.success=1
+[1583806075.8663013][perf-test]: capture_snapshot.duration.ms=39
+[1583806085.2258985][perf-test]: capture_snapshot.success=1
+[1583806085.2259176][perf-test]: capture_snapshot.duration.ms=38
+[1583806093.85961][perf-test]: capture_snapshot.success=1
+[1583806093.8596318][perf-test]: capture_snapshot.duration.ms=39
+[1583806101.8958127][perf-test]: capture_snapshot.success=1
+[1583806101.8958342][perf-test]: capture_snapshot.duration.ms=39
+[1583806110.6553009][perf-test]: capture_snapshot.success=1
+[1583806110.6553204][perf-test]: capture_snapshot.duration.ms=37
+[1583806119.1304204][perf-test]: capture_snapshot.success=1
+[1583806119.1304417][perf-test]: capture_snapshot.duration.ms=37
+[1583806127.5576856][perf-test]: capture_snapshot.success=1
+[1583806127.5577147][perf-test]: capture_snapshot.duration.ms=40
+[1583806135.4466722][perf-test]: capture_snapshot.success=1
+[1583806135.4466944][perf-test]: capture_snapshot.duration.ms=41
+[1583806143.5089216][perf-test]: capture_snapshot.success=1
+[1583806143.508942][perf-test]: capture_snapshot.duration.ms=39
+[1583806151.940447][perf-test]: capture_snapshot.success=1
+[1583806151.9404736][perf-test]: capture_snapshot.duration.ms=38
+[1583806161.5271308][perf-test]: capture_snapshot.success=1
+[1583806161.527157][perf-test]: capture_snapshot.duration.ms=40
+[1583806170.9580455][perf-test]: capture_snapshot.success=1
+[1583806170.9580665][perf-test]: capture_snapshot.duration.ms=38
+[1583806180.9037383][perf-test]: capture_snapshot.success=1
+[1583806180.9037597][perf-test]: capture_snapshot.duration.ms=39
+[1583806193.5425696][perf-test]: capture_snapshot.success=1
+[1583806193.542599][perf-test]: capture_snapshot.duration.ms=40
+[1583806203.0330253][perf-test]: capture_snapshot.success=1
+[1583806203.0330508][perf-test]: capture_snapshot.duration.ms=39
+[1583806210.7737813][perf-test]: capture_snapshot.success=1
+[1583806210.7738028][perf-test]: capture_snapshot.duration.ms=39
+[1583806222.11902][perf-test]: capture_snapshot.success=1
+[1583806222.1190417][perf-test]: capture_snapshot.duration.ms=42
+[1583806232.4978073][perf-test]: capture_snapshot.success=1
+[1583806232.4978306][perf-test]: capture_snapshot.duration.ms=39
+[1583806241.8643613][perf-test]: capture_snapshot.success=1
+[1583806241.864382][perf-test]: capture_snapshot.duration.ms=40
+[1583806251.9191365][perf-test]: capture_snapshot.success=1
+[1583806251.9191575][perf-test]: capture_snapshot.duration.ms=39
+[1583806261.0938118][perf-test]: capture_snapshot.success=1
+[1583806261.0938327][perf-test]: capture_snapshot.duration.ms=39
+[1583806270.9126232][perf-test]: capture_snapshot.success=1
+[1583806270.9126434][perf-test]: capture_snapshot.duration.ms=38
+[1583806282.5235214][perf-test]: capture_snapshot.success=1
+[1583806282.5235434][perf-test]: capture_snapshot.duration.ms=39
+[1583806294.0446298][perf-test]: capture_snapshot.success=1
+[1583806294.04465][perf-test]: capture_snapshot.duration.ms=38
+[1583806306.270835][perf-test]: capture_snapshot.success=1
+[1583806306.2708552][perf-test]: capture_snapshot.duration.ms=39
+[INFO] 2020-03-10 02:12:13,223 main: epoch: 0, iteration: 59, data_idx: 5664
+[INFO] 2020-03-10 02:12:24,472 main: epoch: 0, iteration: 60, data_idx: 5760
+[INFO] 2020-03-10 02:12:34,262 main: epoch: 0, iteration: 61, data_idx: 5856
+[INFO] 2020-03-10 02:12:42,816 main: epoch: 0, iteration: 62, data_idx: 5952
+[INFO] 2020-03-10 02:12:52,102 main: epoch: 0, iteration: 63, data_idx: 6048
+[INFO] 2020-03-10 02:13:01,095 main: epoch: 0, iteration: 64, data_idx: 6144
+[INFO] 2020-03-10 02:13:09,851 main: epoch: 0, iteration: 65, data_idx: 6240
+[INFO] 2020-03-10 02:13:21,676 main: epoch: 0, iteration: 66, data_idx: 6336
+[INFO] 2020-03-10 02:13:30,743 main: epoch: 0, iteration: 67, data_idx: 6432
+[INFO] 2020-03-10 02:13:39,900 main: epoch: 0, iteration: 68, data_idx: 6528
+[INFO] 2020-03-10 02:13:51,099 main: epoch: 0, iteration: 69, data_idx: 6624
+[INFO] 2020-03-10 02:14:02,384 main: epoch: 0, iteration: 70, data_idx: 6720
+[INFO] 2020-03-10 02:14:11,768 main: epoch: 0, iteration: 71, data_idx: 6816
+[INFO] 2020-03-10 02:14:22,064 main: epoch: 0, iteration: 72, data_idx: 6912
+[INFO] 2020-03-10 02:14:30,850 main: epoch: 0, iteration: 73, data_idx: 7008
+[INFO] 2020-03-10 02:14:39,720 main: epoch: 0, iteration: 74, data_idx: 7104
+[INFO] 2020-03-10 02:14:49,383 main: epoch: 0, iteration: 75, data_idx: 7200
+[INFO] 2020-03-10 02:14:58,110 main: epoch: 0, iteration: 76, data_idx: 7296
+[INFO] 2020-03-10 02:15:06,808 main: epoch: 0, iteration: 77, data_idx: 7392
+[INFO] 2020-03-10 02:15:16,118 main: epoch: 0, iteration: 78, data_idx: 7488
+[INFO] 2020-03-10 02:15:25,696 main: epoch: 0, iteration: 79, data_idx: 7584
+[INFO] 2020-03-10 02:15:35,517 main: epoch: 0, iteration: 80, data_idx: 7680
+[INFO] 2020-03-10 02:15:44,558 main: epoch: 0, iteration: 81, data_idx: 7776
+[INFO] 2020-03-10 02:15:53,516 main: epoch: 0, iteration: 82, data_idx: 7872
+[INFO] 2020-03-10 02:16:02,578 main: epoch: 0, iteration: 83, data_idx: 7968
+[INFO] 2020-03-10 02:16:11,025 main: epoch: 0, iteration: 84, data_idx: 8064
+[INFO] 2020-03-10 02:16:19,507 main: epoch: 0, iteration: 85, data_idx: 8160
+[INFO] 2020-03-10 02:16:28,018 main: epoch: 0, iteration: 86, data_idx: 8256
+[INFO] 2020-03-10 02:16:35,922 main: epoch: 0, iteration: 87, data_idx: 8352
+[INFO] 2020-03-10 02:16:43,359 main: epoch: 0, iteration: 88, data_idx: 8448
+[INFO] 2020-03-10 02:16:51,028 main: epoch: 0, iteration: 89, data_idx: 8544
+[INFO] 2020-03-10 02:16:59,867 main: epoch: 0, iteration: 90, data_idx: 8640
+[INFO] 2020-03-10 02:17:07,943 main: epoch: 0, iteration: 91, data_idx: 8736
+[INFO] 2020-03-10 02:17:15,923 main: epoch: 0, iteration: 92, data_idx: 8832
+[INFO] 2020-03-10 02:17:23,862 main: epoch: 0, iteration: 93, data_idx: 8928
+[INFO] 2020-03-10 02:17:31,930 main: epoch: 0, iteration: 94, data_idx: 9024
+[INFO] 2020-03-10 02:17:40,535 main: epoch: 0, iteration: 95, data_idx: 9120
+[INFO] 2020-03-10 02:17:49,071 main: epoch: 0, iteration: 96, data_idx: 9216
+[INFO] 2020-03-10 02:17:57,874 main: epoch: 0, iteration: 97, data_idx: 9312
+[INFO] 2020-03-10 02:18:06,203 main: epoch: 0, iteration: 98, data_idx: 9408
+[INFO] 2020-03-10 02:18:14,647 main: epoch: 0, iteration: 99, data_idx: 9504
+[INFO] 2020-03-10 02:18:25,440 main: epoch: 0, iteration: 100, data_idx: 9600
+[INFO] 2020-03-10 02:18:33,087 main: epoch: 0, iteration: 101, data_idx: 9696
+[INFO] 2020-03-10 02:18:41,492 main: epoch: 0, iteration: 102, data_idx: 9792
+[INFO] 2020-03-10 02:18:49,397 main: epoch: 0, iteration: 103, data_idx: 9888
+[INFO] 2020-03-10 02:18:58,112 main: epoch: 0, iteration: 104, data_idx: 9984
+[INFO] 2020-03-10 02:19:06,206 main: epoch: 0, iteration: 105, data_idx: 10080
+[INFO] 2020-03-10 02:19:13,811 main: epoch: 0, iteration: 106, data_idx: 10176
+[INFO] 2020-03-10 02:19:22,272 main: epoch: 0, iteration: 107, data_idx: 10272
+[INFO] 2020-03-10 02:19:29,990 main: epoch: 0, iteration: 108, data_idx: 10368
+[INFO] 2020-03-10 02:19:37,755 main: epoch: 0, iteration: 109, data_idx: 10464
+[INFO] 2020-03-10 02:19:45,564 main: epoch: 0, iteration: 110, data_idx: 10560
+[INFO] 2020-03-10 02:19:54,028 main: epoch: 0, iteration: 111, data_idx: 10656
+[INFO] 2020-03-10 02:20:02,089 main: epoch: 0, iteration: 112, data_idx: 10752
+[INFO] 2020-03-10 02:20:10,132 main: epoch: 0, iteration: 113, data_idx: 10848
+[INFO] 2020-03-10 02:20:18,525 main: epoch: 0, iteration: 114, data_idx: 10944
+[INFO] 2020-03-10 02:20:26,489 main: epoch: 0, iteration: 115, data_idx: 11040
+[INFO] 2020-03-10 02:20:34,941 main: epoch: 0, iteration: 116, data_idx: 11136
+[INFO] 2020-03-10 02:20:42,916 main: epoch: 0, iteration: 117, data_idx: 11232
+[INFO] 2020-03-10 02:20:52,826 main: epoch: 0, iteration: 118, data_idx: 11328
+[INFO] 2020-03-10 02:21:00,613 main: epoch: 0, iteration: 119, data_idx: 11424
+[INFO] 2020-03-10 02:21:08,929 main: epoch: 0, iteration: 120, data_idx: 11520
+[INFO] 2020-03-10 02:21:16,875 main: epoch: 0, iteration: 121, data_idx: 11616
+[INFO] 2020-03-10 02:21:25,066 main: epoch: 0, iteration: 122, data_idx: 11712
+[INFO] 2020-03-10 02:21:33,461 main: epoch: 0, iteration: 123, data_idx: 11808
+[INFO] 2020-03-10 02:21:42,320 main: epoch: 0, iteration: 124, data_idx: 11904
+[1583806321.175774][perf-test]: capture_snapshot.success=1
+[1583806321.1758351][perf-test]: capture_snapshot.duration.ms=39
+[1583806333.2699814][perf-test]: capture_snapshot.success=1
+[1583806333.2700021][perf-test]: capture_snapshot.duration.ms=40
+[1583806344.5185773][perf-test]: capture_snapshot.success=1
+[1583806344.518598][perf-test]: capture_snapshot.duration.ms=39
+[1583806354.3083851][perf-test]: capture_snapshot.success=1
+[1583806354.3084064][perf-test]: capture_snapshot.duration.ms=40
+[1583806362.8673902][perf-test]: capture_snapshot.success=1
+[1583806362.8674111][perf-test]: capture_snapshot.duration.ms=38
+[1583806372.1501143][perf-test]: capture_snapshot.success=1
+[1583806372.150136][perf-test]: capture_snapshot.duration.ms=39
+[1583806381.1399753][perf-test]: capture_snapshot.success=1
+[1583806381.139997][perf-test]: capture_snapshot.duration.ms=38
+[1583806389.8954945][perf-test]: capture_snapshot.success=1
+[1583806389.895532][perf-test]: capture_snapshot.duration.ms=38
+[1583806401.72286][perf-test]: capture_snapshot.success=1
+[1583806401.72288][perf-test]: capture_snapshot.duration.ms=38
+[1583806410.7878907][perf-test]: capture_snapshot.success=1
+[1583806410.7879114][perf-test]: capture_snapshot.duration.ms=38
+[1583806419.9760997][perf-test]: capture_snapshot.success=1
+[1583806419.9761198][perf-test]: capture_snapshot.duration.ms=39
+[1583806431.1490421][perf-test]: capture_snapshot.success=1
+[1583806431.1490653][perf-test]: capture_snapshot.duration.ms=41
+[1583806442.433689][perf-test]: capture_snapshot.success=1
+[1583806442.4337091][perf-test]: capture_snapshot.duration.ms=38
+[1583806451.8198247][perf-test]: capture_snapshot.success=1
+[1583806451.8198442][perf-test]: capture_snapshot.duration.ms=38
+[1583806462.1095293][perf-test]: capture_snapshot.success=1
+[1583806462.1095498][perf-test]: capture_snapshot.duration.ms=39
+[1583806470.8962545][perf-test]: capture_snapshot.success=1
+[1583806470.8962748][perf-test]: capture_snapshot.duration.ms=39
+[1583806479.765677][perf-test]: capture_snapshot.success=1
+[1583806479.7656968][perf-test]: capture_snapshot.duration.ms=39
+[1583806489.4279854][perf-test]: capture_snapshot.success=1
+[1583806489.4280055][perf-test]: capture_snapshot.duration.ms=39
+[1583806498.1579728][perf-test]: capture_snapshot.success=1
+[1583806498.1579938][perf-test]: capture_snapshot.duration.ms=39
+[1583806506.8551314][perf-test]: capture_snapshot.success=1
+[1583806506.855152][perf-test]: capture_snapshot.duration.ms=41
+[1583806516.1728802][perf-test]: capture_snapshot.success=1
+[1583806516.1728997][perf-test]: capture_snapshot.duration.ms=38
+[1583806525.7403738][perf-test]: capture_snapshot.success=1
+[1583806525.7403972][perf-test]: capture_snapshot.duration.ms=37
+[1583806535.5634034][perf-test]: capture_snapshot.success=1
+[1583806535.563425][perf-test]: capture_snapshot.duration.ms=39
+[1583806544.6020126][perf-test]: capture_snapshot.success=1
+[1583806544.6020348][perf-test]: capture_snapshot.duration.ms=37
+[1583806553.565473][perf-test]: capture_snapshot.success=1
+[1583806553.565493][perf-test]: capture_snapshot.duration.ms=39
+[1583806562.6227407][perf-test]: capture_snapshot.success=1
+[1583806562.6227622][perf-test]: capture_snapshot.duration.ms=38
+[1583806571.0698729][perf-test]: capture_snapshot.success=1
+[1583806571.0698936][perf-test]: capture_snapshot.duration.ms=38
+[1583806579.5513434][perf-test]: capture_snapshot.success=1
+[1583806579.5513642][perf-test]: capture_snapshot.duration.ms=38
+[1583806588.0640166][perf-test]: capture_snapshot.success=1
+[1583806588.064039][perf-test]: capture_snapshot.duration.ms=39
+[1583806595.9664466][perf-test]: capture_snapshot.success=1
+[1583806595.9664662][perf-test]: capture_snapshot.duration.ms=38
+[1583806603.4080842][perf-test]: capture_snapshot.success=1
+[1583806603.408107][perf-test]: capture_snapshot.duration.ms=40
+[1583806611.0733023][perf-test]: capture_snapshot.success=1
+[1583806611.0733294][perf-test]: capture_snapshot.duration.ms=38
+[1583806619.9133937][perf-test]: capture_snapshot.success=1
+[1583806619.913416][perf-test]: capture_snapshot.duration.ms=39
+[1583806627.9879596][perf-test]: capture_snapshot.success=1
+[1583806627.9879804][perf-test]: capture_snapshot.duration.ms=38
+[1583806635.9698396][perf-test]: capture_snapshot.success=1
+[1583806635.9698598][perf-test]: capture_snapshot.duration.ms=39
+[1583806643.9070418][perf-test]: capture_snapshot.success=1
+[1583806643.907063][perf-test]: capture_snapshot.duration.ms=38
+[1583806651.9798677][perf-test]: capture_snapshot.success=1
+[1583806651.9798872][perf-test]: capture_snapshot.duration.ms=38
+[1583806660.5799882][perf-test]: capture_snapshot.success=1
+[1583806660.5800118][perf-test]: capture_snapshot.duration.ms=39
+[1583806669.114339][perf-test]: capture_snapshot.success=1
+[1583806669.1143584][perf-test]: capture_snapshot.duration.ms=37
+[1583806677.9183424][perf-test]: capture_snapshot.success=1
+[1583806677.918362][perf-test]: capture_snapshot.duration.ms=37
+[1583806686.248416][perf-test]: capture_snapshot.success=1
+[1583806686.2484357][perf-test]: capture_snapshot.duration.ms=39
+[1583806694.691245][perf-test]: capture_snapshot.success=1
+[1583806694.6912653][perf-test]: capture_snapshot.duration.ms=38
+[1583806705.4862518][perf-test]: capture_snapshot.success=1
+[1583806705.486273][perf-test]: capture_snapshot.duration.ms=38
+[1583806713.1301496][perf-test]: capture_snapshot.success=1
+[1583806713.1301699][perf-test]: capture_snapshot.duration.ms=37
+[1583806721.5363796][perf-test]: capture_snapshot.success=1
+[1583806721.5363994][perf-test]: capture_snapshot.duration.ms=38
+[1583806729.443537][perf-test]: capture_snapshot.success=1
+[1583806729.443557][perf-test]: capture_snapshot.duration.ms=38
+[1583806738.1561058][perf-test]: capture_snapshot.success=1
+[1583806738.1561263][perf-test]: capture_snapshot.duration.ms=37
+[1583806746.2571][perf-test]: capture_snapshot.success=1
+[1583806746.2571228][perf-test]: capture_snapshot.duration.ms=38
+[1583806753.8557038][perf-test]: capture_snapshot.success=1
+[1583806753.8557236][perf-test]: capture_snapshot.duration.ms=38
+[1583806762.3185525][perf-test]: capture_snapshot.success=1
+[1583806762.3185716][perf-test]: capture_snapshot.duration.ms=37
+[1583806770.0343714][perf-test]: capture_snapshot.success=1
+[1583806770.0343916][perf-test]: capture_snapshot.duration.ms=38
+[1583806777.8018475][perf-test]: capture_snapshot.success=1
+[1583806777.8018677][perf-test]: capture_snapshot.duration.ms=37
+[1583806785.6121452][perf-test]: capture_snapshot.success=1
+[1583806785.612165][perf-test]: capture_snapshot.duration.ms=36
+[1583806794.0716043][perf-test]: capture_snapshot.success=1
+[1583806794.0716245][perf-test]: capture_snapshot.duration.ms=37
+[1583806802.1351125][perf-test]: capture_snapshot.success=1
+[1583806802.135133][perf-test]: capture_snapshot.duration.ms=38
+[1583806810.1747591][perf-test]: capture_snapshot.success=1
+[1583806810.1747794][perf-test]: capture_snapshot.duration.ms=36
+[1583806818.5695245][perf-test]: capture_snapshot.success=1
+[1583806818.5695486][perf-test]: capture_snapshot.duration.ms=37
+[1583806826.5323622][perf-test]: capture_snapshot.success=1
+[1583806826.5323815][perf-test]: capture_snapshot.duration.ms=36
+[1583806834.9883804][perf-test]: capture_snapshot.success=1
+[1583806834.9884002][perf-test]: capture_snapshot.duration.ms=37
+[1583806842.9600332][perf-test]: capture_snapshot.success=1
+[1583806842.9600537][perf-test]: capture_snapshot.duration.ms=37
+[1583806852.8699226][perf-test]: capture_snapshot.success=1
+[1583806852.8699422][perf-test]: capture_snapshot.duration.ms=37
+[1583806860.657326][perf-test]: capture_snapshot.success=1
+[1583806860.6573465][perf-test]: capture_snapshot.duration.ms=37
+[1583806868.9729798][perf-test]: capture_snapshot.success=1
+[1583806868.9730008][perf-test]: capture_snapshot.duration.ms=37
+[1583806876.9191728][perf-test]: capture_snapshot.success=1
+[1583806876.9191957][perf-test]: capture_snapshot.duration.ms=38
+[1583806885.123531][perf-test]: capture_snapshot.success=1
+[1583806885.1235507][perf-test]: capture_snapshot.duration.ms=38
+[1583806893.5085309][perf-test]: capture_snapshot.success=1
+[1583806893.5085511][perf-test]: capture_snapshot.duration.ms=40
+[INFO] 2020-03-10 02:21:51,008 main: epoch: 0, iteration: 125, data_idx: 12000
+[INFO] 2020-03-10 02:21:58,832 main: epoch: 0, iteration: 126, data_idx: 12096
+[INFO] 2020-03-10 02:22:06,911 main: epoch: 0, iteration: 127, data_idx: 12192
+[INFO] 2020-03-10 02:22:14,658 main: epoch: 0, iteration: 128, data_idx: 12288
+[INFO] 2020-03-10 02:22:22,301 main: epoch: 0, iteration: 129, data_idx: 12384
+[INFO] 2020-03-10 02:22:29,990 main: epoch: 0, iteration: 130, data_idx: 12480
+[INFO] 2020-03-10 02:22:37,624 main: epoch: 0, iteration: 131, data_idx: 12576
+[INFO] 2020-03-10 02:22:46,287 main: epoch: 0, iteration: 132, data_idx: 12672
+[INFO] 2020-03-10 02:22:54,719 main: epoch: 0, iteration: 133, data_idx: 12768
+[INFO] 2020-03-10 02:23:02,396 main: epoch: 0, iteration: 134, data_idx: 12864
+[INFO] 2020-03-10 02:23:10,212 main: epoch: 0, iteration: 135, data_idx: 12960
+[INFO] 2020-03-10 02:23:17,805 main: epoch: 0, iteration: 136, data_idx: 13056
+[INFO] 2020-03-10 02:23:27,286 main: epoch: 0, iteration: 137, data_idx: 13152
+[INFO] 2020-03-10 02:23:35,098 main: epoch: 0, iteration: 138, data_idx: 13248
+[INFO] 2020-03-10 02:23:43,358 main: epoch: 0, iteration: 139, data_idx: 13344
+[INFO] 2020-03-10 02:23:51,438 main: epoch: 0, iteration: 140, data_idx: 13440
+[INFO] 2020-03-10 02:23:58,964 main: epoch: 0, iteration: 141, data_idx: 13536
+[INFO] 2020-03-10 02:24:07,398 main: epoch: 0, iteration: 142, data_idx: 13632
+[INFO] 2020-03-10 02:24:15,614 main: epoch: 0, iteration: 143, data_idx: 13728
+[INFO] 2020-03-10 02:24:23,527 main: epoch: 0, iteration: 144, data_idx: 13824
+[INFO] 2020-03-10 02:24:32,470 main: epoch: 0, iteration: 145, data_idx: 13920
+[INFO] 2020-03-10 02:24:42,011 main: epoch: 0, iteration: 146, data_idx: 14016
+[INFO] 2020-03-10 02:24:50,202 main: epoch: 0, iteration: 147, data_idx: 14112
+[INFO] 2020-03-10 02:24:58,874 main: epoch: 0, iteration: 148, data_idx: 14208
+[INFO] 2020-03-10 02:25:06,536 main: epoch: 0, iteration: 149, data_idx: 14304
+[INFO] 2020-03-10 02:25:16,992 main: epoch: 0, iteration: 150, data_idx: 14400
+[INFO] 2020-03-10 02:25:27,056 main: epoch: 0, iteration: 151, data_idx: 14496
+[INFO] 2020-03-10 02:25:36,903 main: epoch: 0, iteration: 152, data_idx: 14592
+[INFO] 2020-03-10 02:25:45,302 main: epoch: 0, iteration: 153, data_idx: 14688
+[INFO] 2020-03-10 02:25:54,057 main: epoch: 0, iteration: 154, data_idx: 14784
+[INFO] 2020-03-10 02:26:01,498 main: epoch: 0, iteration: 155, data_idx: 14880
+[INFO] 2020-03-10 02:26:09,736 main: epoch: 0, iteration: 156, data_idx: 14976
+[INFO] 2020-03-10 02:26:20,400 main: epoch: 0, iteration: 157, data_idx: 15072
+[INFO] 2020-03-10 02:26:29,266 main: epoch: 0, iteration: 158, data_idx: 15168
+[INFO] 2020-03-10 02:26:37,791 main: epoch: 0, iteration: 159, data_idx: 15264
+[INFO] 2020-03-10 02:26:46,290 main: epoch: 0, iteration: 160, data_idx: 15360
+[INFO] 2020-03-10 02:26:55,491 main: epoch: 0, iteration: 161, data_idx: 15456
+[INFO] 2020-03-10 02:27:05,432 main: epoch: 0, iteration: 162, data_idx: 15552
+[INFO] 2020-03-10 02:27:15,166 main: epoch: 0, iteration: 163, data_idx: 15648
+[INFO] 2020-03-10 02:27:25,370 main: epoch: 0, iteration: 164, data_idx: 15744
+[INFO] 2020-03-10 02:27:43,478 main: epoch: 0, iteration: 165, data_idx: 15840
+[INFO] 2020-03-10 02:27:53,387 main: epoch: 0, iteration: 166, data_idx: 15936
+[INFO] 2020-03-10 02:28:03,022 main: epoch: 0, iteration: 167, data_idx: 16032
+[INFO] 2020-03-10 02:28:12,243 main: epoch: 0, iteration: 168, data_idx: 16128
+[INFO] 2020-03-10 02:28:20,560 main: epoch: 0, iteration: 169, data_idx: 16224
+[INFO] 2020-03-10 02:28:30,145 main: epoch: 0, iteration: 170, data_idx: 16320
+[INFO] 2020-03-10 02:28:39,134 main: epoch: 0, iteration: 171, data_idx: 16416
+[INFO] 2020-03-10 02:28:48,196 main: epoch: 0, iteration: 172, data_idx: 16512
+[INFO] 2020-03-10 02:28:55,899 main: epoch: 0, iteration: 173, data_idx: 16608
+[INFO] 2020-03-10 02:29:03,545 main: epoch: 0, iteration: 174, data_idx: 16704
+[INFO] 2020-03-10 02:29:11,075 main: epoch: 0, iteration: 175, data_idx: 16800
+[INFO] 2020-03-10 02:29:19,169 main: epoch: 0, iteration: 176, data_idx: 16896
+[INFO] 2020-03-10 02:29:27,271 main: epoch: 0, iteration: 177, data_idx: 16992
+[INFO] 2020-03-10 02:29:36,165 main: epoch: 0, iteration: 178, data_idx: 17088
+[INFO] 2020-03-10 02:29:44,330 main: epoch: 0, iteration: 179, data_idx: 17184
+[INFO] 2020-03-10 02:29:52,600 main: epoch: 0, iteration: 180, data_idx: 17280
+[INFO] 2020-03-10 02:30:01,130 main: epoch: 0, iteration: 181, data_idx: 17376
+[INFO] 2020-03-10 02:30:08,699 main: epoch: 0, iteration: 182, data_idx: 17472
+[INFO] 2020-03-10 02:30:16,252 main: epoch: 0, iteration: 183, data_idx: 17568
+[INFO] 2020-03-10 02:30:23,387 main: epoch: 0, iteration: 184, data_idx: 17664
+[INFO] 2020-03-10 02:30:30,750 main: epoch: 0, iteration: 185, data_idx: 17760
+[INFO] 2020-03-10 02:30:39,169 main: epoch: 0, iteration: 186, data_idx: 17856
+[INFO] 2020-03-10 02:30:46,261 main: epoch: 0, iteration: 187, data_idx: 17952
+[INFO] 2020-03-10 02:30:53,431 main: epoch: 0, iteration: 188, data_idx: 18048
+[INFO] 2020-03-10 02:31:01,817 main: epoch: 0, iteration: 189, data_idx: 18144
+[INFO] 2020-03-10 02:31:10,106 main: epoch: 0, iteration: 190, data_idx: 18240
+[1583806902.3931847][perf-test]: capture_snapshot.success=1
+[1583806902.3932748][perf-test]: capture_snapshot.duration.ms=66
+[1583806911.0523643][perf-test]: capture_snapshot.success=1
+[1583806911.0523837][perf-test]: capture_snapshot.duration.ms=37
+[1583806918.8764806][perf-test]: capture_snapshot.success=1
+[1583806918.8765][perf-test]: capture_snapshot.duration.ms=38
+[1583806926.955457][perf-test]: capture_snapshot.success=1
+[1583806926.955477][perf-test]: capture_snapshot.duration.ms=38
+[1583806934.707012][perf-test]: capture_snapshot.success=1
+[1583806934.707032][perf-test]: capture_snapshot.duration.ms=38
+[1583806942.3458607][perf-test]: capture_snapshot.success=1
+[1583806942.3458803][perf-test]: capture_snapshot.duration.ms=37
+[1583806950.0352654][perf-test]: capture_snapshot.success=1
+[1583806950.0352848][perf-test]: capture_snapshot.duration.ms=39
+[1583806957.6678991][perf-test]: capture_snapshot.success=1
+[1583806957.6679192][perf-test]: capture_snapshot.duration.ms=37
+[1583806966.3324196][perf-test]: capture_snapshot.success=1
+[1583806966.3324437][perf-test]: capture_snapshot.duration.ms=38
+[1583806974.7736626][perf-test]: capture_snapshot.success=1
+[1583806974.7736828][perf-test]: capture_snapshot.duration.ms=38
+[1583806982.4402175][perf-test]: capture_snapshot.success=1
+[1583806982.4402382][perf-test]: capture_snapshot.duration.ms=38
+[1583806990.2553847][perf-test]: capture_snapshot.success=1
+[1583806990.2554038][perf-test]: capture_snapshot.duration.ms=37
+[1583806997.85141][perf-test]: capture_snapshot.success=1
+[1583806997.8514311][perf-test]: capture_snapshot.duration.ms=40
+[1583807007.3300269][perf-test]: capture_snapshot.success=1
+[1583807007.3300478][perf-test]: capture_snapshot.duration.ms=37
+[1583807015.145643][perf-test]: capture_snapshot.success=1
+[1583807015.1456628][perf-test]: capture_snapshot.duration.ms=38
+[1583807023.4050813][perf-test]: capture_snapshot.success=1
+[1583807023.405101][perf-test]: capture_snapshot.duration.ms=38
+[1583807031.4835024][perf-test]: capture_snapshot.success=1
+[1583807031.4835236][perf-test]: capture_snapshot.duration.ms=38
+[1583807039.0077667][perf-test]: capture_snapshot.success=1
+[1583807039.007786][perf-test]: capture_snapshot.duration.ms=37
+[1583807047.442474][perf-test]: capture_snapshot.success=1
+[1583807047.4424944][perf-test]: capture_snapshot.duration.ms=37
+[1583807055.6571362][perf-test]: capture_snapshot.success=1
+[1583807055.6571553][perf-test]: capture_snapshot.duration.ms=36
+[1583807063.5718462][perf-test]: capture_snapshot.success=1
+[1583807063.5718656][perf-test]: capture_snapshot.duration.ms=38
+[1583807072.51313][perf-test]: capture_snapshot.success=1
+[1583807072.513149][perf-test]: capture_snapshot.duration.ms=36
+[1583807082.0572953][perf-test]: capture_snapshot.success=1
+[1583807082.057318][perf-test]: capture_snapshot.duration.ms=39
+[1583807090.247339][perf-test]: capture_snapshot.success=1
+[1583807090.247359][perf-test]: capture_snapshot.duration.ms=37
+[1583807098.9176886][perf-test]: capture_snapshot.success=1
+[1583807098.9177089][perf-test]: capture_snapshot.duration.ms=37
+[1583807106.5811307][perf-test]: capture_snapshot.success=1
+[1583807106.5811505][perf-test]: capture_snapshot.duration.ms=38
+[1583807117.0363061][perf-test]: capture_snapshot.success=1
+[1583807117.0363286][perf-test]: capture_snapshot.duration.ms=37
+[1583807127.0991628][perf-test]: capture_snapshot.success=1
+[1583807127.099183][perf-test]: capture_snapshot.duration.ms=37
+[1583807136.9462268][perf-test]: capture_snapshot.success=1
+[1583807136.9462469][perf-test]: capture_snapshot.duration.ms=37
+[1583807145.3469064][perf-test]: capture_snapshot.success=1
+[1583807145.3469288][perf-test]: capture_snapshot.duration.ms=38
+[1583807154.1020539][perf-test]: capture_snapshot.success=1
+[1583807154.1020746][perf-test]: capture_snapshot.duration.ms=38
+[1583807161.5422816][perf-test]: capture_snapshot.success=1
+[1583807161.5423021][perf-test]: capture_snapshot.duration.ms=37
+[1583807169.7816892][perf-test]: capture_snapshot.success=1
+[1583807169.7817087][perf-test]: capture_snapshot.duration.ms=39
+[1583807180.4443374][perf-test]: capture_snapshot.success=1
+[1583807180.4443567][perf-test]: capture_snapshot.duration.ms=37
+[1583807189.3187785][perf-test]: capture_snapshot.success=1
+[1583807189.3187978][perf-test]: capture_snapshot.duration.ms=37
+[1583807197.8359869][perf-test]: capture_snapshot.success=1
+[1583807197.8360074][perf-test]: capture_snapshot.duration.ms=38
+[1583807206.3405535][perf-test]: capture_snapshot.success=1
+[1583807206.3405735][perf-test]: capture_snapshot.duration.ms=37
+[1583807215.5363982][perf-test]: capture_snapshot.success=1
+[1583807215.5364208][perf-test]: capture_snapshot.duration.ms=39
+[1583807225.4842434][perf-test]: capture_snapshot.success=1
+[1583807225.4842656][perf-test]: capture_snapshot.duration.ms=38
+[1583807235.2087698][perf-test]: capture_snapshot.success=1
+[1583807235.20879][perf-test]: capture_snapshot.duration.ms=37
+[1583807245.4168205][perf-test]: capture_snapshot.success=1
+[1583807245.4168417][perf-test]: capture_snapshot.duration.ms=39
+[1583807263.524363][perf-test]: capture_snapshot.success=1
+[1583807263.5243816][perf-test]: capture_snapshot.duration.ms=36
+[1583807273.431597][perf-test]: capture_snapshot.success=1
+[1583807273.4316165][perf-test]: capture_snapshot.duration.ms=37
+[1583807283.066319][perf-test]: capture_snapshot.success=1
+[1583807283.066339][perf-test]: capture_snapshot.duration.ms=38
+[1583807292.28579][perf-test]: capture_snapshot.success=1
+[1583807292.2858102][perf-test]: capture_snapshot.duration.ms=36
+[1583807300.6043262][perf-test]: capture_snapshot.success=1
+[1583807300.604348][perf-test]: capture_snapshot.duration.ms=37
+[1583807310.1888435][perf-test]: capture_snapshot.success=1
+[1583807310.1888633][perf-test]: capture_snapshot.duration.ms=37
+[1583807319.1770551][perf-test]: capture_snapshot.success=1
+[1583807319.1770742][perf-test]: capture_snapshot.duration.ms=36
+[1583807328.241133][perf-test]: capture_snapshot.success=1
+[1583807328.2411587][perf-test]: capture_snapshot.duration.ms=38
+[1583807335.9431186][perf-test]: capture_snapshot.success=1
+[1583807335.9431386][perf-test]: capture_snapshot.duration.ms=38
+[1583807343.589942][perf-test]: capture_snapshot.success=1
+[1583807343.5899677][perf-test]: capture_snapshot.duration.ms=38
+[1583807351.119785][perf-test]: capture_snapshot.success=1
+[1583807351.1198049][perf-test]: capture_snapshot.duration.ms=38
+[1583807359.21623][perf-test]: capture_snapshot.success=1
+[1583807359.2162492][perf-test]: capture_snapshot.duration.ms=40
+[1583807367.3159811][perf-test]: capture_snapshot.success=1
+[1583807367.3160021][perf-test]: capture_snapshot.duration.ms=35
+[1583807376.209369][perf-test]: capture_snapshot.success=1
+[1583807376.2093885][perf-test]: capture_snapshot.duration.ms=38
+[1583807384.3878927][perf-test]: capture_snapshot.success=1
+[1583807384.3879137][perf-test]: capture_snapshot.duration.ms=38
+[1583807392.6706645][perf-test]: capture_snapshot.success=1
+[1583807392.67069][perf-test]: capture_snapshot.duration.ms=64
+[1583807401.1754992][perf-test]: capture_snapshot.success=1
+[1583807401.1755223][perf-test]: capture_snapshot.duration.ms=37
+[1583807408.7567015][perf-test]: capture_snapshot.success=1
+[1583807408.7567213][perf-test]: capture_snapshot.duration.ms=37
+[1583807416.2966921][perf-test]: capture_snapshot.success=1
+[1583807416.2967124][perf-test]: capture_snapshot.duration.ms=38
+[1583807423.4304416][perf-test]: capture_snapshot.success=1
+[1583807423.4304607][perf-test]: capture_snapshot.duration.ms=36
+[1583807430.8014052][perf-test]: capture_snapshot.success=1
+[1583807430.8014252][perf-test]: capture_snapshot.duration.ms=38
+[1583807439.2135997][perf-test]: capture_snapshot.success=1
+[1583807439.21362][perf-test]: capture_snapshot.duration.ms=38
+[1583807446.305233][perf-test]: capture_snapshot.success=1
+[1583807446.3052528][perf-test]: capture_snapshot.duration.ms=37
+[1583807453.4740262][perf-test]: capture_snapshot.success=1
+[1583807453.4740472][perf-test]: capture_snapshot.duration.ms=37
+[1583807461.8617494][perf-test]: capture_snapshot.success=1
+[1583807461.86177][perf-test]: capture_snapshot.duration.ms=38
+[INFO] 2020-03-10 02:31:18,047 main: epoch: 0, iteration: 191, data_idx: 18336
+[INFO] 2020-03-10 02:31:26,230 main: epoch: 0, iteration: 192, data_idx: 18432
+[INFO] 2020-03-10 02:31:33,942 main: epoch: 0, iteration: 193, data_idx: 18528
+[INFO] 2020-03-10 02:31:41,946 main: epoch: 0, iteration: 194, data_idx: 18624
+[INFO] 2020-03-10 02:31:49,737 main: epoch: 0, iteration: 195, data_idx: 18720
+[INFO] 2020-03-10 02:31:56,771 main: epoch: 0, iteration: 196, data_idx: 18816
+[INFO] 2020-03-10 02:32:04,321 main: epoch: 0, iteration: 197, data_idx: 18912
+[INFO] 2020-03-10 02:32:12,175 main: epoch: 0, iteration: 198, data_idx: 19008
+[INFO] 2020-03-10 02:32:21,964 main: epoch: 0, iteration: 199, data_idx: 19104
+[INFO] 2020-03-10 02:32:30,931 main: epoch: 0, iteration: 200, data_idx: 19200
+[INFO] 2020-03-10 02:32:38,498 main: epoch: 0, iteration: 201, data_idx: 19296
+[INFO] 2020-03-10 02:32:46,221 main: epoch: 0, iteration: 202, data_idx: 19392
+[INFO] 2020-03-10 02:32:54,299 main: epoch: 0, iteration: 203, data_idx: 19488
+[INFO] 2020-03-10 02:33:02,449 main: epoch: 0, iteration: 204, data_idx: 19584
+[INFO] 2020-03-10 02:33:10,066 main: epoch: 0, iteration: 205, data_idx: 19680
+[INFO] 2020-03-10 02:33:18,234 main: epoch: 0, iteration: 206, data_idx: 19776
+[INFO] 2020-03-10 02:33:27,449 main: epoch: 0, iteration: 207, data_idx: 19872
+[INFO] 2020-03-10 02:33:36,299 main: epoch: 0, iteration: 208, data_idx: 19968
+[INFO] 2020-03-10 02:33:44,605 main: epoch: 0, iteration: 209, data_idx: 20064
+[INFO] 2020-03-10 02:33:52,879 main: epoch: 0, iteration: 210, data_idx: 20160
+[INFO] 2020-03-10 02:34:02,048 main: epoch: 0, iteration: 211, data_idx: 20256
+[INFO] 2020-03-10 02:34:10,134 main: epoch: 0, iteration: 212, data_idx: 20352
+[INFO] 2020-03-10 02:34:18,578 main: epoch: 0, iteration: 213, data_idx: 20448
+[INFO] 2020-03-10 02:34:28,525 main: epoch: 0, iteration: 214, data_idx: 20544
+[INFO] 2020-03-10 02:34:36,618 main: epoch: 0, iteration: 215, data_idx: 20640
+[INFO] 2020-03-10 02:34:44,431 main: epoch: 0, iteration: 216, data_idx: 20736
+[INFO] 2020-03-10 02:34:53,368 main: epoch: 0, iteration: 217, data_idx: 20832
+[INFO] 2020-03-10 02:35:03,808 main: epoch: 0, iteration: 218, data_idx: 20928
+[INFO] 2020-03-10 02:35:13,754 main: epoch: 0, iteration: 219, data_idx: 21024
+[INFO] 2020-03-10 02:35:24,325 main: epoch: 0, iteration: 220, data_idx: 21120
+[INFO] 2020-03-10 02:35:34,650 main: epoch: 0, iteration: 221, data_idx: 21216
+[INFO] 2020-03-10 02:35:44,741 main: epoch: 0, iteration: 222, data_idx: 21312
+[INFO] 2020-03-10 02:35:53,998 main: epoch: 0, iteration: 223, data_idx: 21408
+[INFO] 2020-03-10 02:36:02,656 main: epoch: 0, iteration: 224, data_idx: 21504
+[INFO] 2020-03-10 02:36:10,943 main: epoch: 0, iteration: 225, data_idx: 21600
+[INFO] 2020-03-10 02:36:21,530 main: epoch: 0, iteration: 226, data_idx: 21696
+[INFO] 2020-03-10 02:36:31,670 main: epoch: 0, iteration: 227, data_idx: 21792
+[INFO] 2020-03-10 02:36:39,932 main: epoch: 0, iteration: 228, data_idx: 21888
+[INFO] 2020-03-10 02:36:49,565 main: epoch: 0, iteration: 229, data_idx: 21984
+[INFO] 2020-03-10 02:37:00,107 main: epoch: 0, iteration: 230, data_idx: 22080
+[INFO] 2020-03-10 02:37:11,564 main: epoch: 0, iteration: 231, data_idx: 22176
+[INFO] 2020-03-10 02:37:25,029 main: epoch: 0, iteration: 232, data_idx: 22272
+[INFO] 2020-03-10 02:37:38,122 main: epoch: 0, iteration: 233, data_idx: 22368
+[INFO] 2020-03-10 02:37:49,307 main: epoch: 0, iteration: 234, data_idx: 22464
+[INFO] 2020-03-10 02:37:58,505 main: epoch: 0, iteration: 235, data_idx: 22560
+[INFO] 2020-03-10 02:38:13,059 main: epoch: 0, iteration: 236, data_idx: 22656
+[INFO] 2020-03-10 02:38:21,929 main: epoch: 0, iteration: 237, data_idx: 22752
+[INFO] 2020-03-10 02:38:29,893 main: epoch: 0, iteration: 238, data_idx: 22848
+[INFO] 2020-03-10 02:38:37,873 main: epoch: 0, iteration: 239, data_idx: 22944
+[INFO] 2020-03-10 02:38:46,849 main: epoch: 0, iteration: 240, data_idx: 23040
+[INFO] 2020-03-10 02:38:55,088 main: epoch: 0, iteration: 241, data_idx: 23136
+[INFO] 2020-03-10 02:39:03,105 main: epoch: 0, iteration: 242, data_idx: 23232
+[INFO] 2020-03-10 02:39:10,961 main: epoch: 0, iteration: 243, data_idx: 23328
+[INFO] 2020-03-10 02:39:20,312 main: epoch: 0, iteration: 244, data_idx: 23424
+[INFO] 2020-03-10 02:39:31,121 main: epoch: 0, iteration: 245, data_idx: 23520
+[INFO] 2020-03-10 02:39:39,908 main: epoch: 0, iteration: 246, data_idx: 23616
+[INFO] 2020-03-10 02:39:49,540 main: epoch: 0, iteration: 247, data_idx: 23712
+[INFO] 2020-03-10 02:39:58,408 main: epoch: 0, iteration: 248, data_idx: 23808
+[INFO] 2020-03-10 02:40:09,022 main: epoch: 0, iteration: 249, data_idx: 23904
+[INFO] 2020-03-10 02:40:18,269 main: epoch: 0, iteration: 250, data_idx: 24000
+[INFO] 2020-03-10 02:40:26,583 main: epoch: 0, iteration: 251, data_idx: 24096
+[INFO] 2020-03-10 02:40:34,394 main: epoch: 0, iteration: 252, data_idx: 24192
+[INFO] 2020-03-10 02:40:42,085 main: epoch: 0, iteration: 253, data_idx: 24288
+[INFO] 2020-03-10 02:40:50,406 main: epoch: 0, iteration: 254, data_idx: 24384
+[INFO] 2020-03-10 02:40:59,286 main: epoch: 0, iteration: 255, data_idx: 24480
+[INFO] 2020-03-10 02:41:09,031 main: epoch: 0, iteration: 256, data_idx: 24576
+[1583807470.152584][perf-test]: capture_snapshot.success=1
+[1583807470.152642][perf-test]: capture_snapshot.duration.ms=38
+[1583807478.092809][perf-test]: capture_snapshot.success=1
+[1583807478.09283][perf-test]: capture_snapshot.duration.ms=38
+[1583807486.2742307][perf-test]: capture_snapshot.success=1
+[1583807486.2742512][perf-test]: capture_snapshot.duration.ms=38
+[1583807493.9898193][perf-test]: capture_snapshot.success=1
+[1583807493.989839][perf-test]: capture_snapshot.duration.ms=38
+[1583807501.9899547][perf-test]: capture_snapshot.success=1
+[1583807501.9899757][perf-test]: capture_snapshot.duration.ms=37
+[1583807509.7820249][perf-test]: capture_snapshot.success=1
+[1583807509.7820454][perf-test]: capture_snapshot.duration.ms=38
+[1583807516.8150833][perf-test]: capture_snapshot.success=1
+[1583807516.815112][perf-test]: capture_snapshot.duration.ms=37
+[1583807524.3648145][perf-test]: capture_snapshot.success=1
+[1583807524.3648357][perf-test]: capture_snapshot.duration.ms=37
+[1583807532.2190044][perf-test]: capture_snapshot.success=1
+[1583807532.2190242][perf-test]: capture_snapshot.duration.ms=38
+[1583807542.015389][perf-test]: capture_snapshot.success=1
+[1583807542.015432][perf-test]: capture_snapshot.duration.ms=43
+[1583807550.9768362][perf-test]: capture_snapshot.success=1
+[1583807550.9768553][perf-test]: capture_snapshot.duration.ms=38
+[1583807558.5520318][perf-test]: capture_snapshot.success=1
+[1583807558.5520518][perf-test]: capture_snapshot.duration.ms=38
+[1583807566.2644503][perf-test]: capture_snapshot.success=1
+[1583807566.2644703][perf-test]: capture_snapshot.duration.ms=37
+[1583807574.3455129][perf-test]: capture_snapshot.success=1
+[1583807574.3455324][perf-test]: capture_snapshot.duration.ms=38
+[1583807582.4937][perf-test]: capture_snapshot.success=1
+[1583807582.4937196][perf-test]: capture_snapshot.duration.ms=37
+[1583807590.114367][perf-test]: capture_snapshot.success=1
+[1583807590.1143863][perf-test]: capture_snapshot.duration.ms=37
+[1583807598.281541][perf-test]: capture_snapshot.success=1
+[1583807598.2815607][perf-test]: capture_snapshot.duration.ms=37
+[1583807607.4935455][perf-test]: capture_snapshot.success=1
+[1583807607.493565][perf-test]: capture_snapshot.duration.ms=38
+[1583807616.343607][perf-test]: capture_snapshot.success=1
+[1583807616.343628][perf-test]: capture_snapshot.duration.ms=38
+[1583807624.6479306][perf-test]: capture_snapshot.success=1
+[1583807624.64795][perf-test]: capture_snapshot.duration.ms=36
+[1583807632.9256032][perf-test]: capture_snapshot.success=1
+[1583807632.925626][perf-test]: capture_snapshot.duration.ms=37
+[1583807642.0922801][perf-test]: capture_snapshot.success=1
+[1583807642.0923035][perf-test]: capture_snapshot.duration.ms=38
+[1583807650.1802897][perf-test]: capture_snapshot.success=1
+[1583807650.1803133][perf-test]: capture_snapshot.duration.ms=37
+[1583807658.6318898][perf-test]: capture_snapshot.success=1
+[1583807658.631916][perf-test]: capture_snapshot.duration.ms=38
+[1583807668.5739548][perf-test]: capture_snapshot.success=1
+[1583807668.5739768][perf-test]: capture_snapshot.duration.ms=38
+[1583807676.662568][perf-test]: capture_snapshot.success=1
+[1583807676.6625912][perf-test]: capture_snapshot.duration.ms=38
+[1583807684.4842916][perf-test]: capture_snapshot.success=1
+[1583807684.4843132][perf-test]: capture_snapshot.duration.ms=37
+[1583807693.4189467][perf-test]: capture_snapshot.success=1
+[1583807693.4189672][perf-test]: capture_snapshot.duration.ms=37
+[1583807703.8539002][perf-test]: capture_snapshot.success=1
+[1583807703.853921][perf-test]: capture_snapshot.duration.ms=39
+[1583807713.7990124][perf-test]: capture_snapshot.success=1
+[1583807713.7990327][perf-test]: capture_snapshot.duration.ms=38
+[1583807724.370119][perf-test]: capture_snapshot.success=1
+[1583807724.3701417][perf-test]: capture_snapshot.duration.ms=38
+[1583807734.6958342][perf-test]: capture_snapshot.success=1
+[1583807734.6958592][perf-test]: capture_snapshot.duration.ms=38
+[1583807744.7865293][perf-test]: capture_snapshot.success=1
+[1583807744.7865505][perf-test]: capture_snapshot.duration.ms=39
+[1583807754.0435297][perf-test]: capture_snapshot.success=1
+[1583807754.043551][perf-test]: capture_snapshot.duration.ms=38
+[1583807762.703768][perf-test]: capture_snapshot.success=1
+[1583807762.7037907][perf-test]: capture_snapshot.duration.ms=39
+[1583807771.019105][perf-test]: capture_snapshot.success=1
+[1583807771.0191255][perf-test]: capture_snapshot.duration.ms=39
+[1583807781.5774488][perf-test]: capture_snapshot.success=1
+[1583807781.5774708][perf-test]: capture_snapshot.duration.ms=41
+[1583807791.7169726][perf-test]: capture_snapshot.success=1
+[1583807791.7170024][perf-test]: capture_snapshot.duration.ms=40
+[1583807799.9761713][perf-test]: capture_snapshot.success=1
+[1583807799.976191][perf-test]: capture_snapshot.duration.ms=38
+[1583807809.6128716][perf-test]: capture_snapshot.success=1
+[1583807809.612902][perf-test]: capture_snapshot.duration.ms=38
+[1583807820.1517503][perf-test]: capture_snapshot.success=1
+[1583807820.1517708][perf-test]: capture_snapshot.duration.ms=36
+[1583807831.6079283][perf-test]: capture_snapshot.success=1
+[1583807831.607949][perf-test]: capture_snapshot.duration.ms=37
+[1583807845.0819192][perf-test]: capture_snapshot.success=1
+[1583807845.081939][perf-test]: capture_snapshot.duration.ms=38
+[1583807858.319353][perf-test]: capture_snapshot.success=1
+[1583807858.3193743][perf-test]: capture_snapshot.duration.ms=36
+[1583807869.3511846][perf-test]: capture_snapshot.success=1
+[1583807869.3512049][perf-test]: capture_snapshot.duration.ms=38
+[1583807878.5502706][perf-test]: capture_snapshot.success=1
+[1583807878.550291][perf-test]: capture_snapshot.duration.ms=37
+[1583807893.1029012][perf-test]: capture_snapshot.success=1
+[1583807893.1029212][perf-test]: capture_snapshot.duration.ms=38
+[1583807901.9732752][perf-test]: capture_snapshot.success=1
+[1583807901.9732943][perf-test]: capture_snapshot.duration.ms=38
+[1583807909.9377978][perf-test]: capture_snapshot.success=1
+[1583807909.9378178][perf-test]: capture_snapshot.duration.ms=38
+[1583807917.9172645][perf-test]: capture_snapshot.success=1
+[1583807917.917285][perf-test]: capture_snapshot.duration.ms=38
+[1583807926.892911][perf-test]: capture_snapshot.success=1
+[1583807926.892931][perf-test]: capture_snapshot.duration.ms=37
+[1583807935.1332397][perf-test]: capture_snapshot.success=1
+[1583807935.133261][perf-test]: capture_snapshot.duration.ms=39
+[1583807943.1540346][perf-test]: capture_snapshot.success=1
+[1583807943.1540565][perf-test]: capture_snapshot.duration.ms=38
+[1583807951.0057027][perf-test]: capture_snapshot.success=1
+[1583807951.0057287][perf-test]: capture_snapshot.duration.ms=38
+[1583807960.3568683][perf-test]: capture_snapshot.success=1
+[1583807960.3568902][perf-test]: capture_snapshot.duration.ms=38
+[1583807971.1674604][perf-test]: capture_snapshot.success=1
+[1583807971.1674845][perf-test]: capture_snapshot.duration.ms=39
+[1583807979.962056][perf-test]: capture_snapshot.success=1
+[1583807979.9620795][perf-test]: capture_snapshot.duration.ms=38
+[1583807989.5864568][perf-test]: capture_snapshot.success=1
+[1583807989.5864825][perf-test]: capture_snapshot.duration.ms=39
+[1583807998.4540098][perf-test]: capture_snapshot.success=1
+[1583807998.4540308][perf-test]: capture_snapshot.duration.ms=39
+[1583808009.0883744][perf-test]: capture_snapshot.success=1
+[1583808009.0883963][perf-test]: capture_snapshot.duration.ms=38
+[1583808018.3157887][perf-test]: capture_snapshot.success=1
+[1583808018.3158138][perf-test]: capture_snapshot.duration.ms=40
+[1583808026.6291413][perf-test]: capture_snapshot.success=1
+[1583808026.6291637][perf-test]: capture_snapshot.duration.ms=39
+[1583808034.44126][perf-test]: capture_snapshot.success=1
+[1583808034.4412808][perf-test]: capture_snapshot.duration.ms=41
+[1583808042.1362724][perf-test]: capture_snapshot.success=1
+[1583808042.1362917][perf-test]: capture_snapshot.duration.ms=37
+[1583808050.4489639][perf-test]: capture_snapshot.success=1
+[1583808050.448986][perf-test]: capture_snapshot.duration.ms=37
+[1583808059.3317966][perf-test]: capture_snapshot.success=1
+[1583808059.331817][perf-test]: capture_snapshot.duration.ms=39
+[INFO] 2020-03-10 02:41:17,714 main: epoch: 0, iteration: 257, data_idx: 24672
+[INFO] 2020-03-10 02:41:26,358 main: epoch: 0, iteration: 258, data_idx: 24768
+[INFO] 2020-03-10 02:41:34,301 main: epoch: 0, iteration: 259, data_idx: 24864
+[INFO] 2020-03-10 02:41:43,170 main: epoch: 0, iteration: 260, data_idx: 24960
+[INFO] 2020-03-10 02:41:51,776 main: epoch: 0, iteration: 261, data_idx: 25056
+[INFO] 2020-03-10 02:42:00,040 main: epoch: 0, iteration: 262, data_idx: 25152
+[INFO] 2020-03-10 02:42:08,457 main: epoch: 0, iteration: 263, data_idx: 25248
+[INFO] 2020-03-10 02:42:17,850 main: epoch: 0, iteration: 264, data_idx: 25344
+[INFO] 2020-03-10 02:42:25,872 main: epoch: 0, iteration: 265, data_idx: 25440
+[INFO] 2020-03-10 02:42:34,870 main: epoch: 0, iteration: 266, data_idx: 25536
+[INFO] 2020-03-10 02:42:43,232 main: epoch: 0, iteration: 267, data_idx: 25632
+[INFO] 2020-03-10 02:42:51,450 main: epoch: 0, iteration: 268, data_idx: 25728
+[INFO] 2020-03-10 02:42:59,588 main: epoch: 0, iteration: 269, data_idx: 25824
+[INFO] 2020-03-10 02:43:09,840 main: epoch: 0, iteration: 270, data_idx: 25920
+[INFO] 2020-03-10 02:43:17,788 main: epoch: 0, iteration: 271, data_idx: 26016
+[INFO] 2020-03-10 02:43:25,555 main: epoch: 0, iteration: 272, data_idx: 26112
+[INFO] 2020-03-10 02:43:33,741 main: epoch: 0, iteration: 273, data_idx: 26208
+[INFO] 2020-03-10 02:43:42,320 main: epoch: 0, iteration: 274, data_idx: 26304
+[INFO] 2020-03-10 02:43:51,660 main: epoch: 0, iteration: 275, data_idx: 26400
+[INFO] 2020-03-10 02:43:59,771 main: epoch: 0, iteration: 276, data_idx: 26496
+[INFO] 2020-03-10 02:44:09,007 main: epoch: 0, iteration: 277, data_idx: 26592
+[INFO] 2020-03-10 02:44:18,285 main: epoch: 0, iteration: 278, data_idx: 26688
+[INFO] 2020-03-10 02:44:27,030 main: epoch: 0, iteration: 279, data_idx: 26784
+[INFO] 2020-03-10 02:44:35,996 main: epoch: 0, iteration: 280, data_idx: 26880
+[INFO] 2020-03-10 02:44:43,941 main: epoch: 0, iteration: 281, data_idx: 26976
+[INFO] 2020-03-10 02:44:52,425 main: epoch: 0, iteration: 282, data_idx: 27072
+[INFO] 2020-03-10 02:45:02,173 main: epoch: 0, iteration: 283, data_idx: 27168
+[INFO] 2020-03-10 02:45:11,647 main: epoch: 0, iteration: 284, data_idx: 27264
+[INFO] 2020-03-10 02:45:21,326 main: epoch: 0, iteration: 285, data_idx: 27360
+[INFO] 2020-03-10 02:45:30,347 main: epoch: 0, iteration: 286, data_idx: 27456
+[INFO] 2020-03-10 02:45:38,331 main: epoch: 0, iteration: 287, data_idx: 27552
+[INFO] 2020-03-10 02:45:47,098 main: epoch: 0, iteration: 288, data_idx: 27648
+[INFO] 2020-03-10 02:45:55,382 main: epoch: 0, iteration: 289, data_idx: 27744
+[INFO] 2020-03-10 02:46:03,700 main: epoch: 0, iteration: 290, data_idx: 27840
+[INFO] 2020-03-10 02:46:11,360 main: epoch: 0, iteration: 291, data_idx: 27936
+[INFO] 2020-03-10 02:46:19,575 main: epoch: 0, iteration: 292, data_idx: 28032
+[INFO] 2020-03-10 02:46:27,629 main: epoch: 0, iteration: 293, data_idx: 28128
+[INFO] 2020-03-10 02:46:36,400 main: epoch: 0, iteration: 294, data_idx: 28224
+[INFO] 2020-03-10 02:46:44,643 main: epoch: 0, iteration: 295, data_idx: 28320
+[INFO] 2020-03-10 02:46:53,968 main: epoch: 0, iteration: 296, data_idx: 28416
+[INFO] 2020-03-10 02:47:03,531 main: epoch: 0, iteration: 297, data_idx: 28512
+[INFO] 2020-03-10 02:47:12,144 main: epoch: 0, iteration: 298, data_idx: 28608
+[INFO] 2020-03-10 02:47:22,421 main: epoch: 0, iteration: 299, data_idx: 28704
+[INFO] 2020-03-10 02:47:30,735 main: epoch: 0, iteration: 300, data_idx: 28800
+[INFO] 2020-03-10 02:47:40,170 main: epoch: 0, iteration: 301, data_idx: 28896
+[INFO] 2020-03-10 02:47:49,060 main: epoch: 0, iteration: 302, data_idx: 28992
+[INFO] 2020-03-10 02:47:56,973 main: epoch: 0, iteration: 303, data_idx: 29088
+[INFO] 2020-03-10 02:48:04,637 main: epoch: 0, iteration: 304, data_idx: 29184
+[INFO] 2020-03-10 02:48:13,454 main: epoch: 0, iteration: 305, data_idx: 29280
+[INFO] 2020-03-10 02:48:21,532 main: epoch: 0, iteration: 306, data_idx: 29376
+[INFO] 2020-03-10 02:48:29,777 main: epoch: 0, iteration: 307, data_idx: 29472
+[INFO] 2020-03-10 02:48:38,090 main: epoch: 0, iteration: 308, data_idx: 29568
+[INFO] 2020-03-10 02:48:45,675 main: epoch: 0, iteration: 309, data_idx: 29664
+[INFO] 2020-03-10 02:48:53,543 main: epoch: 0, iteration: 310, data_idx: 29760
+[INFO] 2020-03-10 02:49:00,879 main: epoch: 0, iteration: 311, data_idx: 29856
+[INFO] 2020-03-10 02:49:08,844 main: epoch: 0, iteration: 312, data_idx: 29952
+[INFO] 2020-03-10 02:49:17,084 main: epoch: 0, iteration: 313, data_idx: 30048
+[INFO] 2020-03-10 02:49:25,789 main: epoch: 0, iteration: 314, data_idx: 30144
+[INFO] 2020-03-10 02:49:34,718 main: epoch: 0, iteration: 315, data_idx: 30240
+[INFO] 2020-03-10 02:49:43,594 main: epoch: 0, iteration: 316, data_idx: 30336
+[INFO] 2020-03-10 02:49:52,096 main: epoch: 0, iteration: 317, data_idx: 30432
+[INFO] 2020-03-10 02:49:59,970 main: epoch: 0, iteration: 318, data_idx: 30528
+[INFO] 2020-03-10 02:50:07,622 main: epoch: 0, iteration: 319, data_idx: 30624
+[INFO] 2020-03-10 02:50:15,843 main: epoch: 0, iteration: 320, data_idx: 30720
+[INFO] 2020-03-10 02:50:24,688 main: epoch: 0, iteration: 321, data_idx: 30816
+[INFO] 2020-03-10 02:50:33,681 main: epoch: 0, iteration: 322, data_idx: 30912
+[1583808069.0761087][perf-test]: capture_snapshot.success=1
+[1583808069.0761688][perf-test]: capture_snapshot.duration.ms=38
+[1583808077.7701702][perf-test]: capture_snapshot.success=1
+[1583808077.7701912][perf-test]: capture_snapshot.duration.ms=38
+[1583808086.4043362][perf-test]: capture_snapshot.success=1
+[1583808086.4043581][perf-test]: capture_snapshot.duration.ms=40
+[1583808094.349132][perf-test]: capture_snapshot.success=1
+[1583808094.349152][perf-test]: capture_snapshot.duration.ms=37
+[1583808103.2139025][perf-test]: capture_snapshot.success=1
+[1583808103.2139225][perf-test]: capture_snapshot.duration.ms=38
+[1583808111.8215556][perf-test]: capture_snapshot.success=1
+[1583808111.8215764][perf-test]: capture_snapshot.duration.ms=38
+[1583808120.085287][perf-test]: capture_snapshot.success=1
+[1583808120.085308][perf-test]: capture_snapshot.duration.ms=38
+[1583808128.5014641][perf-test]: capture_snapshot.success=1
+[1583808128.5014846][perf-test]: capture_snapshot.duration.ms=38
+[1583808137.894692][perf-test]: capture_snapshot.success=1
+[1583808137.894712][perf-test]: capture_snapshot.duration.ms=38
+[1583808145.9168901][perf-test]: capture_snapshot.success=1
+[1583808145.9169106][perf-test]: capture_snapshot.duration.ms=37
+[1583808154.9146068][perf-test]: capture_snapshot.success=1
+[1583808154.9146268][perf-test]: capture_snapshot.duration.ms=37
+[1583808163.2781308][perf-test]: capture_snapshot.success=1
+[1583808163.2781506][perf-test]: capture_snapshot.duration.ms=37
+[1583808171.4959333][perf-test]: capture_snapshot.success=1
+[1583808171.4959552][perf-test]: capture_snapshot.duration.ms=38
+[1583808179.6346586][perf-test]: capture_snapshot.success=1
+[1583808179.6346865][perf-test]: capture_snapshot.duration.ms=40
+[1583808189.886055][perf-test]: capture_snapshot.success=1
+[1583808189.88608][perf-test]: capture_snapshot.duration.ms=39
+[1583808197.833784][perf-test]: capture_snapshot.success=1
+[1583808197.8338063][perf-test]: capture_snapshot.duration.ms=38
+[1583808205.5993915][perf-test]: capture_snapshot.success=1
+[1583808205.5994122][perf-test]: capture_snapshot.duration.ms=37
+[1583808213.7861578][perf-test]: capture_snapshot.success=1
+[1583808213.7861779][perf-test]: capture_snapshot.duration.ms=37
+[1583808222.364655][perf-test]: capture_snapshot.success=1
+[1583808222.3646755][perf-test]: capture_snapshot.duration.ms=38
+[1583808231.7043068][perf-test]: capture_snapshot.success=1
+[1583808231.7043273][perf-test]: capture_snapshot.duration.ms=38
+[1583808239.8160486][perf-test]: capture_snapshot.success=1
+[1583808239.8160691][perf-test]: capture_snapshot.duration.ms=38
+[1583808249.0524035][perf-test]: capture_snapshot.success=1
+[1583808249.0524232][perf-test]: capture_snapshot.duration.ms=38
+[1583808258.3349264][perf-test]: capture_snapshot.success=1
+[1583808258.334952][perf-test]: capture_snapshot.duration.ms=42
+[1583808267.074726][perf-test]: capture_snapshot.success=1
+[1583808267.0747461][perf-test]: capture_snapshot.duration.ms=38
+[1583808276.0411031][perf-test]: capture_snapshot.success=1
+[1583808276.041123][perf-test]: capture_snapshot.duration.ms=38
+[1583808284.0153863][perf-test]: capture_snapshot.success=1
+[1583808284.0154119][perf-test]: capture_snapshot.duration.ms=68
+[1583808292.4698446][perf-test]: capture_snapshot.success=1
+[1583808292.4698644][perf-test]: capture_snapshot.duration.ms=38
+[1583808302.222523][perf-test]: capture_snapshot.success=1
+[1583808302.2225442][perf-test]: capture_snapshot.duration.ms=40
+[1583808311.6930044][perf-test]: capture_snapshot.success=1
+[1583808311.6930242][perf-test]: capture_snapshot.duration.ms=39
+[1583808321.3723545][perf-test]: capture_snapshot.success=1
+[1583808321.3723755][perf-test]: capture_snapshot.duration.ms=39
+[1583808330.3917525][perf-test]: capture_snapshot.success=1
+[1583808330.391776][perf-test]: capture_snapshot.duration.ms=38
+[1583808338.3781922][perf-test]: capture_snapshot.success=1
+[1583808338.3782125][perf-test]: capture_snapshot.duration.ms=38
+[1583808347.1412907][perf-test]: capture_snapshot.success=1
+[1583808347.1413107][perf-test]: capture_snapshot.duration.ms=37
+[1583808355.4267795][perf-test]: capture_snapshot.success=1
+[1583808355.4267988][perf-test]: capture_snapshot.duration.ms=38
+[1583808363.7448452][perf-test]: capture_snapshot.success=1
+[1583808363.744867][perf-test]: capture_snapshot.duration.ms=38
+[1583808371.4055512][perf-test]: capture_snapshot.success=1
+[1583808371.4055796][perf-test]: capture_snapshot.duration.ms=38
+[1583808379.6232798][perf-test]: capture_snapshot.success=1
+[1583808379.6233115][perf-test]: capture_snapshot.duration.ms=40
+[1583808387.675501][perf-test]: capture_snapshot.success=1
+[1583808387.6755335][perf-test]: capture_snapshot.duration.ms=39
+[1583808396.4464543][perf-test]: capture_snapshot.success=1
+[1583808396.4464846][perf-test]: capture_snapshot.duration.ms=39
+[1583808404.6964726][perf-test]: capture_snapshot.success=1
+[1583808404.6965036][perf-test]: capture_snapshot.duration.ms=44
+[1583808414.0136247][perf-test]: capture_snapshot.success=1
+[1583808414.0136535][perf-test]: capture_snapshot.duration.ms=38
+[1583808423.5777116][perf-test]: capture_snapshot.success=1
+[1583808423.577742][perf-test]: capture_snapshot.duration.ms=39
+[1583808432.1900003][perf-test]: capture_snapshot.success=1
+[1583808432.1900296][perf-test]: capture_snapshot.duration.ms=39
+[1583808442.479882][perf-test]: capture_snapshot.success=1
+[1583808442.4799113][perf-test]: capture_snapshot.duration.ms=43
+[1583808450.7816653][perf-test]: capture_snapshot.success=1
+[1583808450.7816951][perf-test]: capture_snapshot.duration.ms=39
+[1583808460.2199419][perf-test]: capture_snapshot.success=1
+[1583808460.219972][perf-test]: capture_snapshot.duration.ms=38
+[1583808469.1300735][perf-test]: capture_snapshot.success=1
+[1583808469.130105][perf-test]: capture_snapshot.duration.ms=39
+[1583808477.0218134][perf-test]: capture_snapshot.success=1
+[1583808477.0218453][perf-test]: capture_snapshot.duration.ms=40
+[1583808484.68676][perf-test]: capture_snapshot.success=1
+[1583808484.6867924][perf-test]: capture_snapshot.duration.ms=40
+[1583808493.501877][perf-test]: capture_snapshot.success=1
+[1583808493.501907][perf-test]: capture_snapshot.duration.ms=41
+[1583808501.5852604][perf-test]: capture_snapshot.success=1
+[1583808501.585283][perf-test]: capture_snapshot.duration.ms=38
+[1583808509.8216805][perf-test]: capture_snapshot.success=1
+[1583808509.8217013][perf-test]: capture_snapshot.duration.ms=38
+[1583808518.1343422][perf-test]: capture_snapshot.success=1
+[1583808518.1343622][perf-test]: capture_snapshot.duration.ms=37
+[1583808525.7203786][perf-test]: capture_snapshot.success=1
+[1583808525.7203996][perf-test]: capture_snapshot.duration.ms=38
+[1583808533.588601][perf-test]: capture_snapshot.success=1
+[1583808533.5886214][perf-test]: capture_snapshot.duration.ms=39
+[1583808540.9262867][perf-test]: capture_snapshot.success=1
+[1583808540.9263077][perf-test]: capture_snapshot.duration.ms=40
+[1583808548.8886971][perf-test]: capture_snapshot.success=1
+[1583808548.8887162][perf-test]: capture_snapshot.duration.ms=38
+[1583808557.1297705][perf-test]: capture_snapshot.success=1
+[1583808557.1297915][perf-test]: capture_snapshot.duration.ms=39
+[1583808565.8349063][perf-test]: capture_snapshot.success=1
+[1583808565.834926][perf-test]: capture_snapshot.duration.ms=38
+[1583808574.762416][perf-test]: capture_snapshot.success=1
+[1583808574.7624366][perf-test]: capture_snapshot.duration.ms=36
+[1583808583.638912][perf-test]: capture_snapshot.success=1
+[1583808583.6389315][perf-test]: capture_snapshot.duration.ms=38
+[1583808592.1400023][perf-test]: capture_snapshot.success=1
+[1583808592.1400223][perf-test]: capture_snapshot.duration.ms=37
+[1583808600.0154505][perf-test]: capture_snapshot.success=1
+[1583808600.0154748][perf-test]: capture_snapshot.duration.ms=38
+[1583808607.667683][perf-test]: capture_snapshot.success=1
+[1583808607.6677034][perf-test]: capture_snapshot.duration.ms=39
+[1583808615.886821][perf-test]: capture_snapshot.success=1
+[1583808615.8868408][perf-test]: capture_snapshot.duration.ms=37
+[1583808624.741516][perf-test]: capture_snapshot.success=1
+[1583808624.7415369][perf-test]: capture_snapshot.duration.ms=47
+[INFO] 2020-03-10 02:50:41,161 main: epoch: 0, iteration: 323, data_idx: 31008
+[INFO] 2020-03-10 02:50:48,404 main: epoch: 0, iteration: 324, data_idx: 31104
+[INFO] 2020-03-10 02:50:56,441 main: epoch: 0, iteration: 325, data_idx: 31200
+[INFO] 2020-03-10 02:51:03,636 main: epoch: 0, iteration: 326, data_idx: 31296
+[INFO] 2020-03-10 02:51:10,955 main: epoch: 0, iteration: 327, data_idx: 31392
+[INFO] 2020-03-10 02:51:17,990 main: epoch: 0, iteration: 328, data_idx: 31488
+[INFO] 2020-03-10 02:51:25,665 main: epoch: 0, iteration: 329, data_idx: 31584
+[INFO] 2020-03-10 02:51:33,514 main: epoch: 0, iteration: 330, data_idx: 31680
+[INFO] 2020-03-10 02:51:41,097 main: epoch: 0, iteration: 331, data_idx: 31776
+[INFO] 2020-03-10 02:51:49,263 main: epoch: 0, iteration: 332, data_idx: 31872
+[INFO] 2020-03-10 02:51:57,867 main: epoch: 0, iteration: 333, data_idx: 31968
+[INFO] 2020-03-10 02:52:05,482 main: epoch: 0, iteration: 334, data_idx: 32064
+[INFO] 2020-03-10 02:52:13,619 main: epoch: 0, iteration: 335, data_idx: 32160
+[INFO] 2020-03-10 02:52:21,608 main: epoch: 0, iteration: 336, data_idx: 32256
+[INFO] 2020-03-10 02:52:29,379 main: epoch: 0, iteration: 337, data_idx: 32352
+[INFO] 2020-03-10 02:52:38,000 main: epoch: 0, iteration: 338, data_idx: 32448
+[INFO] 2020-03-10 02:52:46,480 main: epoch: 0, iteration: 339, data_idx: 32544
+[INFO] 2020-03-10 02:52:55,324 main: epoch: 0, iteration: 340, data_idx: 32640
+[INFO] 2020-03-10 02:53:03,980 main: epoch: 0, iteration: 341, data_idx: 32736
+[INFO] 2020-03-10 02:53:12,398 main: epoch: 0, iteration: 342, data_idx: 32832
+[INFO] 2020-03-10 02:53:21,349 main: epoch: 0, iteration: 343, data_idx: 32928
+[INFO] 2020-03-10 02:53:29,533 main: epoch: 0, iteration: 344, data_idx: 33024
+[INFO] 2020-03-10 02:53:38,328 main: epoch: 0, iteration: 345, data_idx: 33120
+[INFO] 2020-03-10 02:53:49,136 main: epoch: 0, iteration: 346, data_idx: 33216
+[INFO] 2020-03-10 02:54:01,093 main: epoch: 0, iteration: 347, data_idx: 33312
+[INFO] 2020-03-10 02:54:09,193 main: epoch: 0, iteration: 348, data_idx: 33408
+[INFO] 2020-03-10 02:54:18,828 main: epoch: 0, iteration: 349, data_idx: 33504
+[INFO] 2020-03-10 02:54:27,495 main: epoch: 0, iteration: 350, data_idx: 33600
+[INFO] 2020-03-10 02:54:36,791 main: epoch: 0, iteration: 351, data_idx: 33696
+[INFO] 2020-03-10 02:54:44,578 main: epoch: 0, iteration: 352, data_idx: 33792
+[INFO] 2020-03-10 02:54:52,344 main: epoch: 0, iteration: 353, data_idx: 33888
+[INFO] 2020-03-10 02:55:00,363 main: epoch: 0, iteration: 354, data_idx: 33984
+[INFO] 2020-03-10 02:55:09,468 main: epoch: 0, iteration: 355, data_idx: 34080
+[INFO] 2020-03-10 02:55:18,905 main: epoch: 0, iteration: 356, data_idx: 34176
+[INFO] 2020-03-10 02:55:28,577 main: epoch: 0, iteration: 357, data_idx: 34272
+[INFO] 2020-03-10 02:55:37,576 main: epoch: 0, iteration: 358, data_idx: 34368
+[INFO] 2020-03-10 02:55:45,851 main: epoch: 0, iteration: 359, data_idx: 34464
+[INFO] 2020-03-10 02:55:55,267 main: epoch: 0, iteration: 360, data_idx: 34560
+[INFO] 2020-03-10 02:56:06,051 main: epoch: 0, iteration: 361, data_idx: 34656
+[INFO] 2020-03-10 02:56:16,267 main: epoch: 0, iteration: 362, data_idx: 34752
+[INFO] 2020-03-10 02:56:24,907 main: epoch: 0, iteration: 363, data_idx: 34848
+[INFO] 2020-03-10 02:56:33,118 main: epoch: 0, iteration: 364, data_idx: 34944
+[INFO] 2020-03-10 02:56:41,581 main: epoch: 0, iteration: 365, data_idx: 35040
+[INFO] 2020-03-10 02:56:49,788 main: epoch: 0, iteration: 366, data_idx: 35136
+[INFO] 2020-03-10 02:56:58,062 main: epoch: 0, iteration: 367, data_idx: 35232
+[INFO] 2020-03-10 02:57:07,078 main: epoch: 0, iteration: 368, data_idx: 35328
+[INFO] 2020-03-10 02:57:15,862 main: epoch: 0, iteration: 369, data_idx: 35424
+[INFO] 2020-03-10 02:57:23,729 main: epoch: 0, iteration: 370, data_idx: 35520
+[INFO] 2020-03-10 02:57:30,930 main: epoch: 0, iteration: 371, data_idx: 35616
+[INFO] 2020-03-10 02:57:38,086 main: epoch: 0, iteration: 372, data_idx: 35712
+[INFO] 2020-03-10 02:57:45,751 main: epoch: 0, iteration: 373, data_idx: 35808
+[INFO] 2020-03-10 02:57:53,640 main: epoch: 0, iteration: 374, data_idx: 35904
+[INFO] 2020-03-10 02:58:00,960 main: epoch: 0, iteration: 375, data_idx: 36000
+[INFO] 2020-03-10 02:58:09,548 main: epoch: 0, iteration: 376, data_idx: 36096
+[INFO] 2020-03-10 02:58:17,940 main: epoch: 0, iteration: 377, data_idx: 36192
+[INFO] 2020-03-10 02:58:26,717 main: epoch: 0, iteration: 378, data_idx: 36288
+[INFO] 2020-03-10 02:58:35,899 main: epoch: 0, iteration: 379, data_idx: 36384
+[INFO] 2020-03-10 02:58:44,385 main: epoch: 0, iteration: 380, data_idx: 36480
+[INFO] 2020-03-10 02:58:52,108 main: epoch: 0, iteration: 381, data_idx: 36576
+[INFO] 2020-03-10 02:59:00,642 main: epoch: 0, iteration: 382, data_idx: 36672
+[INFO] 2020-03-10 02:59:09,061 main: epoch: 0, iteration: 383, data_idx: 36768
+[INFO] 2020-03-10 02:59:16,871 main: epoch: 0, iteration: 384, data_idx: 36864
+[INFO] 2020-03-10 02:59:24,189 main: epoch: 0, iteration: 385, data_idx: 36960
+[INFO] 2020-03-10 02:59:32,242 main: epoch: 0, iteration: 386, data_idx: 37056
+[INFO] 2020-03-10 02:59:40,185 main: epoch: 0, iteration: 387, data_idx: 37152
+[INFO] 2020-03-10 02:59:49,241 main: epoch: 0, iteration: 388, data_idx: 37248
+[1583808633.7248154][perf-test]: capture_snapshot.success=1
+[1583808633.7248747][perf-test]: capture_snapshot.duration.ms=37
+[1583808641.2048213][perf-test]: capture_snapshot.success=1
+[1583808641.2048478][perf-test]: capture_snapshot.duration.ms=37
+[1583808648.4518106][perf-test]: capture_snapshot.success=1
+[1583808648.4518397][perf-test]: capture_snapshot.duration.ms=40
+[1583808656.496663][perf-test]: capture_snapshot.success=1
+[1583808656.496691][perf-test]: capture_snapshot.duration.ms=39
+[1583808663.6804779][perf-test]: capture_snapshot.success=1
+[1583808663.6805067][perf-test]: capture_snapshot.duration.ms=37
+[1583808671.0010931][perf-test]: capture_snapshot.success=1
+[1583808671.001121][perf-test]: capture_snapshot.duration.ms=39
+[1583808678.0359519][perf-test]: capture_snapshot.success=1
+[1583808678.0359802][perf-test]: capture_snapshot.duration.ms=39
+[1583808685.7111876][perf-test]: capture_snapshot.success=1
+[1583808685.7112167][perf-test]: capture_snapshot.duration.ms=40
+[1583808693.5614443][perf-test]: capture_snapshot.success=1
+[1583808693.5614734][perf-test]: capture_snapshot.duration.ms=40
+[1583808701.1437342][perf-test]: capture_snapshot.success=1
+[1583808701.1437624][perf-test]: capture_snapshot.duration.ms=39
+[1583808709.307291][perf-test]: capture_snapshot.success=1
+[1583808709.3073163][perf-test]: capture_snapshot.duration.ms=37
+[1583808717.9160492][perf-test]: capture_snapshot.success=1
+[1583808717.9160767][perf-test]: capture_snapshot.duration.ms=39
+[1583808725.5277815][perf-test]: capture_snapshot.success=1
+[1583808725.5278099][perf-test]: capture_snapshot.duration.ms=39
+[1583808733.6648295][perf-test]: capture_snapshot.success=1
+[1583808733.664857][perf-test]: capture_snapshot.duration.ms=39
+[1583808741.654898][perf-test]: capture_snapshot.success=1
+[1583808741.6549292][perf-test]: capture_snapshot.duration.ms=41
+[1583808749.4521194][perf-test]: capture_snapshot.success=1
+[1583808749.4521444][perf-test]: capture_snapshot.duration.ms=66
+[1583808758.0528958][perf-test]: capture_snapshot.success=1
+[1583808758.0529156][perf-test]: capture_snapshot.duration.ms=42
+[1583808766.523818][perf-test]: capture_snapshot.success=1
+[1583808766.5238385][perf-test]: capture_snapshot.duration.ms=37
+[1583808775.3680413][perf-test]: capture_snapshot.success=1
+[1583808775.3680623][perf-test]: capture_snapshot.duration.ms=38
+[1583808784.033608][perf-test]: capture_snapshot.success=1
+[1583808784.033629][perf-test]: capture_snapshot.duration.ms=47
+[1583808792.4409142][perf-test]: capture_snapshot.success=1
+[1583808792.4409347][perf-test]: capture_snapshot.duration.ms=36
+[1583808801.398515][perf-test]: capture_snapshot.success=1
+[1583808801.3985384][perf-test]: capture_snapshot.duration.ms=43
+[1583808809.5773065][perf-test]: capture_snapshot.success=1
+[1583808809.57733][perf-test]: capture_snapshot.duration.ms=38
+[1583808818.3775563][perf-test]: capture_snapshot.success=1
+[1583808818.3775756][perf-test]: capture_snapshot.duration.ms=42
+[1583808829.179498][perf-test]: capture_snapshot.success=1
+[1583808829.1795177][perf-test]: capture_snapshot.duration.ms=37
+[1583808841.1395044][perf-test]: capture_snapshot.success=1
+[1583808841.1395266][perf-test]: capture_snapshot.duration.ms=40
+[1583808849.2384925][perf-test]: capture_snapshot.success=1
+[1583808849.2385128][perf-test]: capture_snapshot.duration.ms=38
+[1583808858.8731751][perf-test]: capture_snapshot.success=1
+[1583808858.873195][perf-test]: capture_snapshot.duration.ms=39
+[1583808867.546197][perf-test]: capture_snapshot.success=1
+[1583808867.546235][perf-test]: capture_snapshot.duration.ms=43
+[1583808876.8395371][perf-test]: capture_snapshot.success=1
+[1583808876.839557][perf-test]: capture_snapshot.duration.ms=42
+[1583808884.6211135][perf-test]: capture_snapshot.success=1
+[1583808884.621135][perf-test]: capture_snapshot.duration.ms=36
+[1583808892.3898995][perf-test]: capture_snapshot.success=1
+[1583808892.3899207][perf-test]: capture_snapshot.duration.ms=39
+[1583808900.4200118][perf-test]: capture_snapshot.success=1
+[1583808900.4200351][perf-test]: capture_snapshot.duration.ms=50
+[1583808909.515469][perf-test]: capture_snapshot.success=1
+[1583808909.5154881][perf-test]: capture_snapshot.duration.ms=37
+[1583808918.9533515][perf-test]: capture_snapshot.success=1
+[1583808918.9533708][perf-test]: capture_snapshot.duration.ms=40
+[1583808928.6218297][perf-test]: capture_snapshot.success=1
+[1583808928.621851][perf-test]: capture_snapshot.duration.ms=38
+[1583808937.6218543][perf-test]: capture_snapshot.success=1
+[1583808937.621874][perf-test]: capture_snapshot.duration.ms=36
+[1583808945.8966355][perf-test]: capture_snapshot.success=1
+[1583808945.8966572][perf-test]: capture_snapshot.duration.ms=39
+[1583808955.3131804][perf-test]: capture_snapshot.success=1
+[1583808955.3132002][perf-test]: capture_snapshot.duration.ms=38
+[1583808966.0971348][perf-test]: capture_snapshot.success=1
+[1583808966.0971549][perf-test]: capture_snapshot.duration.ms=39
+[1583808976.3111088][perf-test]: capture_snapshot.success=1
+[1583808976.311129][perf-test]: capture_snapshot.duration.ms=38
+[1583808984.9547162][perf-test]: capture_snapshot.success=1
+[1583808984.9547355][perf-test]: capture_snapshot.duration.ms=41
+[1583808993.1627657][perf-test]: capture_snapshot.success=1
+[1583808993.162786][perf-test]: capture_snapshot.duration.ms=38
+[1583809001.625171][perf-test]: capture_snapshot.success=1
+[1583809001.625191][perf-test]: capture_snapshot.duration.ms=37
+[1583809009.8323119][perf-test]: capture_snapshot.success=1
+[1583809009.8323314][perf-test]: capture_snapshot.duration.ms=37
+[1583809018.1067183][perf-test]: capture_snapshot.success=1
+[1583809018.1067388][perf-test]: capture_snapshot.duration.ms=38
+[1583809027.121199][perf-test]: capture_snapshot.success=1
+[1583809027.121233][perf-test]: capture_snapshot.duration.ms=36
+[1583809035.9061728][perf-test]: capture_snapshot.success=1
+[1583809035.9061935][perf-test]: capture_snapshot.duration.ms=37
+[1583809043.7746496][perf-test]: capture_snapshot.success=1
+[1583809043.77467][perf-test]: capture_snapshot.duration.ms=39
+[1583809050.9747965][perf-test]: capture_snapshot.success=1
+[1583809050.974816][perf-test]: capture_snapshot.duration.ms=38
+[1583809058.132476][perf-test]: capture_snapshot.success=1
+[1583809058.1324959][perf-test]: capture_snapshot.duration.ms=39
+[1583809065.7969272][perf-test]: capture_snapshot.success=1
+[1583809065.7969465][perf-test]: capture_snapshot.duration.ms=37
+[1583809073.6935012][perf-test]: capture_snapshot.success=1
+[1583809073.6935217][perf-test]: capture_snapshot.duration.ms=37
+[1583809081.0041282][perf-test]: capture_snapshot.success=1
+[1583809081.0041485][perf-test]: capture_snapshot.duration.ms=38
+[1583809089.5917034][perf-test]: capture_snapshot.success=1
+[1583809089.591723][perf-test]: capture_snapshot.duration.ms=37
+[1583809097.9855022][perf-test]: capture_snapshot.success=1
+[1583809097.985527][perf-test]: capture_snapshot.duration.ms=39
+[1583809106.7597659][perf-test]: capture_snapshot.success=1
+[1583809106.7597847][perf-test]: capture_snapshot.duration.ms=36
+[1583809115.9603345][perf-test]: capture_snapshot.success=1
+[1583809115.9603558][perf-test]: capture_snapshot.duration.ms=40
+[1583809124.4298005][perf-test]: capture_snapshot.success=1
+[1583809124.4298215][perf-test]: capture_snapshot.duration.ms=37
+[1583809132.162595][perf-test]: capture_snapshot.success=1
+[1583809132.1626163][perf-test]: capture_snapshot.duration.ms=39
+[1583809140.717405][perf-test]: capture_snapshot.success=1
+[1583809140.7174253][perf-test]: capture_snapshot.duration.ms=38
+[1583809149.1088264][perf-test]: capture_snapshot.success=1
+[1583809149.1088464][perf-test]: capture_snapshot.duration.ms=39
+[1583809156.914552][perf-test]: capture_snapshot.success=1
+[1583809156.914573][perf-test]: capture_snapshot.duration.ms=37
+[1583809164.2340302][perf-test]: capture_snapshot.success=1
+[1583809164.2340512][perf-test]: capture_snapshot.duration.ms=38
+[1583809172.2866178][perf-test]: capture_snapshot.success=1
+[1583809172.2866385][perf-test]: capture_snapshot.duration.ms=38
+[1583809180.2293463][perf-test]: capture_snapshot.success=1
+[1583809180.2293668][perf-test]: capture_snapshot.duration.ms=38
+[INFO] 2020-03-10 02:59:58,614 main: epoch: 0, iteration: 389, data_idx: 37344
+[INFO] 2020-03-10 03:00:08,153 main: epoch: 0, iteration: 390, data_idx: 37440
+[INFO] 2020-03-10 03:00:16,843 main: epoch: 0, iteration: 391, data_idx: 37536
+[INFO] 2020-03-10 03:00:24,615 main: epoch: 0, iteration: 392, data_idx: 37632
+[INFO] 2020-03-10 03:00:31,933 main: epoch: 0, iteration: 393, data_idx: 37728
+[INFO] 2020-03-10 03:00:39,493 main: epoch: 0, iteration: 394, data_idx: 37824
+[INFO] 2020-03-10 03:00:46,858 main: epoch: 0, iteration: 395, data_idx: 37920
+[INFO] 2020-03-10 03:00:54,930 main: epoch: 0, iteration: 396, data_idx: 38016
+[INFO] 2020-03-10 03:01:03,609 main: epoch: 0, iteration: 397, data_idx: 38112
+[INFO] 2020-03-10 03:01:12,779 main: epoch: 0, iteration: 398, data_idx: 38208
+[INFO] 2020-03-10 03:01:20,192 main: epoch: 0, iteration: 399, data_idx: 38304
+[INFO] 2020-03-10 03:01:28,032 main: epoch: 0, iteration: 400, data_idx: 38400
+[INFO] 2020-03-10 03:01:35,515 main: epoch: 0, iteration: 401, data_idx: 38496
+[INFO] 2020-03-10 03:01:43,525 main: epoch: 0, iteration: 402, data_idx: 38592
+[INFO] 2020-03-10 03:01:50,958 main: epoch: 0, iteration: 403, data_idx: 38688
+[INFO] 2020-03-10 03:01:58,784 main: epoch: 0, iteration: 404, data_idx: 38784
+[INFO] 2020-03-10 03:02:07,738 main: epoch: 0, iteration: 405, data_idx: 38880
+[INFO] 2020-03-10 03:02:17,857 main: epoch: 0, iteration: 406, data_idx: 38976
+[INFO] 2020-03-10 03:02:28,273 main: epoch: 0, iteration: 407, data_idx: 39072
+[INFO] 2020-03-10 03:02:38,017 main: epoch: 0, iteration: 408, data_idx: 39168
+[INFO] 2020-03-10 03:02:46,043 main: epoch: 0, iteration: 409, data_idx: 39264
+[INFO] 2020-03-10 03:02:54,342 main: epoch: 0, iteration: 410, data_idx: 39360
+[INFO] 2020-03-10 03:03:02,375 main: epoch: 0, iteration: 411, data_idx: 39456
+[INFO] 2020-03-10 03:03:10,997 main: epoch: 0, iteration: 412, data_idx: 39552
+[INFO] 2020-03-10 03:03:19,772 main: epoch: 0, iteration: 413, data_idx: 39648
+[INFO] 2020-03-10 03:03:29,171 main: epoch: 0, iteration: 414, data_idx: 39744
+[INFO] 2020-03-10 03:03:40,153 main: epoch: 0, iteration: 415, data_idx: 39840
+[INFO] 2020-03-10 03:03:49,276 main: epoch: 0, iteration: 416, data_idx: 39936
+[INFO] 2020-03-10 03:03:57,971 main: epoch: 0, iteration: 417, data_idx: 40032
+[INFO] 2020-03-10 03:04:06,153 main: epoch: 0, iteration: 418, data_idx: 40128
+[INFO] 2020-03-10 03:04:14,259 main: epoch: 0, iteration: 419, data_idx: 40224
+[INFO] 2020-03-10 03:04:22,387 main: epoch: 0, iteration: 420, data_idx: 40320
+[INFO] 2020-03-10 03:04:30,701 main: epoch: 0, iteration: 421, data_idx: 40416
+[INFO] 2020-03-10 03:04:39,398 main: epoch: 0, iteration: 422, data_idx: 40512
+[INFO] 2020-03-10 03:04:48,803 main: epoch: 0, iteration: 423, data_idx: 40608
+[INFO] 2020-03-10 03:04:58,046 main: epoch: 0, iteration: 424, data_idx: 40704
+[INFO] 2020-03-10 03:05:07,233 main: epoch: 0, iteration: 425, data_idx: 40800
+[INFO] 2020-03-10 03:05:16,361 main: epoch: 0, iteration: 426, data_idx: 40896
+[INFO] 2020-03-10 03:05:24,588 main: epoch: 0, iteration: 427, data_idx: 40992
+[INFO] 2020-03-10 03:05:32,075 main: epoch: 0, iteration: 428, data_idx: 41088
+[INFO] 2020-03-10 03:05:39,775 main: epoch: 0, iteration: 429, data_idx: 41184
+[INFO] 2020-03-10 03:05:47,419 main: epoch: 0, iteration: 430, data_idx: 41280
+[INFO] 2020-03-10 03:05:54,726 main: epoch: 0, iteration: 431, data_idx: 41376
+[INFO] 2020-03-10 03:06:03,213 main: epoch: 0, iteration: 432, data_idx: 41472
+[INFO] 2020-03-10 03:06:11,773 main: epoch: 0, iteration: 433, data_idx: 41568
+[INFO] 2020-03-10 03:06:19,737 main: epoch: 0, iteration: 434, data_idx: 41664
+[INFO] 2020-03-10 03:06:28,320 main: epoch: 0, iteration: 435, data_idx: 41760
+[INFO] 2020-03-10 03:06:37,124 main: epoch: 0, iteration: 436, data_idx: 41856
+[INFO] 2020-03-10 03:06:45,236 main: epoch: 0, iteration: 437, data_idx: 41952
+[INFO] 2020-03-10 03:06:53,405 main: epoch: 0, iteration: 438, data_idx: 42048
+[INFO] 2020-03-10 03:07:03,178 main: epoch: 0, iteration: 439, data_idx: 42144
+[INFO] 2020-03-10 03:07:11,104 main: epoch: 0, iteration: 440, data_idx: 42240
+[INFO] 2020-03-10 03:07:18,508 main: epoch: 0, iteration: 441, data_idx: 42336
+[INFO] 2020-03-10 03:07:26,256 main: epoch: 0, iteration: 442, data_idx: 42432
+[INFO] 2020-03-10 03:07:34,348 main: epoch: 0, iteration: 443, data_idx: 42528
+[INFO] 2020-03-10 03:07:42,819 main: epoch: 0, iteration: 444, data_idx: 42624
+[INFO] 2020-03-10 03:07:51,065 main: epoch: 0, iteration: 445, data_idx: 42720
+[INFO] 2020-03-10 03:07:59,282 main: epoch: 0, iteration: 446, data_idx: 42816
+[INFO] 2020-03-10 03:08:08,224 main: epoch: 0, iteration: 447, data_idx: 42912
+[INFO] 2020-03-10 03:08:16,143 main: epoch: 0, iteration: 448, data_idx: 43008
+[INFO] 2020-03-10 03:08:25,527 main: epoch: 0, iteration: 449, data_idx: 43104
+[INFO] 2020-03-10 03:08:35,243 main: epoch: 0, iteration: 450, data_idx: 43200
+[INFO] 2020-03-10 03:08:45,269 main: epoch: 0, iteration: 451, data_idx: 43296
+[INFO] 2020-03-10 03:08:55,339 main: epoch: 0, iteration: 452, data_idx: 43392
+[INFO] 2020-03-10 03:09:05,198 main: epoch: 0, iteration: 453, data_idx: 43488
+[INFO] 2020-03-10 03:09:13,821 main: epoch: 0, iteration: 454, data_idx: 43584
+[1583809189.2865856][perf-test]: capture_snapshot.success=1
+[1583809189.2866447][perf-test]: capture_snapshot.duration.ms=38
+[1583809198.6591563][perf-test]: capture_snapshot.success=1
+[1583809198.6591756][perf-test]: capture_snapshot.duration.ms=38
+[1583809208.201461][perf-test]: capture_snapshot.success=1
+[1583809208.2014818][perf-test]: capture_snapshot.duration.ms=38
+[1583809216.89101][perf-test]: capture_snapshot.success=1
+[1583809216.89103][perf-test]: capture_snapshot.duration.ms=37
+[1583809224.6594763][perf-test]: capture_snapshot.success=1
+[1583809224.6594963][perf-test]: capture_snapshot.duration.ms=38
+[1583809231.9770665][perf-test]: capture_snapshot.success=1
+[1583809231.9770875][perf-test]: capture_snapshot.duration.ms=38
+[1583809239.544859][perf-test]: capture_snapshot.success=1
+[1583809239.5448785][perf-test]: capture_snapshot.duration.ms=38
+[1583809246.9040954][perf-test]: capture_snapshot.success=1
+[1583809246.9041152][perf-test]: capture_snapshot.duration.ms=37
+[1583809254.9740303][perf-test]: capture_snapshot.success=1
+[1583809254.9740505][perf-test]: capture_snapshot.duration.ms=37
+[1583809263.6530547][perf-test]: capture_snapshot.success=1
+[1583809263.653076][perf-test]: capture_snapshot.duration.ms=37
+[1583809272.8220441][perf-test]: capture_snapshot.success=1
+[1583809272.8220642][perf-test]: capture_snapshot.duration.ms=36
+[1583809280.240468][perf-test]: capture_snapshot.success=1
+[1583809280.2404876][perf-test]: capture_snapshot.duration.ms=37
+[1583809288.0816545][perf-test]: capture_snapshot.success=1
+[1583809288.0816758][perf-test]: capture_snapshot.duration.ms=43
+[1583809295.5638916][perf-test]: capture_snapshot.success=1
+[1583809295.5639172][perf-test]: capture_snapshot.duration.ms=40
+[1583809303.5693383][perf-test]: capture_snapshot.success=1
+[1583809303.5693605][perf-test]: capture_snapshot.duration.ms=38
+[1583809311.004396][perf-test]: capture_snapshot.success=1
+[1583809311.0044167][perf-test]: capture_snapshot.duration.ms=39
+[1583809318.8280587][perf-test]: capture_snapshot.success=1
+[1583809318.8280785][perf-test]: capture_snapshot.duration.ms=37
+[1583809327.7844493][perf-test]: capture_snapshot.success=1
+[1583809327.78447][perf-test]: capture_snapshot.duration.ms=39
+[1583809337.90041][perf-test]: capture_snapshot.success=1
+[1583809337.9004292][perf-test]: capture_snapshot.duration.ms=36
+[1583809348.3188214][perf-test]: capture_snapshot.success=1
+[1583809348.3188417][perf-test]: capture_snapshot.duration.ms=39
+[1583809358.0614946][perf-test]: capture_snapshot.success=1
+[1583809358.0615137][perf-test]: capture_snapshot.duration.ms=37
+[1583809366.0869834][perf-test]: capture_snapshot.success=1
+[1583809366.0870054][perf-test]: capture_snapshot.duration.ms=38
+[1583809374.387676][perf-test]: capture_snapshot.success=1
+[1583809374.387696][perf-test]: capture_snapshot.duration.ms=38
+[1583809382.4198427][perf-test]: capture_snapshot.success=1
+[1583809382.419863][perf-test]: capture_snapshot.duration.ms=38
+[1583809391.0443056][perf-test]: capture_snapshot.success=1
+[1583809391.0443275][perf-test]: capture_snapshot.duration.ms=38
+[1583809399.8200474][perf-test]: capture_snapshot.success=1
+[1583809399.8200674][perf-test]: capture_snapshot.duration.ms=37
+[1583809409.215556][perf-test]: capture_snapshot.success=1
+[1583809409.2155764][perf-test]: capture_snapshot.duration.ms=38
+[1583809420.1989768][perf-test]: capture_snapshot.success=1
+[1583809420.198997][perf-test]: capture_snapshot.duration.ms=39
+[1583809429.3539586][perf-test]: capture_snapshot.success=1
+[1583809429.3539786][perf-test]: capture_snapshot.duration.ms=37
+[1583809438.0152555][perf-test]: capture_snapshot.success=1
+[1583809438.0152764][perf-test]: capture_snapshot.duration.ms=37
+[1583809446.1992416][perf-test]: capture_snapshot.success=1
+[1583809446.199333][perf-test]: capture_snapshot.duration.ms=38
+[1583809454.3037379][perf-test]: capture_snapshot.success=1
+[1583809454.3037577][perf-test]: capture_snapshot.duration.ms=37
+[1583809462.4306874][perf-test]: capture_snapshot.success=1
+[1583809462.430707][perf-test]: capture_snapshot.duration.ms=38
+[1583809470.7454298][perf-test]: capture_snapshot.success=1
+[1583809470.74545][perf-test]: capture_snapshot.duration.ms=38
+[1583809479.441858][perf-test]: capture_snapshot.success=1
+[1583809479.4418786][perf-test]: capture_snapshot.duration.ms=37
+[1583809488.8548021][perf-test]: capture_snapshot.success=1
+[1583809488.854823][perf-test]: capture_snapshot.duration.ms=37
+[1583809498.0937185][perf-test]: capture_snapshot.success=1
+[1583809498.0937378][perf-test]: capture_snapshot.duration.ms=36
+[1583809507.2753313][perf-test]: capture_snapshot.success=1
+[1583809507.275354][perf-test]: capture_snapshot.duration.ms=36
+[1583809516.4057999][perf-test]: capture_snapshot.success=1
+[1583809516.4058192][perf-test]: capture_snapshot.duration.ms=38
+[1583809524.6343086][perf-test]: capture_snapshot.success=1
+[1583809524.6343298][perf-test]: capture_snapshot.duration.ms=38
+[1583809532.1203046][perf-test]: capture_snapshot.success=1
+[1583809532.1203244][perf-test]: capture_snapshot.duration.ms=38
+[1583809539.8193746][perf-test]: capture_snapshot.success=1
+[1583809539.8193944][perf-test]: capture_snapshot.duration.ms=38
+[1583809547.4614205][perf-test]: capture_snapshot.success=1
+[1583809547.4614398][perf-test]: capture_snapshot.duration.ms=36
+[1583809554.7752337][perf-test]: capture_snapshot.success=1
+[1583809554.775254][perf-test]: capture_snapshot.duration.ms=38
+[1583809563.2578502][perf-test]: capture_snapshot.success=1
+[1583809563.2578702][perf-test]: capture_snapshot.duration.ms=38
+[1583809571.817107][perf-test]: capture_snapshot.success=1
+[1583809571.8171272][perf-test]: capture_snapshot.duration.ms=37
+[1583809579.7815177][perf-test]: capture_snapshot.success=1
+[1583809579.7815378][perf-test]: capture_snapshot.duration.ms=38
+[1583809588.3642793][perf-test]: capture_snapshot.success=1
+[1583809588.3643][perf-test]: capture_snapshot.duration.ms=38
+[1583809597.1684232][perf-test]: capture_snapshot.success=1
+[1583809597.1684442][perf-test]: capture_snapshot.duration.ms=38
+[1583809605.2823777][perf-test]: capture_snapshot.success=1
+[1583809605.282399][perf-test]: capture_snapshot.duration.ms=39
+[1583809613.4773304][perf-test]: capture_snapshot.success=1
+[1583809613.4773562][perf-test]: capture_snapshot.duration.ms=66
+[1583809623.2226298][perf-test]: capture_snapshot.success=1
+[1583809623.2226496][perf-test]: capture_snapshot.duration.ms=38
+[1583809631.1506894][perf-test]: capture_snapshot.success=1
+[1583809631.1507092][perf-test]: capture_snapshot.duration.ms=37
+[1583809638.5542748][perf-test]: capture_snapshot.success=1
+[1583809638.5542943][perf-test]: capture_snapshot.duration.ms=37
+[1583809646.300735][perf-test]: capture_snapshot.success=1
+[1583809646.3007555][perf-test]: capture_snapshot.duration.ms=38
+[1583809654.3999488][perf-test]: capture_snapshot.success=1
+[1583809654.399969][perf-test]: capture_snapshot.duration.ms=38
+[1583809662.8635802][perf-test]: capture_snapshot.success=1
+[1583809662.8635998][perf-test]: capture_snapshot.duration.ms=38
+[1583809671.1122518][perf-test]: capture_snapshot.success=1
+[1583809671.1122713][perf-test]: capture_snapshot.duration.ms=37
+[1583809679.3267646][perf-test]: capture_snapshot.success=1
+[1583809679.3267844][perf-test]: capture_snapshot.duration.ms=38
+[1583809688.268422][perf-test]: capture_snapshot.success=1
+[1583809688.2684422][perf-test]: capture_snapshot.duration.ms=38
+[1583809696.1932337][perf-test]: capture_snapshot.success=1
+[1583809696.193254][perf-test]: capture_snapshot.duration.ms=38
+[1583809705.573858][perf-test]: capture_snapshot.success=1
+[1583809705.5738773][perf-test]: capture_snapshot.duration.ms=38
+[1583809715.2877998][perf-test]: capture_snapshot.success=1
+[1583809715.2878199][perf-test]: capture_snapshot.duration.ms=38
+[1583809725.312985][perf-test]: capture_snapshot.success=1
+[1583809725.3130047][perf-test]: capture_snapshot.duration.ms=38
+[1583809735.3833823][perf-test]: capture_snapshot.success=1
+[1583809735.3834023][perf-test]: capture_snapshot.duration.ms=38
+[1583809745.2478597][perf-test]: capture_snapshot.success=1
+[1583809745.2478795][perf-test]: capture_snapshot.duration.ms=38
+[INFO] 2020-03-10 03:09:21,235 main: epoch: 0, iteration: 455, data_idx: 43680
+[INFO] 2020-03-10 03:09:30,044 main: epoch: 0, iteration: 456, data_idx: 43776
+[INFO] 2020-03-10 03:09:38,141 main: epoch: 0, iteration: 457, data_idx: 43872
+[INFO] 2020-03-10 03:09:46,246 main: epoch: 0, iteration: 458, data_idx: 43968
+[INFO] 2020-03-10 03:09:55,247 main: epoch: 0, iteration: 459, data_idx: 44064
+[INFO] 2020-03-10 03:10:04,829 main: epoch: 0, iteration: 460, data_idx: 44160
+[INFO] 2020-03-10 03:10:13,777 main: epoch: 0, iteration: 461, data_idx: 44256
+[INFO] 2020-03-10 03:10:22,017 main: epoch: 0, iteration: 462, data_idx: 44352
+[INFO] 2020-03-10 03:10:30,447 main: epoch: 0, iteration: 463, data_idx: 44448
+[INFO] 2020-03-10 03:10:38,024 main: epoch: 0, iteration: 464, data_idx: 44544
+[INFO] 2020-03-10 03:10:47,436 main: epoch: 0, iteration: 465, data_idx: 44640
+[INFO] 2020-03-10 03:10:55,871 main: epoch: 0, iteration: 466, data_idx: 44736
+[INFO] 2020-03-10 03:11:03,936 main: epoch: 0, iteration: 467, data_idx: 44832
+[INFO] 2020-03-10 03:11:11,449 main: epoch: 0, iteration: 468, data_idx: 44928
+[INFO] 2020-03-10 03:11:18,997 main: epoch: 0, iteration: 469, data_idx: 45024
+[INFO] 2020-03-10 03:11:27,068 main: epoch: 0, iteration: 470, data_idx: 45120
+[INFO] 2020-03-10 03:11:35,114 main: epoch: 0, iteration: 471, data_idx: 45216
+[INFO] 2020-03-10 03:11:43,150 main: epoch: 0, iteration: 472, data_idx: 45312
+[INFO] 2020-03-10 03:11:51,463 main: epoch: 0, iteration: 473, data_idx: 45408
+[INFO] 2020-03-10 03:12:00,014 main: epoch: 0, iteration: 474, data_idx: 45504
+[INFO] 2020-03-10 03:12:07,943 main: epoch: 0, iteration: 475, data_idx: 45600
+[INFO] 2020-03-10 03:12:15,993 main: epoch: 0, iteration: 476, data_idx: 45696
+[INFO] 2020-03-10 03:12:24,482 main: epoch: 0, iteration: 477, data_idx: 45792
+[INFO] 2020-03-10 03:12:33,252 main: epoch: 0, iteration: 478, data_idx: 45888
+[INFO] 2020-03-10 03:12:40,612 main: epoch: 0, iteration: 479, data_idx: 45984
+[INFO] 2020-03-10 03:12:48,082 main: epoch: 0, iteration: 480, data_idx: 46080
+[INFO] 2020-03-10 03:12:55,589 main: epoch: 0, iteration: 481, data_idx: 46176
+[INFO] 2020-03-10 03:13:03,730 main: epoch: 0, iteration: 482, data_idx: 46272
+[INFO] 2020-03-10 03:13:11,392 main: epoch: 0, iteration: 483, data_idx: 46368
+[INFO] 2020-03-10 03:13:19,518 main: epoch: 0, iteration: 484, data_idx: 46464
+[INFO] 2020-03-10 03:13:28,246 main: epoch: 0, iteration: 485, data_idx: 46560
+[INFO] 2020-03-10 03:13:38,134 main: epoch: 0, iteration: 486, data_idx: 46656
+[INFO] 2020-03-10 03:13:48,359 main: epoch: 0, iteration: 487, data_idx: 46752
+[INFO] 2020-03-10 03:13:57,601 main: epoch: 0, iteration: 488, data_idx: 46848
+[INFO] 2020-03-10 03:14:05,869 main: epoch: 0, iteration: 489, data_idx: 46944
+[INFO] 2020-03-10 03:14:14,347 main: epoch: 0, iteration: 490, data_idx: 47040
+[INFO] 2020-03-10 03:14:24,139 main: epoch: 0, iteration: 491, data_idx: 47136
+[INFO] 2020-03-10 03:14:33,021 main: epoch: 0, iteration: 492, data_idx: 47232
+[INFO] 2020-03-10 03:14:41,112 main: epoch: 0, iteration: 493, data_idx: 47328
+[INFO] 2020-03-10 03:14:49,295 main: epoch: 0, iteration: 494, data_idx: 47424
+[INFO] 2020-03-10 03:14:57,807 main: epoch: 0, iteration: 495, data_idx: 47520
+[INFO] 2020-03-10 03:15:05,631 main: epoch: 0, iteration: 496, data_idx: 47616
+[INFO] 2020-03-10 03:15:13,753 main: epoch: 0, iteration: 497, data_idx: 47712
+[INFO] 2020-03-10 03:15:22,500 main: epoch: 0, iteration: 498, data_idx: 47808
+[INFO] 2020-03-10 03:15:31,062 main: epoch: 0, iteration: 499, data_idx: 47904
+[INFO] 2020-03-10 03:15:41,086 main: epoch: 0, iteration: 500, data_idx: 48000
+[INFO] 2020-03-10 03:15:51,455 main: epoch: 0, iteration: 501, data_idx: 48096
+[INFO] 2020-03-10 03:16:01,589 main: epoch: 0, iteration: 502, data_idx: 48192
+[INFO] 2020-03-10 03:16:09,657 main: epoch: 0, iteration: 503, data_idx: 48288
+[INFO] 2020-03-10 03:16:18,954 main: epoch: 0, iteration: 504, data_idx: 48384
+[INFO] 2020-03-10 03:16:27,652 main: epoch: 0, iteration: 505, data_idx: 48480
