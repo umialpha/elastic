@@ -35,7 +35,7 @@ def to_generator(train_step_fn):
             try:
                 yield train_step_fn(state)
             except StopIteration as e:
-                logging.info("End of data reached from train_step", exc_info=e)
+                logging.info("End of data reached from train_step", exc_info=e) 
                 return
 
     return wrap
