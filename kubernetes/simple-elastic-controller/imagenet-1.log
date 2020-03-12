@@ -1,0 +1,628 @@
+[INFO] 2020-03-12 08:03:27,856 main: rdzv init method=etcd://etcd:2379/imagenet?min_workers=1&max_workers=4&last_call_timeout=5
+[INFO] 2020-03-12 08:03:27,856 main: Loading data from: /data/tiny-imagenet-200/train
+[INFO] 2020-03-12 08:03:37,605 main: Loading model: resnet101
+[INFO] 2020-03-12 08:03:40,641 main: Rank [0] running on GPU [0]
+INFO 2020-03-12 08:03:40,646 Etcd machines: ['http://0.0.0.0:2379']
+[INFO] 2020-03-12 08:03:40,740 main: Entering torchelastic train_loop
+INFO 2020-03-12 08:03:40,741 Attempting to join next rendezvous
+INFO 2020-03-12 08:03:40,756 Observed existing rendezvous state: {'status': 'final', 'version': '133', 'participants': [0, 1], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_133/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_133/rank_1'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:03:40,775 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "133", "participants": [0, 1], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_133/rank_0", "/torchelastic/p2p/run_imagenet/rdzv/v_133/rank_1"], "num_workers_waiting": 1}
+INFO 2020-03-12 08:03:40,776 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_133/rank_0 is not renewed.
+INFO 2020-03-12 08:03:40,776 Rendevous version 133 is incomplete. 
+INFO 2020-03-12 08:03:40,776 Attempting to destroy it.
+INFO 2020-03-12 08:03:40,787 Destroyed rendezvous version 133 successfully.
+INFO 2020-03-12 08:03:40,787 Previously existing rendezvous state changed. Will re-try joining.
+INFO 2020-03-12 08:03:40,787 Attempting to join next rendezvous
+INFO 2020-03-12 08:03:40,850 New rendezvous state created: {'status': 'joinable', 'version': '134', 'participants': []}
+INFO 2020-03-12 08:03:40,910 Joined rendezvous version 134 as rank 0. Full state: {'status': 'joinable', 'version': '134', 'participants': [0]}
+INFO 2020-03-12 08:03:40,910 Rank 0 is responsible for join last call.
+INFO 2020-03-12 08:03:45,938 Rank 0 finished join last call.
+INFO 2020-03-12 08:03:45,938 Waiting for remaining peers.
+INFO 2020-03-12 08:03:45,938 All peers arrived. Confirming membership.
+INFO 2020-03-12 08:03:45,975 Waiting for confirmations from all peers.
+INFO 2020-03-12 08:03:45,976 Rendezvous version 134 is complete. Final state: {'status': 'final', 'version': '134', 'participants': [0], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_134/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:03:45,976 Using TCPStore for c10d::Store implementation
+INFO 2020-03-12 08:03:46,006 Setting up TCPStore server on imagenet-1:49247
+INFO 2020-03-12 08:03:46,007 TCPStore server initialized on imagenet-1:49247
+[INFO] 2020-03-12 08:03:46,007 coordinator_p2p: Got next rendezvous: rank 0, world size 1
+[INFO] 2020-03-12 08:03:46,008 coordinator_p2p: Initialized process group rank 0, world size 1
+[INFO] 2020-03-12 08:03:46,009 main: Rank 0: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=0
+	iteration=0
+	epoch=0/2
+[INFO] 2020-03-12 08:03:46,144 train_loop: Rank 0 synced state with other nodes
+[INFO] 2020-03-12 08:03:50,108 main: epoch: 0, iteration: 0, data_idx: 0
+[INFO] 2020-03-12 08:03:53,823 main: epoch: 0, iteration: 1, data_idx: 64
+[INFO] 2020-03-12 08:03:57,626 main: epoch: 0, iteration: 2, data_idx: 128
+[INFO] 2020-03-12 08:04:01,144 main: epoch: 0, iteration: 3, data_idx: 192
+[INFO] 2020-03-12 08:04:05,387 main: epoch: 0, iteration: 4, data_idx: 256
+[INFO] 2020-03-12 08:04:09,198 main: epoch: 0, iteration: 5, data_idx: 320
+[INFO] 2020-03-12 08:04:13,007 main: epoch: 0, iteration: 6, data_idx: 384
+[INFO] 2020-03-12 08:04:16,758 main: epoch: 0, iteration: 7, data_idx: 448
+[INFO] 2020-03-12 08:04:20,877 main: epoch: 0, iteration: 8, data_idx: 512
+[INFO] 2020-03-12 08:04:25,030 main: epoch: 0, iteration: 9, data_idx: 576
+[INFO] 2020-03-12 08:04:28,841 main: epoch: 0, iteration: 10, data_idx: 640
+[INFO] 2020-03-12 08:04:32,562 main: epoch: 0, iteration: 11, data_idx: 704
+[INFO] 2020-03-12 08:04:36,720 main: epoch: 0, iteration: 12, data_idx: 768
+[INFO] 2020-03-12 08:04:40,462 main: epoch: 0, iteration: 13, data_idx: 832
+[INFO] 2020-03-12 08:04:44,538 main: epoch: 0, iteration: 14, data_idx: 896
+[INFO] 2020-03-12 08:04:48,025 main: epoch: 0, iteration: 15, data_idx: 960
+[INFO] 2020-03-12 08:04:51,601 main: epoch: 0, iteration: 16, data_idx: 1024
+[INFO] 2020-03-12 08:04:55,757 main: epoch: 0, iteration: 17, data_idx: 1088
+[INFO] 2020-03-12 08:04:59,917 main: epoch: 0, iteration: 18, data_idx: 1152
+[INFO] 2020-03-12 08:05:03,900 main: epoch: 0, iteration: 19, data_idx: 1216
+[INFO] 2020-03-12 08:05:11,653 main: epoch: 0, iteration: 20, data_idx: 1280
+[INFO] 2020-03-12 08:05:11,658 coordinator_p2p: Rank 0 detected 1 new nodes; will re-rendezvous.
+[INFO] 2020-03-12 08:05:11,658 train_loop: Rank 0 will re-rendezvous
+INFO 2020-03-12 08:05:11,702 Attempting to join next rendezvous
+INFO 2020-03-12 08:05:11,704 Observed existing rendezvous state: {'status': 'final', 'version': '134', 'participants': [0], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_134/rank_0'], 'num_workers_waiting': 1}
+INFO 2020-03-12 08:05:11,757 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "134", "participants": [0], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_134/rank_0"], "num_workers_waiting": 2}
+INFO 2020-03-12 08:05:21,230 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_134/rank_0 is not renewed.
+INFO 2020-03-12 08:05:21,230 Rendevous version 134 is incomplete. 
+INFO 2020-03-12 08:05:21,231 Attempting to destroy it.
+INFO 2020-03-12 08:05:21,241 Destroyed rendezvous version 134 successfully.
+INFO 2020-03-12 08:05:21,241 Previously existing rendezvous state changed. Will re-try joining.
+INFO 2020-03-12 08:05:21,241 Attempting to join next rendezvous
+INFO 2020-03-12 08:05:21,323 New rendezvous state created: {'status': 'joinable', 'version': '135', 'participants': []}
+INFO 2020-03-12 08:05:21,339 Joined rendezvous version 135 as rank 0. Full state: {'status': 'joinable', 'version': '135', 'participants': [0]}
+INFO 2020-03-12 08:05:21,339 Rank 0 is responsible for join last call.
+INFO 2020-03-12 08:05:27,349 Rank 0 finished join last call.
+INFO 2020-03-12 08:05:27,349 Waiting for remaining peers.
+INFO 2020-03-12 08:05:27,349 All peers arrived. Confirming membership.
+INFO 2020-03-12 08:05:27,460 Waiting for confirmations from all peers.
+INFO 2020-03-12 08:05:27,461 Rendezvous version 135 is complete. Final state: {'status': 'final', 'version': '135', 'participants': [0, 1], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_135/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_135/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:05:27,461 Using TCPStore for c10d::Store implementation
+INFO 2020-03-12 08:05:27,475 Setting up TCPStore server on imagenet-1:52203
+INFO 2020-03-12 08:05:27,486 TCPStore server initialized on imagenet-1:52203
+[INFO] 2020-03-12 08:05:27,486 coordinator_p2p: Got next rendezvous: rank 0, world size 2
+[INFO] 2020-03-12 08:05:27,497 coordinator_p2p: Initialized process group rank 0, world size 2
+[INFO] 2020-03-12 08:05:41,418 main: Rank 0: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=672
+	iteration=21
+	epoch=0/2
+[INFO] 2020-03-12 08:05:44,297 train_loop: Rank 0 synced state with other nodes
+[INFO] 2020-03-12 08:05:53,151 main: epoch: 0, iteration: 21, data_idx: 1344
+[INFO] 2020-03-12 08:06:02,746 main: epoch: 0, iteration: 22, data_idx: 1440
+[INFO] 2020-03-12 08:06:11,444 main: epoch: 0, iteration: 23, data_idx: 1536
+[INFO] 2020-03-12 08:06:20,387 main: epoch: 0, iteration: 24, data_idx: 1632
+[INFO] 2020-03-12 08:06:29,701 main: epoch: 0, iteration: 25, data_idx: 1728
+[INFO] 2020-03-12 08:06:39,559 main: epoch: 0, iteration: 26, data_idx: 1824
+[ERROR] 2020-03-12 08:06:46,805 coordinator_p2p: Rank: 0
+Error: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:572] Connection closed by peer [10.244.14.23]:19367
+ErrorType: <class 'RuntimeError'>
+StackTrace: Traceback (most recent call last):
+  File "/opt/conda/lib/python3.6/site-packages/torchelastic/train_loop.py", line 96, in train
+    state, worker_stats = train_step(state)
+  File "/workspace/elastic/examples/imagenet/main.py", line 316, in train_step
+    loss.backward()
+  File "/opt/conda/lib/python3.6/site-packages/torch/tensor.py", line 195, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/opt/conda/lib/python3.6/site-packages/torch/autograd/__init__.py", line 99, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:572] Connection closed by peer [10.244.14.23]:19367
+
+INFO 2020-03-12 08:06:47,164 Attempting to join next rendezvous
+INFO 2020-03-12 08:06:47,166 Observed existing rendezvous state: {'status': 'final', 'version': '135', 'participants': [0, 1], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_135/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_135/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:06:47,180 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "135", "participants": [0, 1], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_135/rank_1", "/torchelastic/p2p/run_imagenet/rdzv/v_135/rank_0"], "num_workers_waiting": 1}
+INFO 2020-03-12 08:06:48,730 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_135/rank_1 is not renewed.
+INFO 2020-03-12 08:06:48,731 Rendevous version 135 is incomplete. 
+INFO 2020-03-12 08:06:48,731 Attempting to destroy it.
+INFO 2020-03-12 08:06:48,741 Destroyed rendezvous version 135 successfully.
+INFO 2020-03-12 08:06:48,741 Previously existing rendezvous state changed. Will re-try joining.
+INFO 2020-03-12 08:06:48,741 Attempting to join next rendezvous
+INFO 2020-03-12 08:06:48,804 New rendezvous state created: {'status': 'joinable', 'version': '136', 'participants': []}
+INFO 2020-03-12 08:06:48,851 Joined rendezvous version 136 as rank 0. Full state: {'status': 'joinable', 'version': '136', 'participants': [0]}
+INFO 2020-03-12 08:06:48,851 Rank 0 is responsible for join last call.
+INFO 2020-03-12 08:06:53,877 Rank 0 finished join last call.
+INFO 2020-03-12 08:06:53,877 Waiting for remaining peers.
+INFO 2020-03-12 08:06:53,877 All peers arrived. Confirming membership.
+INFO 2020-03-12 08:06:53,961 Waiting for confirmations from all peers.
+INFO 2020-03-12 08:06:53,962 Rendezvous version 136 is complete. Final state: {'status': 'final', 'version': '136', 'participants': [0], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_136/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:06:53,962 Using TCPStore for c10d::Store implementation
+INFO 2020-03-12 08:06:53,976 Setting up TCPStore server on imagenet-1:48245
+INFO 2020-03-12 08:06:53,976 TCPStore server initialized on imagenet-1:48245
+[INFO] 2020-03-12 08:06:53,976 coordinator_p2p: Got next rendezvous: rank 0, world size 1
+[INFO] 2020-03-12 08:06:53,977 coordinator_p2p: Initialized process group rank 0, world size 1
+[INFO] 2020-03-12 08:06:57,419 main: Rank 0: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=1056
+	iteration=27
+	epoch=0/2
+[INFO] 2020-03-12 08:06:57,514 train_loop: Rank 0 synced state with other nodes
+[INFO] 2020-03-12 08:07:02,385 main: epoch: 0, iteration: 27, data_idx: 1920
+[INFO] 2020-03-12 08:07:06,892 main: epoch: 0, iteration: 28, data_idx: 1984
+[INFO] 2020-03-12 08:07:12,033 main: epoch: 0, iteration: 29, data_idx: 2048
+[INFO] 2020-03-12 08:07:17,917 main: epoch: 0, iteration: 30, data_idx: 2112
+[INFO] 2020-03-12 08:07:24,140 main: epoch: 0, iteration: 31, data_idx: 2176
+[INFO] 2020-03-12 08:07:30,426 main: epoch: 0, iteration: 32, data_idx: 2240
+[INFO] 2020-03-12 08:07:36,218 main: epoch: 0, iteration: 33, data_idx: 2304
+[INFO] 2020-03-12 08:07:41,613 main: epoch: 0, iteration: 34, data_idx: 2368
+[INFO] 2020-03-12 08:07:41,617 coordinator_p2p: Rank 0 detected 1 new nodes; will re-rendezvous.
+[INFO] 2020-03-12 08:07:41,617 train_loop: Rank 0 will re-rendezvous
+INFO 2020-03-12 08:07:41,660 Attempting to join next rendezvous
+INFO 2020-03-12 08:07:41,662 Observed existing rendezvous state: {'status': 'final', 'version': '136', 'participants': [0], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_136/rank_0'], 'num_workers_waiting': 1}
+INFO 2020-03-12 08:07:41,683 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "136", "participants": [0], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_136/rank_0"], "num_workers_waiting": 2}
+INFO 2020-03-12 08:07:49,230 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_136/rank_0 is not renewed.
+INFO 2020-03-12 08:07:49,231 Rendevous version 136 is incomplete. 
+INFO 2020-03-12 08:07:49,231 Attempting to destroy it.
+INFO 2020-03-12 08:07:49,242 Destroyed rendezvous version 136 successfully.
+INFO 2020-03-12 08:07:49,242 Previously existing rendezvous state changed. Will re-try joining.
+INFO 2020-03-12 08:07:49,242 Attempting to join next rendezvous
+INFO 2020-03-12 08:07:49,304 New rendezvous state created: {'status': 'joinable', 'version': '137', 'participants': []}
+INFO 2020-03-12 08:07:49,336 Joined rendezvous version 137 as rank 0. Full state: {'status': 'joinable', 'version': '137', 'participants': [0]}
+INFO 2020-03-12 08:07:49,336 Rank 0 is responsible for join last call.
+INFO 2020-03-12 08:07:55,345 Rank 0 finished join last call.
+INFO 2020-03-12 08:07:55,345 Waiting for remaining peers.
+INFO 2020-03-12 08:07:55,346 All peers arrived. Confirming membership.
+INFO 2020-03-12 08:07:55,445 Waiting for confirmations from all peers.
+INFO 2020-03-12 08:07:55,446 Rendezvous version 137 is complete. Final state: {'status': 'final', 'version': '137', 'participants': [0, 1], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_137/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_137/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:07:55,446 Using TCPStore for c10d::Store implementation
+INFO 2020-03-12 08:07:55,465 Setting up TCPStore server on imagenet-1:33221
+INFO 2020-03-12 08:07:55,476 TCPStore server initialized on imagenet-1:33221
+[INFO] 2020-03-12 08:07:55,476 coordinator_p2p: Got next rendezvous: rank 0, world size 2
+[INFO] 2020-03-12 08:07:55,487 coordinator_p2p: Initialized process group rank 0, world size 2
+[INFO] 2020-03-12 08:08:08,983 main: Rank 0: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=1312
+	iteration=35
+	epoch=0/2
+[INFO] 2020-03-12 08:08:11,669 train_loop: Rank 0 synced state with other nodes
+[INFO] 2020-03-12 08:08:23,324 main: epoch: 0, iteration: 35, data_idx: 2432
+[INFO] 2020-03-12 08:08:31,903 main: epoch: 0, iteration: 36, data_idx: 2528
+[1584000220.7412617][perf-test]: capture_snapshot.success=1
+[1584000220.7412822][perf-test]: capture_snapshot.duration.ms=0
+[1584000226.0085485][perf-test]: capture_snapshot.success=1
+[1584000226.0085647][perf-test]: capture_snapshot.duration.ms=0
+[1584000226.0090454][perf-test]: apply_snapshot.success=1
+[1584000226.009057][perf-test]: apply_snapshot.duration.ms=0
+[1584000226.0091498][perf-test]: _sync_state.success=1
+[1584000226.0091593][perf-test]: _sync_state.duration.ms=0
+[1584000226.14418][perf-test]: _init_model.success=1
+[1584000226.1442082][perf-test]: _init_model.duration.ms=135
+[1584000226.1445265][perf-test]: _init_data_loader.success=1
+[1584000226.144538][perf-test]: _init_data_loader.duration.ms=0
+[1584000226.1445434][perf-test]: sync.success=1
+[1584000226.1445487][perf-test]: sync.duration.ms=136
+[1584000226.1456745][perf-test]: capture_snapshot.success=1
+[1584000226.1456847][perf-test]: capture_snapshot.duration.ms=0
+[1584000230.1615608][perf-test]: capture_snapshot.success=1
+[1584000230.1615822][perf-test]: capture_snapshot.duration.ms=49
+[1584000233.875673][perf-test]: capture_snapshot.success=1
+[1584000233.8756928][perf-test]: capture_snapshot.duration.ms=47
+[1584000237.6748593][perf-test]: capture_snapshot.success=1
+[1584000237.6748784][perf-test]: capture_snapshot.duration.ms=43
+[1584000241.19382][perf-test]: capture_snapshot.success=1
+[1584000241.1938446][perf-test]: capture_snapshot.duration.ms=44
+[1584000245.4472523][perf-test]: capture_snapshot.success=1
+[1584000245.4472725][perf-test]: capture_snapshot.duration.ms=55
+[1584000249.244117][perf-test]: capture_snapshot.success=1
+[1584000249.2441368][perf-test]: capture_snapshot.duration.ms=40
+[1584000253.055918][perf-test]: capture_snapshot.success=1
+[1584000253.0559378][perf-test]: capture_snapshot.duration.ms=43
+[1584000256.8075662][perf-test]: capture_snapshot.success=1
+[1584000256.8075857][perf-test]: capture_snapshot.duration.ms=44
+[1584000260.924985][perf-test]: capture_snapshot.success=1
+[1584000260.9250045][perf-test]: capture_snapshot.duration.ms=42
+[1584000265.0781732][perf-test]: capture_snapshot.success=1
+[1584000265.0781937][perf-test]: capture_snapshot.duration.ms=42
+[1584000268.8871012][perf-test]: capture_snapshot.success=1
+[1584000268.8871384][perf-test]: capture_snapshot.duration.ms=40
+[1584000272.6090841][perf-test]: capture_snapshot.success=1
+[1584000272.6091037][perf-test]: capture_snapshot.duration.ms=41
+[1584000276.7680435][perf-test]: capture_snapshot.success=1
+[1584000276.7680638][perf-test]: capture_snapshot.duration.ms=42
+[1584000280.5084844][perf-test]: capture_snapshot.success=1
+[1584000280.508504][perf-test]: capture_snapshot.duration.ms=40
+[1584000284.5904427][perf-test]: capture_snapshot.success=1
+[1584000284.5904636][perf-test]: capture_snapshot.duration.ms=47
+[1584000288.0861404][perf-test]: capture_snapshot.success=1
+[1584000288.0861635][perf-test]: capture_snapshot.duration.ms=55
+[1584000291.6649876][perf-test]: capture_snapshot.success=1
+[1584000291.6650095][perf-test]: capture_snapshot.duration.ms=58
+[1584000295.8055027][perf-test]: capture_snapshot.success=1
+[1584000295.8055227][perf-test]: capture_snapshot.duration.ms=42
+[1584000299.963228][perf-test]: capture_snapshot.success=1
+[1584000299.96325][perf-test]: capture_snapshot.duration.ms=41
+[1584000303.947209][perf-test]: capture_snapshot.success=1
+[1584000303.9472291][perf-test]: capture_snapshot.duration.ms=41
+[1584000311.7020323][perf-test]: capture_snapshot.success=1
+[1584000311.7020526][perf-test]: capture_snapshot.duration.ms=43
+[1584000327.542522][perf-test]: capture_snapshot.success=1
+[1584000327.5425415][perf-test]: capture_snapshot.duration.ms=43
+[1584000341.4187992][perf-test]: apply_snapshot.success=1
+[1584000341.4188333][perf-test]: apply_snapshot.duration.ms=0
+[1584000341.4201307][perf-test]: _sync_state.success=1
+[1584000341.4201446][perf-test]: _sync_state.duration.ms=13922
+[1584000344.2963526][perf-test]: _init_model.success=1
+[1584000344.2963808][perf-test]: _init_model.duration.ms=2876
+[1584000344.2975075][perf-test]: _init_data_loader.success=1
+[1584000344.2975209][perf-test]: _init_data_loader.duration.ms=1
+[1584000344.297527][perf-test]: sync.success=1
+[1584000344.2975318][perf-test]: sync.duration.ms=16799
+[1584000344.3418715][perf-test]: capture_snapshot.success=1
+[1584000344.3418887][perf-test]: capture_snapshot.duration.ms=43
+[1584000353.2234209][perf-test]: capture_snapshot.success=1
+[1584000353.2234406][perf-test]: capture_snapshot.duration.ms=40
+[1584000362.8005555][perf-test]: capture_snapshot.success=1
+[1584000362.8005772][perf-test]: capture_snapshot.duration.ms=41
+[1584000371.4912646][perf-test]: capture_snapshot.success=1
+[1584000371.491287][perf-test]: capture_snapshot.duration.ms=41
+[1584000380.450963][perf-test]: capture_snapshot.success=1
+[1584000380.450985][perf-test]: capture_snapshot.duration.ms=43
+[1584000389.7480743][perf-test]: capture_snapshot.success=1
+[1584000389.7480936][perf-test]: capture_snapshot.duration.ms=41
+[1584000399.6107922][perf-test]: capture_snapshot.success=1
+[1584000399.6108124][perf-test]: capture_snapshot.duration.ms=45
+[1584000406.805839][perf-test]: apply_snapshot.success=1
+[1584000406.805857][perf-test]: apply_snapshot.duration.ms=0
+[1584000407.16439][perf-test]: capture_snapshot.success=1
+[1584000407.1644244][perf-test]: capture_snapshot.duration.ms=357
+[1584000414.0277157][perf-test]: capture_snapshot.success=1
+[1584000414.027738][perf-test]: capture_snapshot.duration.ms=50
+[1584000417.419152][perf-test]: apply_snapshot.success=1
+[1584000417.419185][perf-test]: apply_snapshot.duration.ms=1
+[1584000417.4204686][perf-test]: _sync_state.success=1
+[1584000417.4204829][perf-test]: _sync_state.duration.ms=3442
+[1584000417.5137107][perf-test]: _init_model.success=1
+[1584000417.5137296][perf-test]: _init_model.duration.ms=93
+[1584000417.5145898][perf-test]: _init_data_loader.success=1
+[1584000417.5146017][perf-test]: _init_data_loader.duration.ms=0
+[1584000417.514608][perf-test]: sync.success=1
+[1584000417.5146127][perf-test]: sync.duration.ms=3536
+[1584000417.5582287][perf-test]: capture_snapshot.success=1
+[1584000417.5582452][perf-test]: capture_snapshot.duration.ms=42
+[1584000422.4341376][perf-test]: capture_snapshot.success=1
+[1584000422.4341583][perf-test]: capture_snapshot.duration.ms=43
+[1584000426.9387753][perf-test]: capture_snapshot.success=1
+[1584000426.9387956][perf-test]: capture_snapshot.duration.ms=41
+[1584000432.0789673][perf-test]: capture_snapshot.success=1
+[1584000432.0789871][perf-test]: capture_snapshot.duration.ms=40
+[1584000437.9648235][perf-test]: capture_snapshot.success=1
+[1584000437.9648442][perf-test]: capture_snapshot.duration.ms=42
+[1584000444.1914234][perf-test]: capture_snapshot.success=1
+[1584000444.1914442][perf-test]: capture_snapshot.duration.ms=45
+[1584000450.4744806][perf-test]: capture_snapshot.success=1
+[1584000450.4745092][perf-test]: capture_snapshot.duration.ms=42
+[1584000456.2661407][perf-test]: capture_snapshot.success=1
+[1584000456.266161][perf-test]: capture_snapshot.duration.ms=42
+[1584000461.6601121][perf-test]: capture_snapshot.success=1
+[1584000461.660137][perf-test]: capture_snapshot.duration.ms=41
+[1584000475.5305214][perf-test]: capture_snapshot.success=1
+[1584000475.5305417][perf-test]: capture_snapshot.duration.ms=41
+[1584000488.9838903][perf-test]: apply_snapshot.success=1
+[1584000488.9839234][perf-test]: apply_snapshot.duration.ms=0
+[1584000488.985184][perf-test]: _sync_state.success=1
+[1584000488.985198][perf-test]: _sync_state.duration.ms=13497
+[1584000491.6628377][perf-test]: _init_model.success=1
+[1584000491.6628647][perf-test]: _init_model.duration.ms=2677
+[1584000491.6693704][perf-test]: _init_data_loader.success=1
+[1584000491.6693895][perf-test]: _init_data_loader.duration.ms=6
+[1584000491.6693966][perf-test]: sync.success=1
+[1584000491.669402][perf-test]: sync.duration.ms=16181
+[1584000491.712584][perf-test]: capture_snapshot.success=1
+[1584000491.7126055][perf-test]: capture_snapshot.duration.ms=41
+[1584000503.3776338][perf-test]: capture_snapshot.success=1
+[1584000503.3776553][perf-test]: capture_snapshot.duration.ms=46
+[INFO] 2020-03-12 08:08:40,503 main: epoch: 0, iteration: 37, data_idx: 2624
+[INFO] 2020-03-12 08:08:40,508 coordinator_p2p: Rank 0 detected 1 new nodes; will re-rendezvous.
+[INFO] 2020-03-12 08:08:40,508 train_loop: Rank 0 will re-rendezvous
+INFO 2020-03-12 08:08:40,550 Attempting to join next rendezvous
+INFO 2020-03-12 08:08:40,571 Observed existing rendezvous state: {'status': 'final', 'version': '137', 'participants': [0, 1], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_137/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_137/rank_0'], 'num_workers_waiting': 1}
+INFO 2020-03-12 08:08:40,665 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "137", "participants": [0, 1], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_137/rank_1", "/torchelastic/p2p/run_imagenet/rdzv/v_137/rank_0"], "num_workers_waiting": 3}
+INFO 2020-03-12 08:08:46,230 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_137/rank_1 is not renewed.
+INFO 2020-03-12 08:08:46,230 Rendevous version 137 is incomplete. 
+INFO 2020-03-12 08:08:46,230 Attempting to destroy it.
+INFO 2020-03-12 08:08:46,242 Destroyed rendezvous version 137 successfully.
+INFO 2020-03-12 08:08:46,242 Previously existing rendezvous state changed. Will re-try joining.
+INFO 2020-03-12 08:08:46,242 Attempting to join next rendezvous
+INFO 2020-03-12 08:08:46,355 New rendezvous state created: {'status': 'joinable', 'version': '138', 'participants': []}
+INFO 2020-03-12 08:08:46,431 Joined rendezvous version 138 as rank 0. Full state: {'status': 'joinable', 'version': '138', 'participants': [0]}
+INFO 2020-03-12 08:08:46,431 Rank 0 is responsible for join last call.
+INFO 2020-03-12 08:08:52,361 Rank 0 finished join last call.
+INFO 2020-03-12 08:08:52,361 Waiting for remaining peers.
+INFO 2020-03-12 08:08:52,362 All peers arrived. Confirming membership.
+INFO 2020-03-12 08:08:52,399 Waiting for confirmations from all peers.
+INFO 2020-03-12 08:08:52,478 Rendezvous version 138 is complete. Final state: {'status': 'final', 'version': '138', 'participants': [0, 1, 2], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_2', '/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_1'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:08:52,478 Using TCPStore for c10d::Store implementation
+INFO 2020-03-12 08:08:52,492 Setting up TCPStore server on imagenet-1:53521
+INFO 2020-03-12 08:08:52,503 TCPStore server initialized on imagenet-1:53521
+[INFO] 2020-03-12 08:08:52,503 coordinator_p2p: Got next rendezvous: rank 0, world size 3
+[INFO] 2020-03-12 08:08:52,524 coordinator_p2p: Initialized process group rank 0, world size 3
+[INFO] 2020-03-12 08:09:05,871 main: Rank 0: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=1504
+	iteration=38
+	epoch=0/2
+[INFO] 2020-03-12 08:09:08,766 train_loop: Rank 0 synced state with other nodes
+[INFO] 2020-03-12 08:09:21,736 main: epoch: 0, iteration: 38, data_idx: 2720
+[INFO] 2020-03-12 08:09:21,762 coordinator_p2p: Rank 0 detected 1 new nodes; will re-rendezvous.
+[INFO] 2020-03-12 08:09:21,762 train_loop: Rank 0 will re-rendezvous
+INFO 2020-03-12 08:09:21,807 Attempting to join next rendezvous
+INFO 2020-03-12 08:09:21,821 Observed existing rendezvous state: {'status': 'final', 'version': '138', 'participants': [0, 1, 2], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_2', '/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_1'], 'num_workers_waiting': 1}
+INFO 2020-03-12 08:09:21,852 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "138", "participants": [0, 1, 2], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_0", "/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_2", "/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_1"], "num_workers_waiting": 3}
+INFO 2020-03-12 08:09:27,730 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_138/rank_0 is not renewed.
+INFO 2020-03-12 08:09:27,730 Rendevous version 138 is incomplete. 
+INFO 2020-03-12 08:09:27,731 Attempting to destroy it.
+INFO 2020-03-12 08:09:27,774 Destroyed rendezvous version 138 successfully.
+INFO 2020-03-12 08:09:27,774 Previously existing rendezvous state changed. Will re-try joining.
+INFO 2020-03-12 08:09:27,774 Attempting to join next rendezvous
+INFO 2020-03-12 08:09:27,836 New rendezvous state created: {'status': 'joinable', 'version': '139', 'participants': []}
+INFO 2020-03-12 08:09:27,900 Joined rendezvous version 139 as rank 0. Full state: {'status': 'joinable', 'version': '139', 'participants': [0]}
+INFO 2020-03-12 08:09:27,900 Rank 0 is responsible for join last call.
+INFO 2020-03-12 08:09:28,885 Rank 0 finished join last call.
+INFO 2020-03-12 08:09:28,885 Waiting for remaining peers.
+INFO 2020-03-12 08:09:28,885 All peers arrived. Confirming membership.
+INFO 2020-03-12 08:09:28,992 Confirm membership CAS unsuccessful, retrying
+INFO 2020-03-12 08:09:29,056 Waiting for confirmations from all peers.
+INFO 2020-03-12 08:09:29,181 Rendezvous version 139 is complete. Final state: {'status': 'final', 'version': '139', 'participants': [0, 1, 2, 3], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_2', '/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_3'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:09:29,181 Using TCPStore for c10d::Store implementation
+INFO 2020-03-12 08:09:29,199 Setting up TCPStore server on imagenet-1:45049
+INFO 2020-03-12 08:09:29,210 TCPStore server initialized on imagenet-1:45049
+[INFO] 2020-03-12 08:09:29,210 coordinator_p2p: Got next rendezvous: rank 0, world size 4
+[INFO] 2020-03-12 08:09:29,242 coordinator_p2p: Initialized process group rank 0, world size 4
+[INFO] 2020-03-12 08:09:44,246 main: Rank 0: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=1600
+	iteration=39
+	epoch=0/2
+[INFO] 2020-03-12 08:09:48,880 train_loop: Rank 0 synced state with other nodes
+[INFO] 2020-03-12 08:10:02,900 main: epoch: 0, iteration: 39, data_idx: 2848
+[INFO] 2020-03-12 08:10:15,803 main: epoch: 0, iteration: 40, data_idx: 3008
+[INFO] 2020-03-12 08:10:28,264 main: epoch: 0, iteration: 41, data_idx: 3168
+[INFO] 2020-03-12 08:10:40,948 main: epoch: 0, iteration: 42, data_idx: 3328
+[INFO] 2020-03-12 08:10:52,848 main: epoch: 0, iteration: 43, data_idx: 3488
+[INFO] 2020-03-12 08:11:05,939 main: epoch: 0, iteration: 44, data_idx: 3648
+[INFO] 2020-03-12 08:11:18,839 main: epoch: 0, iteration: 45, data_idx: 3808
+[INFO] 2020-03-12 08:11:33,712 main: epoch: 0, iteration: 46, data_idx: 3968
+[INFO] 2020-03-12 08:11:45,824 main: epoch: 0, iteration: 47, data_idx: 4128
+[INFO] 2020-03-12 08:11:56,901 main: epoch: 0, iteration: 48, data_idx: 4288
+[INFO] 2020-03-12 08:12:11,158 main: epoch: 0, iteration: 49, data_idx: 4448
+[INFO] 2020-03-12 08:12:22,100 main: epoch: 0, iteration: 50, data_idx: 4608
+[INFO] 2020-03-12 08:12:34,084 main: epoch: 0, iteration: 51, data_idx: 4768
+[INFO] 2020-03-12 08:12:46,399 main: epoch: 0, iteration: 52, data_idx: 4928
+[INFO] 2020-03-12 08:13:02,132 main: epoch: 0, iteration: 53, data_idx: 5088
+[INFO] 2020-03-12 08:13:14,882 main: epoch: 0, iteration: 54, data_idx: 5248
+[INFO] 2020-03-12 08:13:29,894 main: epoch: 0, iteration: 55, data_idx: 5408
+[INFO] 2020-03-12 08:13:40,502 main: epoch: 0, iteration: 56, data_idx: 5568
+[INFO] 2020-03-12 08:13:50,792 main: epoch: 0, iteration: 57, data_idx: 5728
+[INFO] 2020-03-12 08:14:01,560 main: epoch: 0, iteration: 58, data_idx: 5888
+[INFO] 2020-03-12 08:14:14,351 main: epoch: 0, iteration: 59, data_idx: 6048
+[INFO] 2020-03-12 08:14:26,499 main: epoch: 0, iteration: 60, data_idx: 6208
+[INFO] 2020-03-12 08:14:40,583 main: epoch: 0, iteration: 61, data_idx: 6368
+[INFO] 2020-03-12 08:14:51,342 main: epoch: 0, iteration: 62, data_idx: 6528
+[INFO] 2020-03-12 08:15:01,721 main: epoch: 0, iteration: 63, data_idx: 6688
+[INFO] 2020-03-12 08:15:12,677 main: epoch: 0, iteration: 64, data_idx: 6848
+[INFO] 2020-03-12 08:15:23,766 main: epoch: 0, iteration: 65, data_idx: 7008
+[INFO] 2020-03-12 08:15:34,699 main: epoch: 0, iteration: 66, data_idx: 7168
+[ERROR] 2020-03-12 08:15:42,828 coordinator_p2p: Rank: 0
+Error: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:572] Connection closed by peer [10.244.19.22]:58793
+ErrorType: <class 'RuntimeError'>
+StackTrace: Traceback (most recent call last):
+  File "/opt/conda/lib/python3.6/site-packages/torchelastic/train_loop.py", line 96, in train
+    state, worker_stats = train_step(state)
+  File "/workspace/elastic/examples/imagenet/main.py", line 316, in train_step
+    loss.backward()
+  File "/opt/conda/lib/python3.6/site-packages/torch/tensor.py", line 195, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/opt/conda/lib/python3.6/site-packages/torch/autograd/__init__.py", line 99, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:572] Connection closed by peer [10.244.19.22]:58793
+
+INFO 2020-03-12 08:15:43,187 Attempting to join next rendezvous
+INFO 2020-03-12 08:15:43,189 Observed existing rendezvous state: {'status': 'final', 'version': '139', 'participants': [0, 1, 2, 3], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_2', '/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_3'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:15:43,225 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "139", "participants": [0, 1, 2, 3], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_1", "/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_2", "/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_0", "/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_3"], "num_workers_waiting": 1}
+INFO 2020-03-12 08:15:45,230 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_139/rank_1 is not renewed.
+INFO 2020-03-12 08:15:45,230 Rendevous version 139 is incomplete. 
+INFO 2020-03-12 08:15:45,230 Attempting to destroy it.
+INFO 2020-03-12 08:15:45,245 Destroyed rendezvous version 139 successfully.
+INFO 2020-03-12 08:15:45,245 Previously existing rendezvous state changed. Will re-try joining.
+INFO 2020-03-12 08:15:45,245 Attempting to join next rendezvous
+INFO 2020-03-12 08:15:45,307 New rendezvous state created: {'status': 'joinable', 'version': '140', 'participants': []}
+INFO 2020-03-12 08:15:45,353 Joined rendezvous version 140 as rank 0. Full state: {'status': 'joinable', 'version': '140', 'participants': [0]}
+INFO 2020-03-12 08:15:45,353 Rank 0 is responsible for join last call.
+INFO 2020-03-12 08:15:51,286 Rank 0 finished join last call.
+INFO 2020-03-12 08:15:51,286 Waiting for remaining peers.
+INFO 2020-03-12 08:15:51,287 All peers arrived. Confirming membership.
+INFO 2020-03-12 08:15:51,385 Confirm membership CAS unsuccessful, retrying
+INFO 2020-03-12 08:15:51,464 Waiting for confirmations from all peers.
+INFO 2020-03-12 08:15:51,465 Rendezvous version 140 is complete. Final state: {'status': 'final', 'version': '140', 'participants': [0, 1], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_140/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_140/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:15:51,465 Using TCPStore for c10d::Store implementation
+INFO 2020-03-12 08:15:51,479 Setting up TCPStore server on imagenet-1:45217
+INFO 2020-03-12 08:15:51,490 TCPStore server initialized on imagenet-1:45217
+[INFO] 2020-03-12 08:15:51,490 coordinator_p2p: Got next rendezvous: rank 0, world size 2
+[INFO] 2020-03-12 08:15:51,501 coordinator_p2p: Initialized process group rank 0, world size 2
+[INFO] 2020-03-12 08:16:05,209 main: Rank 0: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=5184
+	iteration=67
+	epoch=0/2
+[INFO] 2020-03-12 08:16:07,865 train_loop: Rank 0 synced state with other nodes
+[INFO] 2020-03-12 08:16:17,062 main: epoch: 0, iteration: 67, data_idx: 7328
+[INFO] 2020-03-12 08:16:17,083 coordinator_p2p: Rank 0 detected 1 new nodes; will re-rendezvous.
+[INFO] 2020-03-12 08:16:17,083 train_loop: Rank 0 will re-rendezvous
+INFO 2020-03-12 08:16:17,129 Attempting to join next rendezvous
+INFO 2020-03-12 08:16:17,130 Observed existing rendezvous state: {'status': 'final', 'version': '140', 'participants': [0, 1], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_140/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_140/rank_0'], 'num_workers_waiting': 1}
+INFO 2020-03-12 08:16:17,167 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "140", "participants": [0, 1], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_140/rank_1", "/torchelastic/p2p/run_imagenet/rdzv/v_140/rank_0"], "num_workers_waiting": 2}
+INFO 2020-03-12 08:16:22,730 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_140/rank_1 is not renewed.
+INFO 2020-03-12 08:16:22,731 Rendevous version 140 is incomplete. 
+INFO 2020-03-12 08:16:22,731 Attempting to destroy it.
+INFO 2020-03-12 08:16:22,745 Destroyed rendezvous version 140 successfully.
+INFO 2020-03-12 08:16:22,745 Previously existing rendezvous state changed. Will re-try joining.
+INFO 2020-03-12 08:16:22,745 Attempting to join next rendezvous
+INFO 2020-03-12 08:16:22,842 New rendezvous state created: {'status': 'joinable', 'version': '141', 'participants': []}
+INFO 2020-03-12 08:16:22,938 Joined rendezvous version 141 as rank 0. Full state: {'status': 'joinable', 'version': '141', 'participants': [0]}
+INFO 2020-03-12 08:16:22,938 Rank 0 is responsible for join last call.
+INFO 2020-03-12 08:16:23,853 Rank 0 finished join last call.
+INFO 2020-03-12 08:16:23,853 Waiting for remaining peers.
+INFO 2020-03-12 08:16:23,854 All peers arrived. Confirming membership.
+INFO 2020-03-12 08:16:23,995 Confirm membership CAS unsuccessful, retrying
+INFO 2020-03-12 08:16:24,089 Confirm membership CAS unsuccessful, retrying
+INFO 2020-03-12 08:16:24,139 Waiting for confirmations from all peers.
+INFO 2020-03-12 08:16:24,140 Rendezvous version 141 is complete. Final state: {'status': 'final', 'version': '141', 'participants': [0, 1, 2, 3], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_2', '/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_3', '/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:16:24,140 Using TCPStore for c10d::Store implementation
+INFO 2020-03-12 08:16:24,151 Setting up TCPStore server on imagenet-1:53201
+INFO 2020-03-12 08:16:24,162 TCPStore server initialized on imagenet-1:53201
+[INFO] 2020-03-12 08:16:24,162 coordinator_p2p: Got next rendezvous: rank 0, world size 4
+[INFO] 2020-03-12 08:16:24,194 coordinator_p2p: Initialized process group rank 0, world size 4
+[INFO] 2020-03-12 08:16:37,731 main: Rank 0: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=5248
+	iteration=68
+	epoch=0/2
+[INFO] 2020-03-12 08:16:42,821 train_loop: Rank 0 synced state with other nodes
+[INFO] 2020-03-12 08:16:54,589 main: epoch: 0, iteration: 68, data_idx: 7424
+[INFO] 2020-03-12 08:17:04,951 main: epoch: 0, iteration: 69, data_idx: 7584
+[INFO] 2020-03-12 08:17:17,200 main: epoch: 0, iteration: 70, data_idx: 7744
+[INFO] 2020-03-12 08:17:33,392 main: epoch: 0, iteration: 71, data_idx: 7904
+[INFO] 2020-03-12 08:17:46,544 main: epoch: 0, iteration: 72, data_idx: 8064
+[INFO] 2020-03-12 08:17:58,399 main: epoch: 0, iteration: 73, data_idx: 8224
+[1584000511.9715784][perf-test]: capture_snapshot.success=1
+[1584000511.9716454][perf-test]: capture_snapshot.duration.ms=46
+[1584000520.5498405][perf-test]: capture_snapshot.success=1
+[1584000520.54986][perf-test]: capture_snapshot.duration.ms=40
+[1584000532.579328][perf-test]: capture_snapshot.success=1
+[1584000532.5793552][perf-test]: capture_snapshot.duration.ms=41
+[1584000545.8718832][perf-test]: apply_snapshot.success=1
+[1584000545.8719175][perf-test]: apply_snapshot.duration.ms=0
+[1584000545.8730245][perf-test]: _sync_state.success=1
+[1584000545.8730373][perf-test]: _sync_state.duration.ms=13348
+[1584000548.7660108][perf-test]: _init_model.success=1
+[1584000548.7660394][perf-test]: _init_model.duration.ms=2892
+[1584000548.7668843][perf-test]: _init_data_loader.success=1
+[1584000548.7668972][perf-test]: _init_data_loader.duration.ms=0
+[1584000548.7669039][perf-test]: sync.success=1
+[1584000548.766909][perf-test]: sync.duration.ms=16242
+[1584000548.809301][perf-test]: capture_snapshot.success=1
+[1584000548.8093154][perf-test]: capture_snapshot.duration.ms=41
+[1584000561.8063667][perf-test]: capture_snapshot.success=1
+[1584000561.8063874][perf-test]: capture_snapshot.duration.ms=42
+[1584000569.3027878][perf-test]: capture_snapshot.success=1
+[1584000569.3028104][perf-test]: capture_snapshot.duration.ms=56
+[1584000584.2459958][perf-test]: apply_snapshot.success=1
+[1584000584.2460308][perf-test]: apply_snapshot.duration.ms=0
+[1584000584.24726][perf-test]: _sync_state.success=1
+[1584000584.2472732][perf-test]: _sync_state.duration.ms=15004
+[1584000588.8792078][perf-test]: _init_model.success=1
+[1584000588.8792346][perf-test]: _init_model.duration.ms=4631
+[1584000588.8800294][perf-test]: _init_data_loader.success=1
+[1584000588.8800411][perf-test]: _init_data_loader.duration.ms=0
+[1584000588.8800483][perf-test]: sync.success=1
+[1584000588.8800533][perf-test]: sync.duration.ms=19637
+[1584000588.9359121][perf-test]: capture_snapshot.success=1
+[1584000588.9359396][perf-test]: capture_snapshot.duration.ms=54
+[1584000602.9704509][perf-test]: capture_snapshot.success=1
+[1584000602.9704778][perf-test]: capture_snapshot.duration.ms=42
+[1584000615.874459][perf-test]: capture_snapshot.success=1
+[1584000615.8744788][perf-test]: capture_snapshot.duration.ms=42
+[1584000628.3343356][perf-test]: capture_snapshot.success=1
+[1584000628.334356][perf-test]: capture_snapshot.duration.ms=42
+[1584000641.0252128][perf-test]: capture_snapshot.success=1
+[1584000641.0252342][perf-test]: capture_snapshot.duration.ms=43
+[1584000652.9180827][perf-test]: capture_snapshot.success=1
+[1584000652.918103][perf-test]: capture_snapshot.duration.ms=41
+[1584000666.0099776][perf-test]: capture_snapshot.success=1
+[1584000666.0100057][perf-test]: capture_snapshot.duration.ms=42
+[1584000678.9274096][perf-test]: capture_snapshot.success=1
+[1584000678.9274328][perf-test]: capture_snapshot.duration.ms=54
+[1584000693.7848694][perf-test]: capture_snapshot.success=1
+[1584000693.784892][perf-test]: capture_snapshot.duration.ms=44
+[1584000705.935539][perf-test]: capture_snapshot.success=1
+[1584000705.9355645][perf-test]: capture_snapshot.duration.ms=73
+[1584000716.9843876][perf-test]: capture_snapshot.success=1
+[1584000716.9844089][perf-test]: capture_snapshot.duration.ms=42
+[1584000731.2493677][perf-test]: capture_snapshot.success=1
+[1584000731.2493882][perf-test]: capture_snapshot.duration.ms=42
+[1584000742.1839104][perf-test]: capture_snapshot.success=1
+[1584000742.1839309][perf-test]: capture_snapshot.duration.ms=42
+[1584000754.1706667][perf-test]: capture_snapshot.success=1
+[1584000754.1706936][perf-test]: capture_snapshot.duration.ms=44
+[1584000766.4929895][perf-test]: capture_snapshot.success=1
+[1584000766.493011][perf-test]: capture_snapshot.duration.ms=42
+[1584000782.2165184][perf-test]: capture_snapshot.success=1
+[1584000782.2165384][perf-test]: capture_snapshot.duration.ms=42
+[1584000794.965434][perf-test]: capture_snapshot.success=1
+[1584000794.965458][perf-test]: capture_snapshot.duration.ms=43
+[1584000809.9743283][perf-test]: capture_snapshot.success=1
+[1584000809.9743497][perf-test]: capture_snapshot.duration.ms=44
+[1584000820.5857964][perf-test]: capture_snapshot.success=1
+[1584000820.5858269][perf-test]: capture_snapshot.duration.ms=43
+[1584000830.8756316][perf-test]: capture_snapshot.success=1
+[1584000830.8756514][perf-test]: capture_snapshot.duration.ms=42
+[1584000841.6447592][perf-test]: capture_snapshot.success=1
+[1584000841.6447797][perf-test]: capture_snapshot.duration.ms=42
+[1584000854.4356158][perf-test]: capture_snapshot.success=1
+[1584000854.4356391][perf-test]: capture_snapshot.duration.ms=43
+[1584000866.5651786][perf-test]: capture_snapshot.success=1
+[1584000866.5651999][perf-test]: capture_snapshot.duration.ms=45
+[1584000880.6653173][perf-test]: capture_snapshot.success=1
+[1584000880.6653378][perf-test]: capture_snapshot.duration.ms=42
+[1584000891.4203486][perf-test]: capture_snapshot.success=1
+[1584000891.420369][perf-test]: capture_snapshot.duration.ms=41
+[1584000901.8124774][perf-test]: capture_snapshot.success=1
+[1584000901.812498][perf-test]: capture_snapshot.duration.ms=42
+[1584000912.7625396][perf-test]: capture_snapshot.success=1
+[1584000912.7625608][perf-test]: capture_snapshot.duration.ms=44
+[1584000923.8453279][perf-test]: capture_snapshot.success=1
+[1584000923.8453481][perf-test]: capture_snapshot.duration.ms=43
+[1584000934.7821186][perf-test]: capture_snapshot.success=1
+[1584000934.7821429][perf-test]: capture_snapshot.duration.ms=42
+[1584000942.8293242][perf-test]: apply_snapshot.success=1
+[1584000942.8293433][perf-test]: apply_snapshot.duration.ms=0
+[1584000943.187138][perf-test]: capture_snapshot.success=1
+[1584000943.1871686][perf-test]: capture_snapshot.duration.ms=356
+[1584000951.5478952][perf-test]: capture_snapshot.success=1
+[1584000951.5479167][perf-test]: capture_snapshot.duration.ms=45
+[1584000965.209569][perf-test]: apply_snapshot.success=1
+[1584000965.209603][perf-test]: apply_snapshot.duration.ms=1
+[1584000965.210854][perf-test]: _sync_state.success=1
+[1584000965.2108676][perf-test]: _sync_state.duration.ms=13708
+[1584000967.8646986][perf-test]: _init_model.success=1
+[1584000967.8647256][perf-test]: _init_model.duration.ms=2653
+[1584000967.8654096][perf-test]: _init_data_loader.success=1
+[1584000967.8654213][perf-test]: _init_data_loader.duration.ms=0
+[1584000967.8654275][perf-test]: sync.success=1
+[1584000967.865432][perf-test]: sync.duration.ms=16363
+[1584000967.9085042][perf-test]: capture_snapshot.success=1
+[1584000967.9085212][perf-test]: capture_snapshot.duration.ms=41
+[1584000977.1281326][perf-test]: capture_snapshot.success=1
+[1584000977.128156][perf-test]: capture_snapshot.duration.ms=43
+[1584000984.2618055][perf-test]: capture_snapshot.success=1
+[1584000984.261829][perf-test]: capture_snapshot.duration.ms=43
+[1584000997.731393][perf-test]: apply_snapshot.success=1
+[1584000997.7314265][perf-test]: apply_snapshot.duration.ms=0
+[1584000997.7325757][perf-test]: _sync_state.success=1
+[1584000997.7325895][perf-test]: _sync_state.duration.ms=13537
+[1584001002.8202734][perf-test]: _init_model.success=1
+[1584001002.8203][perf-test]: _init_model.duration.ms=5087
+[1584001002.8211367][perf-test]: _init_data_loader.success=1
+[1584001002.8211489][perf-test]: _init_data_loader.duration.ms=0
+[1584001002.8211546][perf-test]: sync.success=1
+[1584001002.8211594][perf-test]: sync.duration.ms=18626
+[1584001002.8653865][perf-test]: capture_snapshot.success=1
+[1584001002.8654013][perf-test]: capture_snapshot.duration.ms=43
+[1584001014.6745305][perf-test]: capture_snapshot.success=1
+[1584001014.6745517][perf-test]: capture_snapshot.duration.ms=43
+[1584001025.0339265][perf-test]: capture_snapshot.success=1
+[1584001025.0339472][perf-test]: capture_snapshot.duration.ms=43
+[1584001037.2804787][perf-test]: capture_snapshot.success=1
+[1584001037.280499][perf-test]: capture_snapshot.duration.ms=43
+[1584001053.4758441][perf-test]: capture_snapshot.success=1
+[1584001053.4758668][perf-test]: capture_snapshot.duration.ms=43
+[1584001066.627137][perf-test]: capture_snapshot.success=1
+[1584001066.627157][perf-test]: capture_snapshot.duration.ms=43
+[1584001078.4838846][perf-test]: capture_snapshot.success=1
+[INFO] 2020-03-12 08:18:10,923 main: epoch: 0, iteration: 74, data_idx: 8384
+[INFO] 2020-03-12 08:18:22,897 main: epoch: 0, iteration: 75, data_idx: 8544
+[INFO] 2020-03-12 08:18:38,360 main: epoch: 0, iteration: 76, data_idx: 8704
+[INFO] 2020-03-12 08:18:52,886 main: epoch: 0, iteration: 77, data_idx: 8864
+[INFO] 2020-03-12 08:19:04,319 main: epoch: 0, iteration: 78, data_idx: 9024

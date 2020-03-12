@@ -49,6 +49,8 @@ kind: Service
 metadata:
   name: TBD
   namespace: TBD
+  labels:
+    job-name: TBD
 spec:
   selector:
     job-name: TBD

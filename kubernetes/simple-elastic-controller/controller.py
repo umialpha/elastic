@@ -7,7 +7,7 @@ from kubernetes import client, config
 import yaml
 
 # ELASTIC_CHANGE_INTERVAL is the interval Controller will increase / decrease workers.  
-ELASTIC_CHANGE_INTERVAL = (60, 60 * 2) 
+ELASTIC_CHANGE_INTERVAL = (30, 30 * 2) 
 
 INCREASE = 0
 STAY = 1
@@ -55,32 +55,38 @@ class SimpleElasticController:
         
     
     def next_move_time(self):
-        return time.time() + random.randint(ELASTIC_CHANGE_INTERVAL[0], ELASTIC_CHANGE_INTERVAL[1]) * 1000
+        return time.time() + random.randint(ELASTIC_CHANGE_INTERVAL[0], ELASTIC_CHANGE_INTERVAL[1]) 
 
     def should_stop(self):
         api = client.CoreV1Api()
         pod = api.read_namespaced_pod_status(self._get_name(self._idxes[0]), self.namespace)
         
-        return pod.status.phase != "Succeeded"
+        return pod.status.phase == "Succeeded"
 
     def next_move(self):
         return random.choice([INCREASE, STAY, DECREASE])
 
     def run(self):
         self.create_workers()
+        print("Begin with worker nums: ", self.worker_size)
         next_time =  self.next_move_time()
         while True:
             if self.should_stop():
+                print("Successed, exit")
                 break
             if time.time() > next_time:
                 move = self.next_move()
                 next_time = self.next_move_time()
+                print("Move time")
                 if move == DECREASE and self.worker_size > self.min_worker:
+                    print("DECREASE")
                     self.delete_worker()
                 elif move == INCREASE and self.worker_size < self.max_worker:
+                    print("INCREASE")
                     self.add_worker()
             
-    
+                else:
+                    print("STAY")
 
     def create_workers(self):
         self.worker_size = random.randint(self.min_worker, self.max_worker)
@@ -89,14 +95,21 @@ class SimpleElasticController:
             
 
     def delete_worker(self):
-        idx = random.randint(0, self.worker_size - 1)
-        self._idxes[idx], self._idxes[self.worker_size - 1] = self._idxes[self.worker_size - 1], self._idxes[idx]
-        self._delete_k8s_worker(self._idxes[self.worker_size - 1])
-        self.worker_size -= 1
+        try:
+
+            idx = random.randint(0, self.worker_size - 1)
+            self._idxes[idx], self._idxes[self.worker_size - 1] = self._idxes[self.worker_size - 1], self._idxes[idx]
+            self._delete_k8s_worker(self._idxes[self.worker_size - 1])
+            self.worker_size -= 1
+        except Exception as e:
+            print("delete worker failed", e)
 
     def add_worker(self):
-        self._create_k8s_worker(self._idxes[self.worker_size])
-        self.worker_size += 1
+        try:
+            self._create_k8s_worker(self._idxes[self.worker_size])
+            self.worker_size += 1
+        except Exception as e:
+            print("add worker failed", e)
         
         
 
@@ -127,6 +140,7 @@ class SimpleElasticController:
         
         svc['metadata']['name'] = self._get_name(i)
         svc['metadata']['namespace'] = self.namespace
+        svc['metadata']['labels']['job-name'] = self.job_name
         svc['spec']['selector']['job-name'] = self.job_name
         svc['spec']['selector']['worker'] = str(i)
 

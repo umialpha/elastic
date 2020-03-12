@@ -1,0 +1,157 @@
+[INFO] 2020-03-12 08:08:03,522 main: rdzv init method=etcd://etcd:2379/imagenet?min_workers=1&max_workers=4&last_call_timeout=5
+[INFO] 2020-03-12 08:08:03,522 main: Loading data from: /data/tiny-imagenet-200/train
+[INFO] 2020-03-12 08:08:31,572 main: Loading model: resnet101
+[INFO] 2020-03-12 08:08:34,694 main: Rank [0] running on GPU [0]
+INFO 2020-03-12 08:08:34,701 Etcd machines: ['http://0.0.0.0:2379']
+[INFO] 2020-03-12 08:08:34,758 main: Entering torchelastic train_loop
+INFO 2020-03-12 08:08:34,758 Attempting to join next rendezvous
+INFO 2020-03-12 08:08:34,774 Observed existing rendezvous state: {'status': 'final', 'version': '137', 'participants': [0, 1], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_137/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_137/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:08:34,831 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "137", "participants": [0, 1], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_137/rank_1", "/torchelastic/p2p/run_imagenet/rdzv/v_137/rank_0"], "num_workers_waiting": 1}
+INFO 2020-03-12 08:08:46,231 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_137/rank_1 is not renewed.
+INFO 2020-03-12 08:08:46,231 Rendevous version 137 is incomplete. 
+INFO 2020-03-12 08:08:46,231 Attempting to destroy it.
+INFO 2020-03-12 08:08:46,242 Rendezvous attempt failed, will retry. Reason: Key not found : /torchelastic/p2p/run_imagenet/rdzv/active_version
+INFO 2020-03-12 08:08:47,243 Attempting to join next rendezvous
+INFO 2020-03-12 08:08:47,259 Observed existing rendezvous state: {'status': 'joinable', 'version': '138', 'participants': [0]}
+INFO 2020-03-12 08:08:47,305 Joined rendezvous version 138 as rank 1. Full state: {'status': 'joinable', 'version': '138', 'participants': [0, 1]}
+INFO 2020-03-12 08:08:47,305 Waiting for remaining peers.
+INFO 2020-03-12 08:08:52,363 All peers arrived. Confirming membership.
+INFO 2020-03-12 08:08:52,477 Waiting for confirmations from all peers.
+INFO 2020-03-12 08:08:52,478 Rendezvous version 138 is complete. Final state: {'status': 'final', 'version': '138', 'participants': [0, 1, 2], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_2', '/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_1'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:08:52,479 Using TCPStore for c10d::Store implementation
+INFO 2020-03-12 08:08:52,493 Rank 1 will conenct to TCPStore server at imagenet-1:53521
+[INFO] 2020-03-12 08:08:52,496 coordinator_p2p: Got next rendezvous: rank 1, world size 3
+[INFO] 2020-03-12 08:08:52,536 coordinator_p2p: Initialized process group rank 1, world size 3
+[INFO] 2020-03-12 08:09:05,942 main: Rank 1: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=1504
+	iteration=38
+	epoch=0/2
+[INFO] 2020-03-12 08:09:08,820 train_loop: Rank 1 synced state with other nodes
+[INFO] 2020-03-12 08:09:21,743 main: epoch: 0, iteration: 38, data_idx: 2720
+[INFO] 2020-03-12 08:09:21,763 coordinator_p2p: Rank 1 detected 1 new nodes; will re-rendezvous.
+[INFO] 2020-03-12 08:09:21,763 train_loop: Rank 1 will re-rendezvous
+INFO 2020-03-12 08:09:21,807 Attempting to join next rendezvous
+INFO 2020-03-12 08:09:21,821 Observed existing rendezvous state: {'status': 'final', 'version': '138', 'participants': [0, 1, 2], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_2', '/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_1'], 'num_workers_waiting': 1}
+INFO 2020-03-12 08:09:21,918 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "138", "participants": [0, 1, 2], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_0", "/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_2", "/torchelastic/p2p/run_imagenet/rdzv/v_138/rank_1"], "num_workers_waiting": 4}
+INFO 2020-03-12 08:09:27,731 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_138/rank_0 is not renewed.
+INFO 2020-03-12 08:09:27,731 Rendevous version 138 is incomplete. 
+INFO 2020-03-12 08:09:27,731 Attempting to destroy it.
+INFO 2020-03-12 08:09:27,774 Rendezvous attempt failed, will retry. Reason: Key not found : /torchelastic/p2p/run_imagenet/rdzv/active_version
+INFO 2020-03-12 08:09:28,775 Attempting to join next rendezvous
+INFO 2020-03-12 08:09:28,790 Observed existing rendezvous state: {'status': 'joinable', 'version': '139', 'participants': [0]}
+INFO 2020-03-12 08:09:28,883 Joined rendezvous version 139 as rank 3. Full state: {'status': 'frozen', 'version': '139', 'participants': [0, 1, 2, 3], 'keep_alives': []}
+INFO 2020-03-12 08:09:28,883 Waiting for remaining peers.
+INFO 2020-03-12 08:09:28,884 All peers arrived. Confirming membership.
+INFO 2020-03-12 08:09:28,914 Confirm membership CAS unsuccessful, retrying
+INFO 2020-03-12 08:09:28,992 Confirm membership CAS unsuccessful, retrying
+INFO 2020-03-12 08:09:29,070 Confirm membership CAS unsuccessful, retrying
+INFO 2020-03-12 08:09:29,180 Waiting for confirmations from all peers.
+INFO 2020-03-12 08:09:29,182 Rendezvous version 139 is complete. Final state: {'status': 'final', 'version': '139', 'participants': [0, 1, 2, 3], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_2', '/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_139/rank_3'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:09:29,182 Using TCPStore for c10d::Store implementation
+INFO 2020-03-12 08:09:29,200 Rank 3 will conenct to TCPStore server at imagenet-1:45049
+[INFO] 2020-03-12 08:09:29,203 coordinator_p2p: Got next rendezvous: rank 3, world size 4
+[INFO] 2020-03-12 08:09:29,244 coordinator_p2p: Initialized process group rank 3, world size 4
+[INFO] 2020-03-12 08:09:45,020 main: Rank 3: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=1600
+	iteration=39
+	epoch=0/2
+[INFO] 2020-03-12 08:09:50,454 train_loop: Rank 3 synced state with other nodes
+[INFO] 2020-03-12 08:10:02,906 main: epoch: 0, iteration: 39, data_idx: 2848
+[INFO] 2020-03-12 08:10:15,825 main: epoch: 0, iteration: 40, data_idx: 3008
+[INFO] 2020-03-12 08:10:28,285 main: epoch: 0, iteration: 41, data_idx: 3168
+[INFO] 2020-03-12 08:10:40,976 main: epoch: 0, iteration: 42, data_idx: 3328
+[INFO] 2020-03-12 08:10:52,865 main: epoch: 0, iteration: 43, data_idx: 3488
+[INFO] 2020-03-12 08:11:05,961 main: epoch: 0, iteration: 44, data_idx: 3648
+[INFO] 2020-03-12 08:11:18,865 main: epoch: 0, iteration: 45, data_idx: 3808
+[INFO] 2020-03-12 08:11:33,735 main: epoch: 0, iteration: 46, data_idx: 3968
+[INFO] 2020-03-12 08:11:45,856 main: epoch: 0, iteration: 47, data_idx: 4128
+[INFO] 2020-03-12 08:11:56,935 main: epoch: 0, iteration: 48, data_idx: 4288
+[INFO] 2020-03-12 08:12:11,192 main: epoch: 0, iteration: 49, data_idx: 4448
+[INFO] 2020-03-12 08:12:22,134 main: epoch: 0, iteration: 50, data_idx: 4608
+[INFO] 2020-03-12 08:12:34,119 main: epoch: 0, iteration: 51, data_idx: 4768
+[INFO] 2020-03-12 08:12:46,432 main: epoch: 0, iteration: 52, data_idx: 4928
+[INFO] 2020-03-12 08:13:02,165 main: epoch: 0, iteration: 53, data_idx: 5088
+[INFO] 2020-03-12 08:13:14,916 main: epoch: 0, iteration: 54, data_idx: 5248
+[INFO] 2020-03-12 08:13:29,923 main: epoch: 0, iteration: 55, data_idx: 5408
+[INFO] 2020-03-12 08:13:40,535 main: epoch: 0, iteration: 56, data_idx: 5568
+[INFO] 2020-03-12 08:13:50,827 main: epoch: 0, iteration: 57, data_idx: 5728
+[INFO] 2020-03-12 08:14:01,595 main: epoch: 0, iteration: 58, data_idx: 5888
+[INFO] 2020-03-12 08:14:14,385 main: epoch: 0, iteration: 59, data_idx: 6048
+[INFO] 2020-03-12 08:14:26,513 main: epoch: 0, iteration: 60, data_idx: 6208
+[INFO] 2020-03-12 08:14:40,615 main: epoch: 0, iteration: 61, data_idx: 6368
+[INFO] 2020-03-12 08:14:51,372 main: epoch: 0, iteration: 62, data_idx: 6528
+[INFO] 2020-03-12 08:15:01,763 main: epoch: 0, iteration: 63, data_idx: 6688
+[INFO] 2020-03-12 08:15:12,711 main: epoch: 0, iteration: 64, data_idx: 6848
+[INFO] 2020-03-12 08:15:23,795 main: epoch: 0, iteration: 65, data_idx: 7008
+[INFO] 2020-03-12 08:15:34,733 main: epoch: 0, iteration: 66, data_idx: 7168
+[ERROR] 2020-03-12 08:16:07,821 coordinator_p2p: Rank: 3
+Error: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:572] Connection closed by peer [10.244.20.22]:30408
+ErrorType: <class 'RuntimeError'>
+StackTrace: Traceback (most recent call last):
+  File "/opt/conda/lib/python3.6/site-packages/torchelastic/train_loop.py", line 96, in train
+    state, worker_stats = train_step(state)
+  File "/workspace/elastic/examples/imagenet/main.py", line 316, in train_step
+    loss.backward()
+  File "/opt/conda/lib/python3.6/site-packages/torch/tensor.py", line 195, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/opt/conda/lib/python3.6/site-packages/torch/autograd/__init__.py", line 99, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:572] Connection closed by peer [10.244.20.22]:30408
+
+INFO 2020-03-12 08:16:07,867 Attempting to join next rendezvous
+INFO 2020-03-12 08:16:07,869 Observed existing rendezvous state: {'status': 'final', 'version': '140', 'participants': [0, 1], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_140/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_140/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:16:07,922 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "140", "participants": [0, 1], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_140/rank_1", "/torchelastic/p2p/run_imagenet/rdzv/v_140/rank_0"], "num_workers_waiting": 1}
+INFO 2020-03-12 08:16:22,731 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_140/rank_1 is not renewed.
+INFO 2020-03-12 08:16:22,732 Rendevous version 140 is incomplete. 
+INFO 2020-03-12 08:16:22,732 Attempting to destroy it.
+INFO 2020-03-12 08:16:22,745 Rendezvous attempt failed, will retry. Reason: Key not found : /torchelastic/p2p/run_imagenet/rdzv/active_version
+INFO 2020-03-12 08:16:23,747 Attempting to join next rendezvous
+INFO 2020-03-12 08:16:23,749 Observed existing rendezvous state: {'status': 'joinable', 'version': '141', 'participants': [0]}
+INFO 2020-03-12 08:16:23,761 Joined rendezvous version 141 as rank 1. Full state: {'status': 'joinable', 'version': '141', 'participants': [0, 1]}
+INFO 2020-03-12 08:16:23,761 Waiting for remaining peers.
+INFO 2020-03-12 08:16:23,854 All peers arrived. Confirming membership.
+INFO 2020-03-12 08:16:23,983 Waiting for confirmations from all peers.
+INFO 2020-03-12 08:16:24,140 Rendezvous version 141 is complete. Final state: {'status': 'final', 'version': '141', 'participants': [0, 1, 2, 3], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_2', '/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_3', '/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:16:24,140 Using TCPStore for c10d::Store implementation
+INFO 2020-03-12 08:16:24,152 Rank 1 will conenct to TCPStore server at imagenet-1:53201
+[INFO] 2020-03-12 08:16:24,155 coordinator_p2p: Got next rendezvous: rank 1, world size 4
+[INFO] 2020-03-12 08:16:24,206 coordinator_p2p: Initialized process group rank 1, world size 4
+[INFO] 2020-03-12 08:16:40,014 main: Rank 1: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=5248
+	iteration=68
+	epoch=0/2
+[INFO] 2020-03-12 08:16:45,142 train_loop: Rank 1 synced state with other nodes
+[INFO] 2020-03-12 08:16:54,593 main: epoch: 0, iteration: 68, data_idx: 7424
+[INFO] 2020-03-12 08:17:04,947 main: epoch: 0, iteration: 69, data_idx: 7584
+[INFO] 2020-03-12 08:17:17,201 main: epoch: 0, iteration: 70, data_idx: 7744
+[INFO] 2020-03-12 08:17:33,411 main: epoch: 0, iteration: 71, data_idx: 7904
+[INFO] 2020-03-12 08:17:46,538 main: epoch: 0, iteration: 72, data_idx: 8064
+[INFO] 2020-03-12 08:17:58,395 main: epoch: 0, iteration: 73, data_idx: 8224
+[INFO] 2020-03-12 08:18:10,924 main: epoch: 0, iteration: 74, data_idx: 8384
+[INFO] 2020-03-12 08:18:22,900 main: epoch: 0, iteration: 75, data_idx: 8544
+[INFO] 2020-03-12 08:18:38,361 main: epoch: 0, iteration: 76, data_idx: 8704
+[INFO] 2020-03-12 08:18:52,880 main: epoch: 0, iteration: 77, data_idx: 8864
+[INFO] 2020-03-12 08:19:04,317 main: epoch: 0, iteration: 78, data_idx: 9024
+[ERROR] 2020-03-12 08:19:09,627 coordinator_p2p: Rank: 1
+Error: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:572] Connection closed by peer [10.244.20.22]:10950
+ErrorType: <class 'RuntimeError'>
+StackTrace: Traceback (most recent call last):
+  File "/opt/conda/lib/python3.6/site-packages/torchelastic/train_loop.py", line 96, in train
+    state, worker_stats = train_step(state)
+  File "/workspace/elastic/examples/imagenet/main.py", line 316, in train_step
+    loss.backward()
+  File "/opt/conda/lib/python3.6/site-packages/torch/tensor.py", line 195, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/opt/conda/lib/python3.6/site-packages/torch/autograd/__init__.py", line 99, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:572] Connection closed by peer [10.244.20.22]:10950
+
+INFO 2020-03-12 08:19:09,971 Attempting to join next rendezvous
+INFO 2020-03-12 08:19:09,973 Observed existing rendezvous state: {'status': 'final', 'version': '141', 'participants': [0, 1, 2, 3], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_2', '/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_3', '/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-03-12 08:19:10,051 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "141", "participants": [0, 1, 2, 3], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_2", "/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_1", "/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_3", "/torchelastic/p2p/run_imagenet/rdzv/v_141/rank_0"], "num_workers_waiting": 1}
