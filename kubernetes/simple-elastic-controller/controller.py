@@ -27,12 +27,14 @@ parser.add_argument(
 parser.add_argument(
     "-min_worker",
     required=True,
+    type=int,
     help="define the number of minimum workers, >= 1",
 )
 
 parser.add_argument(
     "-max_worker",
     required=True,
+    type=int,
     help="define the number of maximum workers",
 )
 
@@ -100,7 +102,7 @@ class SimpleElasticController:
 
     def _load_worker_tpl(self):
         base_dir = os.path.dirname(__file__)
-        with open(base_dir +"/imagenet-worker.yaml") as f:
+        with open(base_dir +"/imagenet-worker.tpl") as f:
             return list(yaml.safe_load_all(f))
 
     def _get_name(self, i):
@@ -115,13 +117,13 @@ class SimpleElasticController:
         pod['metadata']['labels']['job-name'] = self.job_name 
         pod['metadata']['labels']['worker'] = str(i)
         
-        for data in pod['metadata']['spec']['containers'][0]['env']:
+        for data in pod['spec']['containers'][0]['env']:
             if data['name'] == "JOB_ID":
                 data['value'] = self.job_name
             elif data['name'] == "MIN_SIZE":
-                data['value'] = self.min_worker
+                data['value'] = str(self.min_worker)
             elif data['name'] == "MAX_SIZE":
-                data['value'] = self.max_worker
+                data['value'] = str(self.max_worker)
         
         svc['metadata']['name'] = self._get_name(i)
         svc['metadata']['namespace'] = self.namespace
