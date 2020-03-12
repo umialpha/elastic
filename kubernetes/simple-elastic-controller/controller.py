@@ -1,5 +1,7 @@
 import random
 import time
+import argparse
+import os
 
 from kubernetes import client, config
 import yaml
@@ -11,13 +13,28 @@ INCREASE = 0
 STAY = 1
 DECREASE = 2
 
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "-job_name",
+    required=True,
+    help="define the job name",
+)
+parser.add_argument(
+    "-namespace",
+    required=True,
+    help="define the namespace, should be the same of etcd pod",
+)
+parser.add_argument(
+    "-min_worker",
+    required=True,
+    help="define the number of minimum workers, >= 1",
+)
 
-
-
-
-
-
-
+parser.add_argument(
+    "-max_worker",
+    required=True,
+    help="define the number of maximum workers",
+)
 
 
 class SimpleElasticController:
@@ -39,7 +56,10 @@ class SimpleElasticController:
         return time.time() + random.randint(ELASTIC_CHANGE_INTERVAL[0], ELASTIC_CHANGE_INTERVAL[1]) * 1000
 
     def should_stop(self):
-        return False
+        api = client.CoreV1Api()
+        pod = api.read_namespaced_pod_status(self._get_name(self._idxes[0]), self.namespace)
+        
+        return pod.status.phase != "Succeeded"
 
     def next_move(self):
         return random.choice([INCREASE, STAY, DECREASE])
@@ -79,6 +99,7 @@ class SimpleElasticController:
         
 
     def _load_worker_tpl(self):
+        base_dir = os.path.dirname(__file__)
         with open(base_dir +"/imagenet-worker.yaml") as f:
             return list(yaml.safe_load_all(f))
 
@@ -86,7 +107,7 @@ class SimpleElasticController:
         return self.job_name + '-' + str(i)
 
     def _create_k8s_worker(self, i):
-        
+
         # hardcode for the sake of simlicity
         pod, svc = self._load_worker_tpl()
         pod['metadata']['name'] = self._get_name(i)
@@ -121,8 +142,6 @@ class SimpleElasticController:
 
 
 if __name__ == "__main__":
-    import os
-    base_dir = os.path.dirname(__file__)
-    with open(base_dir +"/imagenet-worker-0.yaml") as f:
-        for data in yaml.safe_load_all(f):
-            print(data["kind"])
+    args = parser.parse_args()
+    controller = SimpleElasticController(args)
+    controller.run()
