@@ -1,0 +1,334 @@
+[INFO] 2020-03-16 04:18:49,392 main: rdzv init method=etcd://etcd:2379/imagenet?min_workers=2&max_workers=4&last_call_timeout=5
+[INFO] 2020-03-16 04:18:49,393 main: Loading data from: /data/tiny-imagenet-200/train
+[INFO] 2020-03-16 04:19:13,183 main: Loading model: resnet101
+[INFO] 2020-03-16 04:19:16,296 main: Rank [0] running on GPU [0]
+INFO 2020-03-16 04:19:16,302 Etcd machines: ['http://0.0.0.0:2379']
+[INFO] 2020-03-16 04:19:16,348 main: Entering torchelastic train_loop
+INFO 2020-03-16 04:19:16,363 Attempting to join next rendezvous
+INFO 2020-03-16 04:19:16,394 Observed existing rendezvous state: {'status': 'final', 'version': '24', 'participants': [0, 1], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_24/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_24/rank_1'], 'num_workers_waiting': 0}
+INFO 2020-03-16 04:19:16,476 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "24", "participants": [0, 1], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_24/rank_0", "/torchelastic/p2p/run_imagenet/rdzv/v_24/rank_1"], "num_workers_waiting": 1}
+INFO 2020-03-16 04:19:27,057 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_24/rank_0 is not renewed.
+INFO 2020-03-16 04:19:27,057 Rendevous version 24 is incomplete. 
+INFO 2020-03-16 04:19:27,057 Attempting to destroy it.
+INFO 2020-03-16 04:19:27,066 Rendezvous attempt failed, will retry. Reason: Key not found : /torchelastic/p2p/run_imagenet/rdzv/active_version
+INFO 2020-03-16 04:19:28,068 Attempting to join next rendezvous
+INFO 2020-03-16 04:19:28,098 Observed existing rendezvous state: {'status': 'joinable', 'version': '25', 'participants': [0]}
+INFO 2020-03-16 04:19:28,180 Joined rendezvous version 25 as rank 2. Full state: {'status': 'joinable', 'version': '25', 'participants': [0, 1, 2]}
+INFO 2020-03-16 04:19:28,180 Waiting for remaining peers.
+INFO 2020-03-16 04:19:33,201 All peers arrived. Confirming membership.
+INFO 2020-03-16 04:19:33,317 Waiting for confirmations from all peers.
+INFO 2020-03-16 04:19:33,318 Rendezvous version 25 is complete. Final state: {'status': 'final', 'version': '25', 'participants': [0, 1, 2], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_25/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_25/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_25/rank_2'], 'num_workers_waiting': 0}
+INFO 2020-03-16 04:19:33,318 Using TCPStore for c10d::Store implementation
+INFO 2020-03-16 04:19:33,333 Rank 2 will conenct to TCPStore server at imagenet-1:42147
+[INFO] 2020-03-16 04:19:33,336 coordinator_p2p: Got next rendezvous: rank 2, world size 3
+[INFO] 2020-03-16 04:19:33,358 coordinator_p2p: Initialized process group rank 2, world size 3
+[INFO] 2020-03-16 04:19:47,102 main: Rank 2: Model state synced from rank: 0
+	batch_size=32
+	num_data_workers=0
+	data_start_index=33120
+	iteration=386
+	epoch=0/2
+[INFO] 2020-03-16 04:19:49,936 train_loop: Rank 2 synced state with other nodes
+[INFO] 2020-03-16 04:19:58,332 main: epoch: 0, iteration: 386, data_idx: 45472
+[INFO] 2020-03-16 04:20:06,429 main: epoch: 0, iteration: 387, data_idx: 45600
+[INFO] 2020-03-16 04:20:14,768 main: epoch: 0, iteration: 388, data_idx: 45728
+[INFO] 2020-03-16 04:20:22,882 main: epoch: 0, iteration: 389, data_idx: 45856
+[INFO] 2020-03-16 04:20:31,602 main: epoch: 0, iteration: 390, data_idx: 45984
+[INFO] 2020-03-16 04:20:40,838 main: epoch: 0, iteration: 391, data_idx: 46112
+[INFO] 2020-03-16 04:20:50,536 main: epoch: 0, iteration: 392, data_idx: 46240
+[INFO] 2020-03-16 04:20:58,362 main: epoch: 0, iteration: 393, data_idx: 46368
+[INFO] 2020-03-16 04:21:06,682 main: epoch: 0, iteration: 394, data_idx: 46496
+[INFO] 2020-03-16 04:21:14,539 main: epoch: 0, iteration: 395, data_idx: 46624
+[1584332356.3638577][torchelastic]: should_stop_training.success=1
+[1584332356.3638833][torchelastic]: should_stop_training.duration.ms=15
+[1584332373.3363104][torchelastic]: rendezvous_barrier.success=1
+[1584332373.3363302][torchelastic]: rendezvous_barrier.duration.ms=16972
+[1584332373.3589172][torchelastic]: init_process_group.success=1
+[1584332373.3589606][torchelastic]: init_process_group.duration.ms=22
+[1584332373.358971][torchelastic]: load_checkpoint.success=1
+[1584332373.3589766][torchelastic]: load_checkpoint.duration.ms=0
+[1584332389.9367886][torchelastic]: state_sync.duration.ms=16577
+[1584332389.9389372][torchelastic]: should_stop_training.success=1
+[1584332389.9389498][torchelastic]: should_stop_training.duration.ms=1
+[1584332398.3361068][torchelastic]: train_step.duration.ms=8348
+[1584332398.3361464][torchelastic]: monitor_progress.success=1
+[1584332398.3361545][torchelastic]: monitor_progress.duration.ms=0
+[1584332398.336163][torchelastic]: save_checkpoint.success=1
+[1584332398.3361676][torchelastic]: save_checkpoint.duration.ms=0
+[1584332398.3469663][torchelastic]: should_rendezvous.success=1
+[1584332398.3469803][torchelastic]: should_rendezvous.duration.ms=10
+[1584332398.346989][torchelastic]: report_progress.success=1
+[1584332398.346994][torchelastic]: report_progress.duration.ms=0
+[1584332398.3469987][torchelastic]: inner_train_loop.duration.ms=8408
+[1584332398.3478572][torchelastic]: should_stop_training.success=1
+[1584332398.3478694][torchelastic]: should_stop_training.duration.ms=0
+[1584332406.4320707][torchelastic]: train_step.duration.ms=8040
+[1584332406.4321022][torchelastic]: monitor_progress.success=1
+[1584332406.4321089][torchelastic]: monitor_progress.duration.ms=0
+[1584332406.4321167][torchelastic]: save_checkpoint.success=1
+[1584332406.4321213][torchelastic]: save_checkpoint.duration.ms=0
+[1584332406.4363806][torchelastic]: should_rendezvous.success=1
+[1584332406.4363947][torchelastic]: should_rendezvous.duration.ms=4
+[1584332406.4364033][torchelastic]: report_progress.success=1
+[1584332406.436408][torchelastic]: report_progress.duration.ms=0
+[1584332406.4364126][torchelastic]: inner_train_loop.duration.ms=8088
+[1584332406.4372816][torchelastic]: should_stop_training.success=1
+[1584332406.437294][torchelastic]: should_stop_training.duration.ms=0
+[1584332414.771254][torchelastic]: train_step.duration.ms=8289
+[1584332414.7712846][torchelastic]: monitor_progress.success=1
+[1584332414.771292][torchelastic]: monitor_progress.duration.ms=0
+[1584332414.7713][torchelastic]: save_checkpoint.success=1
+[1584332414.7713046][torchelastic]: save_checkpoint.duration.ms=0
+[1584332414.773416][torchelastic]: should_rendezvous.success=1
+[1584332414.77343][torchelastic]: should_rendezvous.duration.ms=2
+[1584332414.7734377][torchelastic]: report_progress.success=1
+[1584332414.7734423][torchelastic]: report_progress.duration.ms=0
+[1584332414.7734473][torchelastic]: inner_train_loop.duration.ms=8336
+[1584332414.7743402][torchelastic]: should_stop_training.success=1
+[1584332414.7743523][torchelastic]: should_stop_training.duration.ms=0
+[1584332422.8854742][torchelastic]: train_step.duration.ms=8069
+[1584332422.8855069][torchelastic]: monitor_progress.success=1
+[1584332422.8855135][torchelastic]: monitor_progress.duration.ms=0
+[1584332422.8855217][torchelastic]: save_checkpoint.success=1
+[1584332422.8855262][torchelastic]: save_checkpoint.duration.ms=0
+[1584332422.9014409][torchelastic]: should_rendezvous.success=1
+[1584332422.9014575][torchelastic]: should_rendezvous.duration.ms=15
+[1584332422.9014668][torchelastic]: report_progress.success=1
+[1584332422.901472][torchelastic]: report_progress.duration.ms=0
+[1584332422.9014769][torchelastic]: inner_train_loop.duration.ms=8127
+[1584332422.9023783][torchelastic]: should_stop_training.success=1
+[1584332422.902391][torchelastic]: should_stop_training.duration.ms=0
+[1584332431.6054][torchelastic]: train_step.duration.ms=8659
+[1584332431.6054323][torchelastic]: monitor_progress.success=1
+[1584332431.6054394][torchelastic]: monitor_progress.duration.ms=0
+[1584332431.605448][torchelastic]: save_checkpoint.success=1
+[1584332431.6054525][torchelastic]: save_checkpoint.duration.ms=0
+[1584332431.6126003][torchelastic]: should_rendezvous.success=1
+[1584332431.6126149][torchelastic]: should_rendezvous.duration.ms=7
+[1584332431.6126237][torchelastic]: report_progress.success=1
+[1584332431.6126285][torchelastic]: report_progress.duration.ms=0
+[1584332431.612633][torchelastic]: inner_train_loop.duration.ms=8710
+[1584332431.6134472][torchelastic]: should_stop_training.success=1
+[1584332431.6134598][torchelastic]: should_stop_training.duration.ms=0
+[1584332440.841987][torchelastic]: train_step.duration.ms=9177
+[1584332440.842017][torchelastic]: monitor_progress.success=1
+[1584332440.8420236][torchelastic]: monitor_progress.duration.ms=0
+[1584332440.842032][torchelastic]: save_checkpoint.success=1
+[1584332440.8421435][torchelastic]: save_checkpoint.duration.ms=0
+[1584332440.850579][torchelastic]: should_rendezvous.success=1
+[1584332440.8505962][torchelastic]: should_rendezvous.duration.ms=8
+[1584332440.850605][torchelastic]: report_progress.success=1
+[1584332440.8506107][torchelastic]: report_progress.duration.ms=0
+[1584332440.850616][torchelastic]: inner_train_loop.duration.ms=9237
+[1584332440.8515236][torchelastic]: should_stop_training.success=1
+[1584332440.8515363][torchelastic]: should_stop_training.duration.ms=0
+[1584332450.5392654][torchelastic]: train_step.duration.ms=9642
+[1584332450.5392976][torchelastic]: monitor_progress.success=1
+[1584332450.539304][torchelastic]: monitor_progress.duration.ms=0
+[1584332450.5393121][torchelastic]: save_checkpoint.success=1
+[1584332450.539429][torchelastic]: save_checkpoint.duration.ms=0
+[1584332450.5415025][torchelastic]: should_rendezvous.success=1
+[1584332450.5415173][torchelastic]: should_rendezvous.duration.ms=2
+[1584332450.541526][torchelastic]: report_progress.success=1
+[1584332450.541531][torchelastic]: report_progress.duration.ms=0
+[1584332450.541536][torchelastic]: inner_train_loop.duration.ms=9689
+[1584332450.5424013][torchelastic]: should_stop_training.success=1
+[1584332450.5424137][torchelastic]: should_stop_training.duration.ms=0
+[1584332458.36583][torchelastic]: train_step.duration.ms=7780
+[1584332458.3658614][torchelastic]: monitor_progress.success=1
+[1584332458.3658676][torchelastic]: monitor_progress.duration.ms=0
+[1584332458.3658764][torchelastic]: save_checkpoint.success=1
+[1584332458.3658812][torchelastic]: save_checkpoint.duration.ms=0
+[1584332458.3817928][torchelastic]: should_rendezvous.success=1
+[1584332458.38181][torchelastic]: should_rendezvous.duration.ms=15
+[1584332458.3818185][torchelastic]: report_progress.success=1
+[1584332458.381824][torchelastic]: report_progress.duration.ms=0
+[1584332458.381829][torchelastic]: inner_train_loop.duration.ms=7839
+[1584332458.3828282][torchelastic]: should_stop_training.success=1
+[1584332458.3828409][torchelastic]: should_stop_training.duration.ms=1
+[1584332466.6854537][torchelastic]: train_step.duration.ms=8260
+[1584332466.6854851][torchelastic]: monitor_progress.success=1
+[1584332466.6854916][torchelastic]: monitor_progress.duration.ms=0
+[1584332466.6854997][torchelastic]: save_checkpoint.success=1
+[1584332466.6855044][torchelastic]: save_checkpoint.duration.ms=0
+[1584332466.687713][torchelastic]: should_rendezvous.success=1
+[1584332466.6877272][torchelastic]: should_rendezvous.duration.ms=2
+[1584332466.6877353][torchelastic]: report_progress.success=1
+[1584332466.68774][torchelastic]: report_progress.duration.ms=0
+[1584332466.687745][torchelastic]: inner_train_loop.duration.ms=8304
+[1584332466.6885827][torchelastic]: should_stop_training.success=1
+[1584332466.6885955][torchelastic]: should_stop_training.duration.ms=0
+[1584332474.5424876][torchelastic]: train_step.duration.ms=7809
+[1584332474.542518][torchelastic]: monitor_progress.success=1
+[1584332474.5425243][torchelastic]: monitor_progress.duration.ms=0
+[1584332474.5425332][torchelastic]: save_checkpoint.success=1
+[1584332474.5425377][torchelastic]: save_checkpoint.duration.ms=0
+[INFO] 2020-03-16 04:21:22,556 main: epoch: 0, iteration: 396, data_idx: 46752
+[INFO] 2020-03-16 04:21:30,826 main: epoch: 0, iteration: 397, data_idx: 46880
+[INFO] 2020-03-16 04:21:38,996 main: epoch: 0, iteration: 398, data_idx: 47008
+[INFO] 2020-03-16 04:21:47,361 main: epoch: 0, iteration: 399, data_idx: 47136
+[INFO] 2020-03-16 04:21:56,084 main: epoch: 0, iteration: 400, data_idx: 47264
+[INFO] 2020-03-16 04:22:04,136 main: epoch: 0, iteration: 401, data_idx: 47392
+[INFO] 2020-03-16 04:22:12,053 main: epoch: 0, iteration: 402, data_idx: 47520
+[INFO] 2020-03-16 04:22:21,111 main: epoch: 0, iteration: 403, data_idx: 47648
+[INFO] 2020-03-16 04:22:28,972 main: epoch: 0, iteration: 404, data_idx: 47776
+[INFO] 2020-03-16 04:22:37,002 main: epoch: 0, iteration: 405, data_idx: 47904
+[1584332474.5595763][torchelastic]: should_rendezvous.success=1
+[1584332474.5596397][torchelastic]: should_rendezvous.duration.ms=17
+[1584332474.5596511][torchelastic]: report_progress.success=1
+[1584332474.5596566][torchelastic]: report_progress.duration.ms=0
+[1584332474.5596619][torchelastic]: inner_train_loop.duration.ms=7871
+[1584332474.5606244][torchelastic]: should_stop_training.success=1
+[1584332474.5606375][torchelastic]: should_stop_training.duration.ms=0
+[1584332482.5891492][torchelastic]: train_step.duration.ms=7984
+[1584332482.5891824][torchelastic]: monitor_progress.success=1
+[1584332482.58919][torchelastic]: monitor_progress.duration.ms=0
+[1584332482.5891974][torchelastic]: save_checkpoint.success=1
+[1584332482.5892017][torchelastic]: save_checkpoint.duration.ms=0
+[1584332482.591631][torchelastic]: should_rendezvous.success=1
+[1584332482.5916474][torchelastic]: should_rendezvous.duration.ms=2
+[1584332482.5916562][torchelastic]: report_progress.success=1
+[1584332482.5916615][torchelastic]: report_progress.duration.ms=0
+[1584332482.5916665][torchelastic]: inner_train_loop.duration.ms=8031
+[1584332482.5925748][torchelastic]: should_stop_training.success=1
+[1584332482.592587][torchelastic]: should_stop_training.duration.ms=0
+[1584332490.8293688][torchelastic]: train_step.duration.ms=8195
+[1584332490.8294005][torchelastic]: monitor_progress.success=1
+[1584332490.829407][torchelastic]: monitor_progress.duration.ms=0
+[1584332490.8294153][torchelastic]: save_checkpoint.success=1
+[1584332490.82942][torchelastic]: save_checkpoint.duration.ms=0
+[1584332490.8343196][torchelastic]: should_rendezvous.success=1
+[1584332490.8343341][torchelastic]: should_rendezvous.duration.ms=4
+[1584332490.8343425][torchelastic]: report_progress.success=1
+[1584332490.8343475][torchelastic]: report_progress.duration.ms=0
+[1584332490.8343525][torchelastic]: inner_train_loop.duration.ms=8241
+[1584332490.8352604][torchelastic]: should_stop_training.success=1
+[1584332490.8352733][torchelastic]: should_stop_training.duration.ms=0
+[1584332498.999125][torchelastic]: train_step.duration.ms=8121
+[1584332498.9991555][torchelastic]: monitor_progress.success=1
+[1584332498.999162][torchelastic]: monitor_progress.duration.ms=0
+[1584332498.99917][torchelastic]: save_checkpoint.success=1
+[1584332498.9991746][torchelastic]: save_checkpoint.duration.ms=0
+[1584332499.0060833][torchelastic]: should_rendezvous.success=1
+[1584332499.0060992][torchelastic]: should_rendezvous.duration.ms=6
+[1584332499.0061076][torchelastic]: report_progress.success=1
+[1584332499.0061128][torchelastic]: report_progress.duration.ms=0
+[1584332499.0061178][torchelastic]: inner_train_loop.duration.ms=8170
+[1584332499.0069973][torchelastic]: should_stop_training.success=1
+[1584332499.0070095][torchelastic]: should_stop_training.duration.ms=0
+[1584332507.3643517][torchelastic]: train_step.duration.ms=8315
+[1584332507.3643842][torchelastic]: monitor_progress.success=1
+[1584332507.3643925][torchelastic]: monitor_progress.duration.ms=0
+[1584332507.3644006][torchelastic]: save_checkpoint.success=1
+[1584332507.3644054][torchelastic]: save_checkpoint.duration.ms=0
+[1584332507.3716705][torchelastic]: should_rendezvous.success=1
+[1584332507.3716848][torchelastic]: should_rendezvous.duration.ms=7
+[1584332507.3716931][torchelastic]: report_progress.success=1
+[1584332507.3716981][torchelastic]: report_progress.duration.ms=0
+[1584332507.3717031][torchelastic]: inner_train_loop.duration.ms=8364
+[1584332507.372552][torchelastic]: should_stop_training.success=1
+[1584332507.372566][torchelastic]: should_stop_training.duration.ms=0
+[1584332516.0876122][torchelastic]: train_step.duration.ms=8671
+[1584332516.0876431][torchelastic]: monitor_progress.success=1
+[1584332516.0876498][torchelastic]: monitor_progress.duration.ms=0
+[1584332516.0876582][torchelastic]: save_checkpoint.success=1
+[1584332516.0876627][torchelastic]: save_checkpoint.duration.ms=0
+[1584332516.0900772][torchelastic]: should_rendezvous.success=1
+[1584332516.090091][torchelastic]: should_rendezvous.duration.ms=2
+[1584332516.0900989][torchelastic]: report_progress.success=1
+[1584332516.0901039][torchelastic]: report_progress.duration.ms=0
+[1584332516.0901117][torchelastic]: inner_train_loop.duration.ms=8717
+[1584332516.0909753][torchelastic]: should_stop_training.success=1
+[1584332516.0909877][torchelastic]: should_stop_training.duration.ms=0
+[1584332524.1393945][torchelastic]: train_step.duration.ms=8006
+[1584332524.139426][torchelastic]: monitor_progress.success=1
+[1584332524.1394324][torchelastic]: monitor_progress.duration.ms=0
+[1584332524.1394405][torchelastic]: save_checkpoint.success=1
+[1584332524.1394453][torchelastic]: save_checkpoint.duration.ms=0
+[1584332524.1417248][torchelastic]: should_rendezvous.success=1
+[1584332524.141739][torchelastic]: should_rendezvous.duration.ms=2
+[1584332524.1417472][torchelastic]: report_progress.success=1
+[1584332524.1417549][torchelastic]: report_progress.duration.ms=0
+[1584332524.1417596][torchelastic]: inner_train_loop.duration.ms=8050
+[1584332524.1426008][torchelastic]: should_stop_training.success=1
+[1584332524.142613][torchelastic]: should_stop_training.duration.ms=0
+[1584332532.0563805][torchelastic]: train_step.duration.ms=7867
+[1584332532.0565984][torchelastic]: monitor_progress.success=1
+[1584332532.056607][torchelastic]: monitor_progress.duration.ms=0
+[1584332532.0566154][torchelastic]: save_checkpoint.success=1
+[1584332532.0566204][torchelastic]: save_checkpoint.duration.ms=0
+[1584332532.058982][torchelastic]: should_rendezvous.success=1
+[1584332532.058996][torchelastic]: should_rendezvous.duration.ms=2
+[1584332532.0590038][torchelastic]: report_progress.success=1
+[1584332532.0590088][torchelastic]: report_progress.duration.ms=0
+[1584332532.0590165][torchelastic]: inner_train_loop.duration.ms=7916
+[1584332532.0598555][torchelastic]: should_stop_training.success=1
+[1584332532.0598679][torchelastic]: should_stop_training.duration.ms=0
+[1584332541.114415][torchelastic]: train_step.duration.ms=9011
+[1584332541.1144469][torchelastic]: monitor_progress.success=1
+[1584332541.1144538][torchelastic]: monitor_progress.duration.ms=0
+[1584332541.1144621][torchelastic]: save_checkpoint.success=1
+[1584332541.1144671][torchelastic]: save_checkpoint.duration.ms=0
+[1584332541.1167338][torchelastic]: should_rendezvous.success=1
+[1584332541.1167502][torchelastic]: should_rendezvous.duration.ms=2
+[1584332541.116759][torchelastic]: report_progress.success=1
+[1584332541.1167643][torchelastic]: report_progress.duration.ms=0
+[1584332541.1167696][torchelastic]: inner_train_loop.duration.ms=9056
+[1584332541.1176314][torchelastic]: should_stop_training.success=1
+[1584332541.1176462][torchelastic]: should_stop_training.duration.ms=0
+[1584332548.975691][torchelastic]: train_step.duration.ms=7814
+[1584332548.9757211][torchelastic]: monitor_progress.success=1
+[1584332548.975728][torchelastic]: monitor_progress.duration.ms=0
+[1584332548.9757366][torchelastic]: save_checkpoint.success=1
+[1584332548.9757414][torchelastic]: save_checkpoint.duration.ms=0
+[1584332548.9949925][torchelastic]: should_rendezvous.success=1
+[1584332548.9950092][torchelastic]: should_rendezvous.duration.ms=19
+[1584332548.9950182][torchelastic]: report_progress.success=1
+[1584332548.9950233][torchelastic]: report_progress.duration.ms=0
+[1584332548.9950285][torchelastic]: inner_train_loop.duration.ms=7877
+[1584332548.9959562][torchelastic]: should_stop_training.success=1
+[1584332548.995969][torchelastic]: should_stop_training.duration.ms=0
+[1584332557.0058048][torchelastic]: train_step.duration.ms=7966
+[1584332557.0058365][torchelastic]: monitor_progress.success=1
+[1584332557.0058436][torchelastic]: monitor_progress.duration.ms=0
+[1584332557.0059361][torchelastic]: save_checkpoint.success=1
+[1584332557.0059426][torchelastic]: save_checkpoint.duration.ms=0
+[1584332557.008043][torchelastic]: should_rendezvous.success=1
+[1584332557.0080574][torchelastic]: should_rendezvous.duration.ms=2
+[1584332557.008066][torchelastic]: report_progress.success=1
+[1584332557.008071][torchelastic]: report_progress.duration.ms=0
+[1584332557.0080757][torchelastic]: inner_train_loop.duration.ms=8012
+[INFO] 2020-03-16 04:22:44,966 main: epoch: 0, iteration: 406, data_idx: 48032
+[INFO] 2020-03-16 04:22:53,167 main: epoch: 0, iteration: 407, data_idx: 48160
+[INFO] 2020-03-16 04:23:01,596 main: epoch: 0, iteration: 408, data_idx: 48288
+[INFO] 2020-03-16 04:23:09,884 main: epoch: 0, iteration: 409, data_idx: 48416
+[INFO] 2020-03-16 04:23:18,861 main: epoch: 0, iteration: 410, data_idx: 48544
+[INFO] 2020-03-16 04:23:18,866 coordinator_p2p: Rank 2 detected 1 new nodes; will re-rendezvous.
+[INFO] 2020-03-16 04:23:18,866 train_loop: Rank 2 will re-rendezvous
+INFO 2020-03-16 04:23:18,911 Attempting to join next rendezvous
+INFO 2020-03-16 04:23:18,927 Observed existing rendezvous state: {'status': 'final', 'version': '25', 'participants': [0, 1, 2], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_25/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_25/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_25/rank_2'], 'num_workers_waiting': 1}
+INFO 2020-03-16 04:23:19,020 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "25", "participants": [0, 1, 2], "keep_alives": ["/torchelastic/p2p/run_imagenet/rdzv/v_25/rank_0", "/torchelastic/p2p/run_imagenet/rdzv/v_25/rank_1", "/torchelastic/p2p/run_imagenet/rdzv/v_25/rank_2"], "num_workers_waiting": 4}
+INFO 2020-03-16 04:23:24,557 Keep-alive key /torchelastic/p2p/run_imagenet/rdzv/v_25/rank_2 is not renewed.
+INFO 2020-03-16 04:23:24,557 Rendevous version 25 is incomplete. 
+INFO 2020-03-16 04:23:24,557 Attempting to destroy it.
+INFO 2020-03-16 04:23:24,567 Rendezvous attempt failed, will retry. Reason: Key not found : /torchelastic/p2p/run_imagenet/rdzv/active_version
+INFO 2020-03-16 04:23:25,568 Attempting to join next rendezvous
+INFO 2020-03-16 04:23:25,583 Observed existing rendezvous state: {'status': 'joinable', 'version': '26', 'participants': [0]}
+INFO 2020-03-16 04:23:25,661 Join rendezvous CAS unsuccessful, retrying
+INFO 2020-03-16 04:23:25,682 Joined rendezvous version 26 as rank 3. Full state: {'status': 'frozen', 'version': '26', 'participants': [0, 1, 2, 3], 'keep_alives': []}
+INFO 2020-03-16 04:23:25,682 Waiting for remaining peers.
+INFO 2020-03-16 04:23:25,682 All peers arrived. Confirming membership.
+INFO 2020-03-16 04:23:25,786 Waiting for confirmations from all peers.
+INFO 2020-03-16 04:23:25,912 Rendezvous version 26 is complete. Final state: {'status': 'final', 'version': '26', 'participants': [0, 1, 2, 3], 'keep_alives': ['/torchelastic/p2p/run_imagenet/rdzv/v_26/rank_0', '/torchelastic/p2p/run_imagenet/rdzv/v_26/rank_3', '/torchelastic/p2p/run_imagenet/rdzv/v_26/rank_1', '/torchelastic/p2p/run_imagenet/rdzv/v_26/rank_2'], 'num_workers_waiting': 0}
+INFO 2020-03-16 04:23:25,912 Using TCPStore for c10d::Store implementation
+INFO 2020-03-16 04:23:25,927 Rank 3 will conenct to TCPStore server at imagenet-3:52267
+[INFO] 2020-03-16 04:23:25,930 coordinator_p2p: Got next rendezvous: rank 3, world size 4
+[INFO] 2020-03-16 04:23:25,992 coordinator_p2p: Initialized process group rank 3, world size 4
+[INFO] 2020-03-16 04:23:39,818 main: Rank 3: Model state synced from rank: 1
+	batch_size=32
+	num_data_workers=0
+	data_start_index=35520
+	iteration=411
+	epoch=0/2
+[INFO] 2020-03-16 04:23:50,056 train_loop: Rank 3 synced state with other nodes
+[INFO] 2020-03-16 04:23:57,687 main: epoch: 0, iteration: 411, data_idx: 48672
