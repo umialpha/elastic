@@ -6,8 +6,6 @@ import os
 from kubernetes import client, config
 import yaml
 
-# ELASTIC_CHANGE_INTERVAL is the interval Controller will increase / decrease workers.  
-ELASTIC_CHANGE_INTERVAL = (30, 30 * 2) 
 
 INCREASE = 0
 STAY = 1
@@ -38,6 +36,23 @@ parser.add_argument(
     help="define the number of maximum workers",
 )
 
+parser.add_argument(
+    "--r",
+    default=False,
+    help="If set True, it will randomly increase or decrease workers, default is False, which means it will always decreased the most recent worker",
+    dest="randomly",
+        )
+parser.add_argument(
+    "-min_move_time",
+    default=60,
+    help="minimum seconds that controller takes move to INCREASE, DECREASE or STAY SAME, default is 60 sec",
+        )
+
+parser.add_argument(
+    "-max_move_time",
+    default= 120,
+    help="maximum seconds that controller takes move to INCREASE, DECREASE or STAY SAME, default is 120 sec",
+)
 
 class SimpleElasticController:
 
@@ -46,7 +61,9 @@ class SimpleElasticController:
         self.namespace = args.namespace
         self.min_worker = args.min_worker
         self.max_worker = args.max_worker
-        
+        self.min_move_time = args.min_move_time
+        self.max_move_time = args.max_move_time
+        self.randomly = args.randomly
         self._idxes = [i for i in range(self.max_worker)]
         self.worker_size = 0
         # k8s client config
@@ -55,7 +72,7 @@ class SimpleElasticController:
         
     
     def next_move_time(self):
-        return time.time() + random.randint(ELASTIC_CHANGE_INTERVAL[0], ELASTIC_CHANGE_INTERVAL[1]) 
+        return time.time() + random.randint(self.min_move_time, self.max_move_time) 
 
     def should_stop(self):
         api = client.CoreV1Api()
@@ -96,9 +113,9 @@ class SimpleElasticController:
 
     def delete_worker(self):
         try:
-
-            idx = random.randint(0, self.worker_size - 1)
-            self._idxes[idx], self._idxes[self.worker_size - 1] = self._idxes[self.worker_size - 1], self._idxes[idx]
+            if self.randomly:
+                idx = random.randint(0, self.worker_size - 1)
+                self._idxes[idx], self._idxes[self.worker_size - 1] = self._idxes[self.worker_size - 1], self._idxes[idx]
             self._delete_k8s_worker(self._idxes[self.worker_size - 1])
             self.worker_size -= 1
         except Exception as e:
