@@ -29,6 +29,7 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 from torch.nn.parameter import Parameter
 from torchelastic.p2p.coordinator_p2p import CoordinatorP2P
+from torchelastic.p2p.coordinator_parallel import CoordinatorParallel
 from torchelastic.utils.data import CyclingIterator, ElasticDistributedSampler
 from torchvision.models.resnet import BasicBlock, Bottleneck
 from torchelastic import metrics
@@ -259,7 +260,7 @@ def single_trainer(
     model.cuda()
     log.info(f"Rank [{local_rank}] running on GPU [{device}]")
 
-    coordinator = CoordinatorP2P(
+    coordinator = CoordinatorParallel(
         c10d_backend=c10d_backend,
         init_method=rdzv_init_url,
         max_num_trainers=max_world_size,
